@@ -1,0 +1,82 @@
+﻿@model TransrodenProyecto.Models.Usuario
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Usuario</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Apellidos)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Apellidos)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Correo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Correo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Clave)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Clave)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Telefono)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Identificacion)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Identificacion)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Rol)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Rol)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id_Usuario }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

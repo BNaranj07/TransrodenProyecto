@@ -1,0 +1,106 @@
+﻿@model TransrodenProyecto.Models.Paquete
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Paquete</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Carga.Id_Carga)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Carga.Id_Carga)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Envio.Id_Envio)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Envio.Id_Envio)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NumeroRastreo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NumeroRastreo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Tipo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Emisor)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Emisor)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Receptor)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Receptor)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Direccion)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pago)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pago)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Descripcion)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.fecha_entrega)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.fecha_entrega)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id_Paquete }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

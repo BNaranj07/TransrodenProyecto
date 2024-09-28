@@ -1,0 +1,74 @@
+﻿@model TransrodenProyecto.Models.Facturacion
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Facturacion</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Paquete.NumeroRastreo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Paquete.NumeroRastreo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Usuario.Nombre)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Usuario.Nombre)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Precio)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Precio)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Subtotal)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Subtotal)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Total)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Total)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Fecha)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id_Facturacion }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

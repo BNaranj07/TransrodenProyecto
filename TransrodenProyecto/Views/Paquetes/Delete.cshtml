@@ -1,0 +1,112 @@
+﻿@model TransrodenProyecto.Models.Paquete
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Paquete</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Carga.Id_Carga)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Carga.Id_Carga)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Envio.Id_Envio)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Envio.Id_Envio)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NumeroRastreo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NumeroRastreo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Tipo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Emisor)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Emisor)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Receptor)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Receptor)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Direccion)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pago)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pago)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Descripcion)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.fecha_entrega)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.fecha_entrega)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>
