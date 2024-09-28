@@ -88,3 +88,44 @@ C:\Users\naran\Documents\Universidad\2024\Tercer cuatri\Desarrollo Sistemas\Proy
 C:\Users\naran\Documents\Universidad\2024\Tercer cuatri\Desarrollo Sistemas\ProyectoTransroden\TransrodenProyecto\TransrodenProyecto\obj\Debug\Transrod.73BF59FF.Up2Date
 C:\Users\naran\Documents\Universidad\2024\Tercer cuatri\Desarrollo Sistemas\ProyectoTransroden\TransrodenProyecto\TransrodenProyecto\obj\Debug\TransrodenProyecto.dll
 C:\Users\naran\Documents\Universidad\2024\Tercer cuatri\Desarrollo Sistemas\ProyectoTransroden\TransrodenProyecto\TransrodenProyecto\obj\Debug\TransrodenProyecto.pdb
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\TransrodenProyecto.dll.config
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\TransrodenProyecto.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\TransrodenProyecto.pdb
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\Antlr3.Runtime.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\EntityFramework.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\EntityFramework.SqlServer.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\Newtonsoft.Json.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\System.Web.Helpers.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\System.Web.Mvc.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\System.Web.Optimization.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\System.Web.Razor.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\System.Web.WebPages.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\System.Web.WebPages.Razor.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\WebGrease.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\EntityFramework.xml
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\EntityFramework.SqlServer.xml
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\System.Web.Helpers.xml
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\System.Web.Mvc.xml
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\System.Web.Optimization.xml
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\System.Web.Razor.xml
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\System.Web.WebPages.xml
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\System.Web.WebPages.Razor.xml
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\Newtonsoft.Json.xml
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\Antlr3.Runtime.pdb
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\es\System.Web.Razor.resources.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\obj\Debug\TransrodenProyecto.csproj.AssemblyReference.cache
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\obj\Debug\TransrodenProyecto.csproj.CoreCompileInputs.cache
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\obj\Debug\Transrod.73BF59FF.Up2Date
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\obj\Debug\TransrodenProyecto.dll
+C:\Users\Jonathan\Documents\GitHub\TransrodenProyecto\TransrodenProyecto\obj\Debug\TransrodenProyecto.pdb

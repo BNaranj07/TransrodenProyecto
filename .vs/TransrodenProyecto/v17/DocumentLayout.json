@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\jonathan\\documents\\github\\transrodenproyecto\\transrodenproyecto\\models\\historial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\models\\historial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\jonathan\\documents\\github\\transrodenproyecto\\transrodenproyecto\\views\\cargas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\cargas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\models\\facturacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\models\\facturacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\jonathan\\documents\\github\\transrodenproyecto\\transrodenproyecto\\models\\historial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\models\\historial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\models\\paquete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\models\\carga.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\models\\carga.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -82,7 +86,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -118,31 +122,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Envio.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Envio.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Envio.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Envio.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Models\\Envio.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T00:47:32.211Z"
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Cargas\\Index.cshtml",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Cargas\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Cargas\\Index.cshtml",
+              "RelativeToolTip": "TransrodenProyecto\\Views\\Cargas\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-28T22:35:31.345Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Carga.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Carga.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Carga.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Carga.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Models\\Carga.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T00:46:30.272Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Camion.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Camion.cs",
               "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Camion.cs",
@@ -154,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Calculadora.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Calculadora.cs",
               "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Calculadora.cs",
@@ -166,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\ApplicationDbContext.cs",
@@ -178,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Historial.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Historial.cs",
               "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Historial.cs",
@@ -197,97 +190,14 @@
               "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Facturacion.cs",
               "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Facturacion.cs",
               "RelativeToolTip": "TransrodenProyecto\\Models\\Facturacion.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAgwCEAAAAAAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAQwCEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T00:47:57.924Z"
+              "WhenOpened": "2024-09-28T00:47:57.924Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Paquete.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Paquete.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Paquete.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Paquete.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Models\\Paquete.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T00:49:21.333Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Usuario.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Usuario.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Models\\Usuario.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADQAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T00:49:55.76Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CalculadorasController.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\CalculadorasController.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\CalculadorasController.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\CalculadorasController.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Controllers\\CalculadorasController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T01:03:47.145Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "CamionsController.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\CamionsController.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\CamionsController.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\CamionsController.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Controllers\\CamionsController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T01:05:37.898Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CargasController.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\CargasController.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\CargasController.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\CargasController.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Controllers\\CargasController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T01:06:29.096Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "EnviosController.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\EnviosController.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\EnviosController.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\EnviosController.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Controllers\\EnviosController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T01:08:02.851Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "FacturacionsController.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\FacturacionsController.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\FacturacionsController.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\FacturacionsController.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Controllers\\FacturacionsController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T01:08:18.664Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "Web.config",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Web.config",
               "RelativeDocumentMoniker": "TransrodenProyecto\\Web.config",
@@ -300,7 +210,115 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Carga.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Carga.cs",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Carga.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Carga.cs",
+              "RelativeToolTip": "TransrodenProyecto\\Models\\Carga.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T00:46:30.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Envio.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Envio.cs",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Envio.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Envio.cs",
+              "RelativeToolTip": "TransrodenProyecto\\Models\\Envio.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T00:47:32.211Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Paquete.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Paquete.cs",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Paquete.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Paquete.cs",
+              "RelativeToolTip": "TransrodenProyecto\\Models\\Paquete.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T00:49:21.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Usuario.cs",
+              "RelativeToolTip": "TransrodenProyecto\\Models\\Usuario.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADQAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T00:49:55.76Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CalculadorasController.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\CalculadorasController.cs",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\CalculadorasController.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\CalculadorasController.cs",
+              "RelativeToolTip": "TransrodenProyecto\\Controllers\\CalculadorasController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T01:03:47.145Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CamionsController.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\CamionsController.cs",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\CamionsController.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\CamionsController.cs",
+              "RelativeToolTip": "TransrodenProyecto\\Controllers\\CamionsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T01:05:37.898Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CargasController.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\CargasController.cs",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\CargasController.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\CargasController.cs",
+              "RelativeToolTip": "TransrodenProyecto\\Controllers\\CargasController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T01:06:29.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "EnviosController.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\EnviosController.cs",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\EnviosController.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\EnviosController.cs",
+              "RelativeToolTip": "TransrodenProyecto\\Controllers\\EnviosController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T01:08:02.851Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 15,
+              "Title": "FacturacionsController.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\FacturacionsController.cs",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\FacturacionsController.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\FacturacionsController.cs",
+              "RelativeToolTip": "TransrodenProyecto\\Controllers\\FacturacionsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T01:08:18.664Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "HistorialsController.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\HistorialsController.cs",
               "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\HistorialsController.cs",
@@ -312,7 +330,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "PaquetesController.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\PaquetesController.cs",
               "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\PaquetesController.cs",
@@ -324,7 +342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "UsuariosController.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\UsuariosController.cs",
               "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\UsuariosController.cs",
