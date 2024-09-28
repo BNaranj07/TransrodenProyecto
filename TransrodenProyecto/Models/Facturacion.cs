@@ -19,9 +19,17 @@ namespace TransrodenProyecto.Models
         public Paquete Paquete { get; set; }
 
 
-        [Required]
         public int Id_Usuario { get; set; }
         public Usuario Usuario { get; set; }
+
+
+        [Required]
+        public string NombreEmisor { get; set; }
+
+
+        //Se utilizara para validar si el emisor tiene una cuenta en transroden y asi asociar el usuario con la factura (en caso de no tener cuenta, simplemente no se asocia a nada y se guarda la cedula)
+        [Required]
+        public string CedulaEmisor { get; set; }
 
 
         [Required]

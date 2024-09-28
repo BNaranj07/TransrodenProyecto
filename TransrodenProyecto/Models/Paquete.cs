@@ -25,15 +25,31 @@ namespace TransrodenProyecto.Models
 
 
         [Required]
-        public string Emisor { get; set; }
+        public string NombreEmisor { get; set; }
+
+
+        //Para Facturacion
+        [Required]
+        public string CedulaEmisor { get; set; }
 
 
         [Required]
-        public string Receptor { get; set; }
+        public string NombreReceptor { get; set; }
+
+
+        // Para confirmacion de entrega 
+        [Required]
+        public string CedulaReceptor { get; set; }
 
 
         [Required]
+        public bool Domicilio { get; set; }
+
+
         public string Direccion { get; set; }
+
+        public string TelefonoDomicilio { get; set; }
+
 
 
         [Required]
@@ -51,7 +67,8 @@ namespace TransrodenProyecto.Models
         public Envio Envio { get; set; }
 
 
-        [Required]
+        public DateTime fecha_recibo { get; set; }
+
         public DateTime fecha_entrega { get; set; }
 
 
