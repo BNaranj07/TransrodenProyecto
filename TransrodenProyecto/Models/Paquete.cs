@@ -14,9 +14,8 @@ namespace TransrodenProyecto.Models
         public int Id_Paquete { get; set; }
 
 
-        [Required]
         [StringLength(50)]
-        public string NumeroRastreo { get; set; }
+        public string NumeroRastreo { get; set; } = string.Empty;
 
 
         //Enum
@@ -59,22 +58,30 @@ namespace TransrodenProyecto.Models
         public string Descripcion { get; set; }
 
 
-        public int Id_Carga { get; set; }
-        public Carga Carga { get; set; }
+        // +++++++++++++++++ Null ++++++++++++++++++++++++++++++
+        // Se necesita de ? para que el campo acepte nulls
+        // Tambien se necesita agregar la opcion virtual
+        // Ademas agregar un modelBuilder.Entity con hasOptional
+        public int? Id_Carga { get; set; }
+        public virtual Carga Carga { get; set; }
 
 
-        public int Id_Envio { get; set; }
-        public Envio Envio { get; set; }
+        // +++++++++++++++++ Null ++++++++++++++++++++++++++++++
+        // Se necesita de ? para que el campo acepte nulls
+        // Tambien se necesita agregar la opcion virtual
+        // Ademas agregar un modelBuilder.Entity con hasOptional
+        public int? Id_Envio { get; set; }
+        public virtual Envio Envio { get; set; }
 
 
         public DateTime fecha_recibo { get; set; }
 
-        public DateTime fecha_entrega { get; set; }
+        public DateTime? fecha_entrega { get; set; }
 
 
-        public List<Historial> Historiales { get; set; }
+        public List<Historial> Historiales { get; set; } = new List<Historial>();
 
-        public List<Facturacion> Facturaciones { get; set; }
+        public List<Facturacion> Facturaciones { get; set; } = new List<Facturacion>();
 
 
     }

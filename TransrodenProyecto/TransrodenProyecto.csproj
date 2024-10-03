@@ -221,11 +221,6 @@
     <Content Include="Views\Envios\Details.cshtml" />
     <Content Include="Views\Envios\Edit.cshtml" />
     <Content Include="Views\Envios\Index.cshtml" />
-    <Content Include="Views\Facturacions\Create.cshtml" />
-    <Content Include="Views\Facturacions\Delete.cshtml" />
-    <Content Include="Views\Facturacions\Details.cshtml" />
-    <Content Include="Views\Facturacions\Edit.cshtml" />
-    <Content Include="Views\Facturacions\Index.cshtml" />
     <Content Include="Views\Historials\Create.cshtml" />
     <Content Include="Views\Historials\Delete.cshtml" />
     <Content Include="Views\Historials\Details.cshtml" />
@@ -236,6 +231,14 @@
     <Content Include="Views\Paquetes\Details.cshtml" />
     <Content Include="Views\Paquetes\Edit.cshtml" />
     <Content Include="Views\Paquetes\Index.cshtml" />
+    <Content Include="Views\Facturacions\Create.cshtml" />
+    <Content Include="Views\Facturacions\Delete.cshtml" />
+    <Content Include="Views\Facturacions\Details.cshtml" />
+    <Content Include="Views\Facturacions\Edit.cshtml" />
+    <Content Include="Views\Facturacions\Index.cshtml" />
+    <Content Include="Views\Facturacions\GenerarFactura.cshtml" />
+    <Content Include="Views\Paquetes\RegistrarPaquete.cshtml" />
+    <Content Include="Views\Facturacions\DetalleFacturacion.cshtml" />
     <Content Include="Views\Usuarios\Create.cshtml" />
     <Content Include="Views\Usuarios\Delete.cshtml" />
     <Content Include="Views\Usuarios\Details.cshtml" />

@@ -24,6 +24,12 @@
                 @Html.DisplayNameFor(model => model.Usuario.Nombre)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.NombreEmisor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CedulaEmisor)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Precio)
             </th>
             <th>
@@ -45,6 +51,12 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Usuario.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreEmisor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CedulaEmisor)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Precio)

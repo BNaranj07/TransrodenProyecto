@@ -30,19 +30,34 @@
                 @Html.DisplayNameFor(model => model.Tipo)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Emisor)
+                @Html.DisplayNameFor(model => model.NombreEmisor)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Receptor)
+                @Html.DisplayNameFor(model => model.CedulaEmisor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreReceptor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CedulaReceptor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Domicilio)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Direccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelefonoDomicilio)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Pago)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha_recibo)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.fecha_entrega)
@@ -65,19 +80,34 @@
                 @Html.DisplayFor(modelItem => item.Tipo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Emisor)
+                @Html.DisplayFor(modelItem => item.NombreEmisor)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Receptor)
+                @Html.DisplayFor(modelItem => item.CedulaEmisor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreReceptor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CedulaReceptor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Domicilio)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelefonoDomicilio)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Pago)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha_recibo)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.fecha_entrega)

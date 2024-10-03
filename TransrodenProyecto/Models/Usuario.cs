@@ -21,6 +21,9 @@ namespace TransrodenProyecto.Models
         [Required]
         public string Apellidos { get; set; }
 
+        [Required]
+        public string Cedula { get; set; }
+
 
         [Required]
         public string Correo { get; set; }
@@ -32,10 +35,6 @@ namespace TransrodenProyecto.Models
 
         [Required]
         public string Telefono { get; set; }
-
-
-        [Required]
-        public string Identificacion { get; set; }
 
 
         //Enum

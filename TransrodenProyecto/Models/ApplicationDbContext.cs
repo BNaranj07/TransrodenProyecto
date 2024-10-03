@@ -11,7 +11,6 @@ namespace TransrodenProyecto.Models
         public ApplicationDbContext() : base("DefaultConnection")
         {
         }
-
         public DbSet<Calculadora> Calculadoras { get; set; }
 
         public DbSet<Camion> Camiones { get; set; }
@@ -28,38 +27,39 @@ namespace TransrodenProyecto.Models
 
         public DbSet<Usuario> Usuarios { get; set; }
 
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            // Configuración para la relación Envio -> Usuario
+            // Configuración para la relación Envio -> Usuario (Esta es requerida)
             modelBuilder.Entity<Envio>()
                 .HasRequired(e => e.Usuario)
                 .WithMany(u => u.Envios)
                 .HasForeignKey(e => e.Id_Usuario)
                 .WillCascadeOnDelete(false);  // Evitar eliminación en cascada
 
-            // Configuración para la relación Paquete -> Envio
+            // Relación Paquete -> Envio (ahora opcional)
             modelBuilder.Entity<Paquete>()
-                .HasRequired(p => p.Envio)
+                .HasOptional(p => p.Envio)     // Relación opcional, permite null
                 .WithMany(e => e.Paquetes)
                 .HasForeignKey(p => p.Id_Envio)
                 .WillCascadeOnDelete(false);  // Evitar eliminación en cascada
 
-            // Configuración para la relación Carga -> Usuario
+            // Configuración para la relación Carga -> Usuario (Esta es requerida)
             modelBuilder.Entity<Carga>()
                 .HasRequired(c => c.Usuario)
                 .WithMany(u => u.Cargas)
                 .HasForeignKey(c => c.Id_Usuario)
                 .WillCascadeOnDelete(false);  // Evitar eliminación en cascada
 
-            // Configuración para la relación Paquete -> Carga
+            // Relación Paquete -> Carga (ahora opcional)
             modelBuilder.Entity<Paquete>()
-                .HasRequired(p => p.Carga)
+                .HasOptional(p => p.Carga)    // Relación opcional, permite null
                 .WithMany(c => c.Paquetes)
                 .HasForeignKey(p => p.Id_Carga)
                 .WillCascadeOnDelete(false);  // Evitar eliminación en cascada
 
             base.OnModelCreating(modelBuilder);
-
         }
 
     }
