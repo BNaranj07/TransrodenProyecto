@@ -19,7 +19,8 @@ namespace TransrodenProyecto.Models
         public Paquete Paquete { get; set; }
 
 
-        public int Id_Usuario { get; set; }
+        // Para que acepte null
+        public int? Id_Usuario { get; set; }
         public Usuario Usuario { get; set; }
 
 
