@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\facturacions\\detallefacturacion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\jonathan\\documents\\github\\transrodenproyecto\\transrodenproyecto\\views\\facturacions\\generarfactura.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\views\\facturacions\\generarfactura.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\facturacions\\generarfactura.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -15,7 +15,7 @@
       "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\controllers\\facturacionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\jonathan\\documents\\github\\transrodenproyecto\\transrodenproyecto\\views\\paquetes\\registrarpaquete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\views\\paquetes\\registrarpaquete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\paquetes\\registrarpaquete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -143,8 +143,7 @@
               "RelativeToolTip": "TransrodenProyecto\\Views\\Facturacions\\GenerarFactura.cshtml",
               "ViewState": "AQIAAB8AAAAAAAAAAAAwwCsAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-04T00:42:04.15Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-04T00:42:04.15Z"
             },
             {
               "$type": "Document",
@@ -168,8 +167,7 @@
               "RelativeToolTip": "TransrodenProyecto\\Controllers\\FacturacionsController.cs",
               "ViewState": "AQIAAE0AAAAAAAAAAAAgwFIAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T02:01:33.828Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-03T02:01:33.828Z"
             },
             {
               "$type": "Document",
@@ -181,8 +179,7 @@
               "RelativeToolTip": "TransrodenProyecto\\Controllers\\PaquetesController.cs",
               "ViewState": "AQIAADUAAAAAAAAAAAAgwKQAAAC2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T01:46:55.572Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-03T01:46:55.572Z"
             },
             {
               "$type": "Document",
@@ -194,8 +191,7 @@
               "RelativeToolTip": "TransrodenProyecto\\Views\\Paquetes\\Index.cshtml",
               "ViewState": "AQIAAFUAAAAAAAAAAEBVwGoAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-03T01:40:33.162Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-03T01:40:33.162Z"
             },
             {
               "$type": "Document",
@@ -231,8 +227,7 @@
               "RelativeToolTip": "TransrodenProyecto\\Views\\Paquetes\\RegistrarPaquete.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-03T02:14:39.377Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-03T02:14:39.377Z"
             },
             {
               "$type": "Document",
@@ -256,8 +251,7 @@
               "RelativeToolTip": "TransrodenProyecto\\Models\\Facturacion.cs",
               "ViewState": "AQIAABsAAAAAAAAAAAAowCUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T00:47:57.924Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-28T00:47:57.924Z"
             },
             {
               "$type": "Document",
@@ -293,8 +287,7 @@
               "RelativeToolTip": "TransrodenProyecto\\Views\\Paquetes\\Details.cshtml",
               "ViewState": "AQIAAFwAAAAAAAAAAAAuwGwAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-03T02:15:46.394Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-03T02:15:46.394Z"
             },
             {
               "$type": "Document",
