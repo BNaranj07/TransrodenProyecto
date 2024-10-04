@@ -67,6 +67,7 @@ namespace TransrodenProyecto.Controllers
                     Domicilio = model.Domicilio,
                     Direccion = model.Direccion,
                     TelefonoDomicilio = model.TelefonoDomicilio,
+                    Cantidad = model.Cantidad,
                     Pago = model.Pago,
                     Descripcion = model.Descripcion,
                     fecha_recibo = System.DateTime.Now
@@ -119,7 +120,7 @@ namespace TransrodenProyecto.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id_Paquete,NumeroRastreo,Tipo,NombreEmisor,CedulaEmisor,NombreReceptor,CedulaReceptor,Domicilio,Direccion,TelefonoDomicilio,Pago,Descripcion,Id_Carga,Id_Envio,fecha_recibo,fecha_entrega")] Paquete paquete)
+        public ActionResult Create([Bind(Include = "Id_Paquete,NumeroRastreo,Tipo,NombreEmisor,CedulaEmisor,NombreReceptor,CedulaReceptor,Domicilio,Direccion,TelefonoDomicilio,Cantidad,Pago,Descripcion,Id_Carga,Id_Envio,fecha_recibo,fecha_entrega")] Paquete paquete)
         {
             if (ModelState.IsValid)
             {
@@ -161,7 +162,7 @@ namespace TransrodenProyecto.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id_Paquete,NumeroRastreo,Tipo,NombreEmisor,CedulaEmisor,NombreReceptor,CedulaReceptor,Domicilio,Direccion,TelefonoDomicilio,Pago,Descripcion,Id_Carga,Id_Envio,fecha_recibo,fecha_entrega")] Paquete paquete)
+        public ActionResult Edit([Bind(Include = "Id_Paquete,NumeroRastreo,Tipo,NombreEmisor,CedulaEmisor,NombreReceptor,CedulaReceptor,Domicilio,Direccion,TelefonoDomicilio,Cantidad,Pago,Descripcion,Id_Carga,Id_Envio,fecha_recibo,fecha_entrega")] Paquete paquete)
         {
             if (ModelState.IsValid)
             {

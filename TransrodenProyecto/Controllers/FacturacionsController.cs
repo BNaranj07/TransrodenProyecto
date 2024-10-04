@@ -64,6 +64,7 @@ namespace TransrodenProyecto.Controllers
                 NombreEmisor = paquete.NombreEmisor,
                 CedulaEmisor = paquete.CedulaEmisor,
                 Id_Usuario = usuario?.Id_Usuario, // Si el usuario existe, se asigna; si no, queda null
+                Cantidad = paquete.Cantidad,
                 Precio = 0,
                 Subtotal = 0,
                 Total = 0,
@@ -88,6 +89,7 @@ namespace TransrodenProyecto.Controllers
                     Id_Usuario = model.Id_Usuario,
                     NombreEmisor = model.NombreEmisor,
                     CedulaEmisor = model.CedulaEmisor,
+                    Cantidad = model.Cantidad,
                     Precio = model.Precio,
                     Subtotal = model.Subtotal,
                     Total = model.Total,
@@ -144,7 +146,7 @@ namespace TransrodenProyecto.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id_Facturacion,Id_Paquete,Id_Usuario,NombreEmisor,CedulaEmisor,Precio,Subtotal,Total,Fecha")] Facturacion facturacion)
+        public ActionResult Create([Bind(Include = "Id_Facturacion,Id_Paquete,Id_Usuario,NombreEmisor,CedulaEmisor,Cantidad,Precio,Subtotal,Total,Fecha")] Facturacion facturacion)
         {
             if (ModelState.IsValid)
             {
@@ -184,7 +186,7 @@ namespace TransrodenProyecto.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id_Facturacion,Id_Paquete,Id_Usuario,NombreEmisor,CedulaEmisor,Precio,Subtotal,Total,Fecha")] Facturacion facturacion)
+        public ActionResult Edit([Bind(Include = "Id_Facturacion,Id_Paquete,Id_Usuario,NombreEmisor,CedulaEmisor,Cantidad,Precio,Subtotal,Total,Fecha")] Facturacion facturacion)
         {
             if (ModelState.IsValid)
             {
