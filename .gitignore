@@ -482,3 +482,6 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+.vs/TransrodenProyecto/v17/.suo
+.vs/TransrodenProyecto/v17/DocumentLayout.backup.json
+.vs/TransrodenProyecto/v17/DocumentLayout.json
