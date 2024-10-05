@@ -1,131 +1,125 @@
 ﻿@model IEnumerable<TransrodenProyecto.Models.Paquete>
 
 @{
-    Layout = null;
+    ViewBag.Title = "Paquetes";
 }
 
-<!DOCTYPE html>
+<h2>Paquetes</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <p>
-        @Html.ActionLink("Create New", "RegistrarPaquete")
-    </p>
+@using (Html.BeginForm("Index", "Paquetes", FormMethod.Get))
+{
+    <div class="form-horizontal">
+        <h4>Buscar Paquetes</h4>
+        <hr />
+
+        <div class="form-group">
+            @Html.Label("Número de Rastreo", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("searchString", "", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Nombre del Cliente", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("searchName", "", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Cédula", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("searchCedula", "", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Fecha Inicio", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("startDate", "", new { @class = "form-control", @type = "date" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Fecha Fin", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("endDate", "", new { @class = "form-control", @type = "date" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Buscar" class="btn btn-default" />
+                <input type="button" value="Limpiar" onclick="limpiarBusqueda()" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<p>
+    @Html.ActionLink("Registrar Nuevo Paquete", "RegistrarPaquete", null, new { @class = "btn btn-primary" })
+</p>
+
+@if (ViewBag.NoResults != null)
+{
+    <p class="text-danger">@ViewBag.NoResults</p>
+}
+else
+{
     <table class="table">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Carga.Id_Carga)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Envio.Id_Envio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NumeroRastreo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tipo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NombreEmisor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CedulaEmisor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NombreReceptor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CedulaReceptor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Domicilio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Direccion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TelefonoDomicilio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cantidad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Pago)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descripcion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.fecha_recibo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.fecha_entrega)
-            </th>
+            <th>@Html.DisplayNameFor(model => model.First().Carga.Id_Carga)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Envio.Id_Envio)</th>
+            <th>@Html.DisplayNameFor(model => model.First().NumeroRastreo)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Tipo)</th>
+            <th>@Html.DisplayNameFor(model => model.First().NombreEmisor)</th>
+            <th>@Html.DisplayNameFor(model => model.First().CedulaEmisor)</th>
+            <th>@Html.DisplayNameFor(model => model.First().NombreReceptor)</th>
+            <th>@Html.DisplayNameFor(model => model.First().CedulaReceptor)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Domicilio)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Direccion)</th>
+            <th>@Html.DisplayNameFor(model => model.First().TelefonoDomicilio)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Cantidad)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Pago)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Descripcion)</th>
+            <th>@Html.DisplayNameFor(model => model.First().fecha_recibo)</th>
             <th></th>
         </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Carga.Id_Carga)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Envio.Id_Envio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumeroRastreo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tipo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombreEmisor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CedulaEmisor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombreReceptor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CedulaReceptor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Domicilio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Direccion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TelefonoDomicilio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cantidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pago)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.fecha_recibo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.fecha_entrega)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id_Paquete }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id_Paquete }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id_Paquete })
-            </td>
-        </tr>
-    }
-    
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Carga.Id_Carga)</td>
+                <td>@Html.DisplayFor(modelItem => item.Envio.Id_Envio)</td>
+                <td>@Html.DisplayFor(modelItem => item.NumeroRastreo)</td>
+                <td>@Html.DisplayFor(modelItem => item.Tipo)</td>
+                <td>@Html.DisplayFor(modelItem => item.NombreEmisor)</td>
+                <td>@Html.DisplayFor(modelItem => item.CedulaEmisor)</td>
+                <td>@Html.DisplayFor(modelItem => item.NombreReceptor)</td>
+                <td>@Html.DisplayFor(modelItem => item.CedulaReceptor)</td>
+                <td>@Html.DisplayFor(modelItem => item.Domicilio)</td>
+                <td>@Html.DisplayFor(modelItem => item.Direccion)</td>
+                <td>@Html.DisplayFor(modelItem => item.TelefonoDomicilio)</td>
+                <td>@Html.DisplayFor(modelItem => item.Cantidad)</td>
+                <td>@Html.DisplayFor(modelItem => item.Pago)</td>
+                <td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
+                <td>@Html.DisplayFor(modelItem => item.fecha_recibo)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id_Paquete }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id_Paquete }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id_Paquete })
+                </td>
+            </tr>
+        }
     </table>
-</body>
-</html>
+}
+
+<script>
+    function limpiarBusqueda() {
+        document.querySelector('input[name="searchString"]').value = '';
+        document.querySelector('input[name="searchName"]').value = '';
+        document.querySelector('input[name="searchCedula"]').value = '';
+        document.querySelector('input[name="startDate"]').value = '';
+        document.querySelector('input[name="endDate"]').value = '';
+    }
+</script>

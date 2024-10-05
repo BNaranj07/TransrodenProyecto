@@ -84,6 +84,8 @@ namespace TransrodenProyecto.Models
 
         public List<Facturacion> Facturaciones { get; set; } = new List<Facturacion>();
 
+        public bool ConfirmarEliminacionFacturas { get; set; }
+
 
     }
 }

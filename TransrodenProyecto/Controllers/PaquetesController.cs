@@ -16,11 +16,43 @@ namespace TransrodenProyecto.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Paquetes
-        public ActionResult Index()
+        public ActionResult Index(string searchString, string searchName, string searchCedula, DateTime? startDate, DateTime? endDate)
         {
-            var paquetes = db.Paquetes.Include(p => p.Carga).Include(p => p.Envio);
+            var paquetes = from p in db.Paquetes select p;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                paquetes = paquetes.Where(p => p.NumeroRastreo.Contains(searchString));
+            }
+
+            if (!String.IsNullOrEmpty(searchName))
+            {
+                paquetes = paquetes.Where(p => p.NombreEmisor.Contains(searchName) || p.NombreReceptor.Contains(searchName));
+            }
+
+            if (!String.IsNullOrEmpty(searchCedula))
+            {
+                paquetes = paquetes.Where(p => p.CedulaEmisor.Contains(searchCedula) || p.CedulaReceptor.Contains(searchCedula));
+            }
+
+            if (startDate.HasValue)
+            {
+                paquetes = paquetes.Where(p => p.fecha_recibo >= startDate.Value);
+            }
+
+            if (endDate.HasValue)
+            {
+                paquetes = paquetes.Where(p => p.fecha_recibo <= endDate.Value);
+            }
+
+            if (!paquetes.Any())
+            {
+                ViewBag.NoResults = "No se encontraron resultados.";
+            }
+
             return View(paquetes.ToList());
         }
+
 
         // GET: Paquetes/Details/5
         public ActionResult Details(int? id)
@@ -37,16 +69,10 @@ namespace TransrodenProyecto.Controllers
             return View(paquete);
         }
 
-
-
-
-        /// ++++++++++++++++++++++++++++++++++++++++++++++ Mis cambios ++++++++++++++++++++++++++++++++++++++++++
-
-
         // GET: Paquetes/RegistrarPaquete
         public ActionResult RegistrarPaquete()
         {
-            return View(); 
+            return View();
         }
 
         // Crear y guardar el paquete
@@ -55,7 +81,6 @@ namespace TransrodenProyecto.Controllers
         {
             if (ModelState.IsValid)
             {
-
                 var nuevoPaquete = new Paquete
                 {
                     NumeroRastreo = GenerarNumeroRastreo(),
@@ -83,32 +108,14 @@ namespace TransrodenProyecto.Controllers
             return View(model);
         }
 
-
-
-
         // Numero de tracking
         private string GenerarNumeroRastreo()
         {
             return Guid.NewGuid().ToString().Substring(0, 10).ToUpper();
         }
-    
 
-
-
-
-
-    /// ++++++++++++++++++++++++++++++++++++++++++++++ Fin Mis cambios ++++++++++++++++++++++++++++++++++++++++++
-
-
-
-
-
-
-
-
-
-    // GET: Paquetes/Create
-    public ActionResult Create()
+        // GET: Paquetes/Create
+        public ActionResult Create()
         {
             ViewBag.Id_Carga = new SelectList(db.Cargas, "Id_Carga", "Id_Carga");
             ViewBag.Id_Envio = new SelectList(db.Envios, "Id_Envio", "Id_Envio");
@@ -116,8 +123,6 @@ namespace TransrodenProyecto.Controllers
         }
 
         // POST: Paquetes/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
-        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id_Paquete,NumeroRastreo,Tipo,NombreEmisor,CedulaEmisor,NombreReceptor,CedulaReceptor,Domicilio,Direccion,TelefonoDomicilio,Cantidad,Pago,Descripcion,Id_Carga,Id_Envio,fecha_recibo,fecha_entrega")] Paquete paquete)
@@ -133,12 +138,6 @@ namespace TransrodenProyecto.Controllers
             ViewBag.Id_Envio = new SelectList(db.Envios, "Id_Envio", "Id_Envio", paquete.Id_Envio);
             return View(paquete);
         }
-
-
-
-
-
-
 
         // GET: Paquetes/Edit/5
         public ActionResult Edit(int? id)
@@ -158,8 +157,6 @@ namespace TransrodenProyecto.Controllers
         }
 
         // POST: Paquetes/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
-        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id_Paquete,NumeroRastreo,Tipo,NombreEmisor,CedulaEmisor,NombreReceptor,CedulaReceptor,Domicilio,Direccion,TelefonoDomicilio,Cantidad,Pago,Descripcion,Id_Carga,Id_Envio,fecha_recibo,fecha_entrega")] Paquete paquete)
