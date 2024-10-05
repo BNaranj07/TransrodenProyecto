@@ -13,7 +13,7 @@
 </head>
 <body>
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Create New", "RegistrarPaquete")
     </p>
     <table class="table">
         <tr>
@@ -49,6 +49,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.TelefonoDomicilio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Pago)
@@ -101,6 +104,9 @@
                 @Html.DisplayFor(modelItem => item.TelefonoDomicilio)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Pago)
             </td>
             <td>
@@ -113,9 +119,9 @@
                 @Html.DisplayFor(modelItem => item.fecha_entrega)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id_Paquete }) |
-                @Html.ActionLink("Details", "Details", new { id=item.Id_Paquete }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.Id_Paquete })
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id_Paquete }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id_Paquete }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id_Paquete })
             </td>
         </tr>
     }
