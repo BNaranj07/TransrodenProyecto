@@ -30,10 +30,13 @@
                 @Html.DisplayNameFor(model => model.CedulaEmisor)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Cantidad)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Precio)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Subtotal)
+                @Html.DisplayNameFor(model => model.Iva)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Total)
@@ -43,41 +46,47 @@
             </th>
             <th></th>
         </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Paquete.NumeroRastreo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Usuario.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombreEmisor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CedulaEmisor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Precio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Subtotal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Total)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fecha)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id_Facturacion }) |
-                @Html.ActionLink("Details", "Details", new { id=item.Id_Facturacion }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.Id_Facturacion })
-            </td>
-        </tr>
-    }
-    
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Paquete.NumeroRastreo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usuario.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreEmisor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CedulaEmisor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cantidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Iva)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id_Facturacion }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id_Facturacion }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id_Facturacion })
+                </td>
+            </tr>
+        }
+
     </table>
+
+
 </body>
 </html>
