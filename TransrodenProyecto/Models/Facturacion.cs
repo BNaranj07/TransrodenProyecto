@@ -37,11 +37,11 @@ namespace TransrodenProyecto.Models
 
 
         [Required]
-        public double Precio { get; set; }
+        public decimal Precio { get; set; }
 
 
         [Required]
-        public double Subtotal { get; set; }
+        public double Iva { get; set; }
 
 
         [Required]
