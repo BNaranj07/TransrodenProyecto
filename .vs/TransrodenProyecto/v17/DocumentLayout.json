@@ -1,86 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\",
+  "WorkspaceRootPath": "C:\\Users\\Anthony\\Desktop\\Universidad\\Trilogia Final\\II Desarrollo e Implementacion\\Proyecto\\TransrodenProyecto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\views\\paquetes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\paquetes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\views\\paquetes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\anthony\\desktop\\universidad\\trilogia final\\ii desarrollo e implementacion\\proyecto\\transrodenproyecto\\transrodenproyecto\\views\\paquetes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\paquetes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\views\\paquetes\\registrarpaquete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\paquetes\\registrarpaquete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\jonathan\\documents\\github\\transrodenproyecto\\transrodenproyecto\\views\\facturacions\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\anthony\\desktop\\universidad\\trilogia final\\ii desarrollo e implementacion\\proyecto\\transrodenproyecto\\transrodenproyecto\\views\\facturacions\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\facturacions\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\controllers\\paquetescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\controllers\\paquetescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\models\\paquete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\anthony\\desktop\\universidad\\trilogia final\\ii desarrollo e implementacion\\proyecto\\transrodenproyecto\\transrodenproyecto\\models\\paquete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\models\\paquete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\views\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\anthony\\desktop\\universidad\\trilogia final\\ii desarrollo e implementacion\\proyecto\\transrodenproyecto\\transrodenproyecto\\controllers\\paquetescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\controllers\\paquetescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\jonathan\\documents\\github\\transrodenproyecto\\transrodenproyecto\\views\\facturacions\\detallefacturacion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\facturacions\\detallefacturacion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\views\\facturacions\\generarfactura.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\facturacions\\generarfactura.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\controllers\\facturacionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\anthony\\desktop\\universidad\\trilogia final\\ii desarrollo e implementacion\\proyecto\\transrodenproyecto\\transrodenproyecto\\controllers\\facturacionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\controllers\\facturacionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\models\\facturacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\anthony\\desktop\\universidad\\trilogia final\\ii desarrollo e implementacion\\proyecto\\transrodenproyecto\\transrodenproyecto\\models\\facturacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\models\\facturacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\views\\usuarios\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\usuarios\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\views\\paquetes\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\paquetes\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\views\\paquetes\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\paquetes\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\views\\paquetes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\paquetes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\controllers\\calculadorascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\controllers\\calculadorascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\views\\cargas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\cargas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\transrodenproyecto\\models\\historial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\models\\historial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -90,24 +34,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:11:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
@@ -122,257 +50,89 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\Edit.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Facturacions\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\Edit.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Facturacions\\Edit.cshtml",
-              "ViewState": "AQIAAEYAAAAAAAAAAAAwwGkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-05T19:59:59.59Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FacturacionsController.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\FacturacionsController.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\FacturacionsController.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\FacturacionsController.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Controllers\\FacturacionsController.cs",
-              "ViewState": "AQIAAE0AAAAAAAAAAAAgwFIAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T02:01:33.828Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PaquetesController.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\PaquetesController.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\PaquetesController.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\PaquetesController.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Controllers\\PaquetesController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T01:46:55.572Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Index.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Paquetes\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Index.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Paquetes\\Index.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAG4AAAAVAAAA",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Anthony\\Desktop\\Universidad\\Trilogia Final\\II Desarrollo e Implementacion\\Proyecto\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Edit.cshtml",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Paquetes\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Anthony\\Desktop\\Universidad\\Trilogia Final\\II Desarrollo e Implementacion\\Proyecto\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Edit.cshtml",
+              "RelativeToolTip": "TransrodenProyecto\\Views\\Paquetes\\Edit.cshtml",
+              "ViewState": "AQIAALMAAAAAAAAAAAAAALIAAABpAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-03T01:40:33.162Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Paquete.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Paquete.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Paquete.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Paquete.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Models\\Paquete.cs",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAuwFYAAAA+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T00:49:21.333Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Usuarios\\Index.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Usuarios\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Usuarios\\Index.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Usuarios\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-03T01:58:47.301Z",
+              "WhenOpened": "2024-10-09T02:24:47.841Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "RegistrarPaquete.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\RegistrarPaquete.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Paquetes\\RegistrarPaquete.cshtml",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\RegistrarPaquete.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Paquetes\\RegistrarPaquete.cshtml",
-              "ViewState": "AQIAAGgAAAAAAAAAAAAwwIUAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-03T02:14:39.377Z",
+              "Title": "Paquete.cs",
+              "DocumentMoniker": "C:\\Users\\Anthony\\Desktop\\Universidad\\Trilogia Final\\II Desarrollo e Implementacion\\Proyecto\\TransrodenProyecto\\TransrodenProyecto\\Models\\Paquete.cs",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Paquete.cs",
+              "ToolTip": "C:\\Users\\Anthony\\Desktop\\Universidad\\Trilogia Final\\II Desarrollo e Implementacion\\Proyecto\\TransrodenProyecto\\TransrodenProyecto\\Models\\Paquete.cs",
+              "RelativeToolTip": "TransrodenProyecto\\Models\\Paquete.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAIwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T02:04:24.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FacturacionsController.cs",
+              "DocumentMoniker": "C:\\Users\\Anthony\\Desktop\\Universidad\\Trilogia Final\\II Desarrollo e Implementacion\\Proyecto\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\FacturacionsController.cs",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\FacturacionsController.cs",
+              "ToolTip": "C:\\Users\\Anthony\\Desktop\\Universidad\\Trilogia Final\\II Desarrollo e Implementacion\\Proyecto\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\FacturacionsController.cs",
+              "RelativeToolTip": "TransrodenProyecto\\Controllers\\FacturacionsController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T02:03:40.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Facturacion.cs",
+              "DocumentMoniker": "C:\\Users\\Anthony\\Desktop\\Universidad\\Trilogia Final\\II Desarrollo e Implementacion\\Proyecto\\TransrodenProyecto\\TransrodenProyecto\\Models\\Facturacion.cs",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Facturacion.cs",
+              "ToolTip": "C:\\Users\\Anthony\\Desktop\\Universidad\\Trilogia Final\\II Desarrollo e Implementacion\\Proyecto\\TransrodenProyecto\\TransrodenProyecto\\Models\\Facturacion.cs",
+              "RelativeToolTip": "TransrodenProyecto\\Models\\Facturacion.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAgwAkAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T01:34:47.51Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Edit.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Paquetes\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Edit.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Paquetes\\Edit.cshtml",
-              "ViewState": "AQIAAHoAAAAAAAAAAAAwwKUAAAASAAAA",
+              "DocumentMoniker": "C:\\Users\\Anthony\\Desktop\\Universidad\\Trilogia Final\\II Desarrollo e Implementacion\\Proyecto\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\Edit.cshtml",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Facturacions\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Anthony\\Desktop\\Universidad\\Trilogia Final\\II Desarrollo e Implementacion\\Proyecto\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\Edit.cshtml",
+              "RelativeToolTip": "TransrodenProyecto\\Views\\Facturacions\\Edit.cshtml",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAF4AAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-03T02:14:50.667Z",
+              "WhenOpened": "2024-10-09T01:33:34.003Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DetalleFacturacion.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\DetalleFacturacion.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Facturacions\\DetalleFacturacion.cshtml",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\DetalleFacturacion.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Facturacions\\DetalleFacturacion.cshtml",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAACkAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-04T00:43:34.106Z",
+              "DocumentIndex": 3,
+              "Title": "PaquetesController.cs",
+              "DocumentMoniker": "C:\\Users\\Anthony\\Desktop\\Universidad\\Trilogia Final\\II Desarrollo e Implementacion\\Proyecto\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\PaquetesController.cs",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\PaquetesController.cs",
+              "ToolTip": "C:\\Users\\Anthony\\Desktop\\Universidad\\Trilogia Final\\II Desarrollo e Implementacion\\Proyecto\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\PaquetesController.cs",
+              "RelativeToolTip": "TransrodenProyecto\\Controllers\\PaquetesController.cs",
+              "ViewState": "AQIAAKoAAAAAAAAAAAAQwLUAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T01:32:00.129Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Delete.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Paquetes\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Delete.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Paquetes\\Delete.cshtml",
-              "ViewState": "AQIAAFsAAAAAAAAAAAAuwHAAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-03T02:14:17.139Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GenerarFactura.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\GenerarFactura.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Facturacions\\GenerarFactura.cshtml",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\GenerarFactura.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Facturacions\\GenerarFactura.cshtml",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAwwCsAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-04T00:42:04.15Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Usuarios\\Edit.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Usuarios\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Usuarios\\Edit.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Usuarios\\Edit.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-03T02:25:16.082Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Facturacion.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Facturacion.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Facturacion.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Facturacion.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Models\\Facturacion.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAowCUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T00:47:57.924Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Create.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Paquetes\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Create.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Paquetes\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-03T02:14:35.533Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Details.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Paquetes\\Details.cshtml",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Details.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Paquetes\\Details.cshtml",
-              "ViewState": "AQIAAFwAAAAAAAAAAAAuwGwAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-03T02:15:46.394Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Cargas\\Index.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Cargas\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Views\\Cargas\\Index.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Cargas\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-28T22:35:31.345Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Historial.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Historial.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Historial.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\Historial.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Models\\Historial.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T00:48:38.229Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Models\\ApplicationDbContext.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Models\\ApplicationDbContext.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAzwEAAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T00:51:17.111Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Web.config",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Web.config",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Web.config",
-              "RelativeToolTip": "TransrodenProyecto\\Web.config",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-10-03T01:41:53.395Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "CalculadorasController.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\CalculadorasController.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\CalculadorasController.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Documents\\GitHub\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\CalculadorasController.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Controllers\\CalculadorasController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T01:03:47.145Z"
             }
           ]
         }

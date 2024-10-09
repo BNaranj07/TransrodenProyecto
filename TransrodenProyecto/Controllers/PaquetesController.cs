@@ -89,6 +89,7 @@ namespace TransrodenProyecto.Controllers
                     CedulaEmisor = model.CedulaEmisor,
                     NombreReceptor = model.NombreReceptor,
                     CedulaReceptor = model.CedulaReceptor,
+                    Estado = model.Estado,
                     Domicilio = model.Domicilio,
                     Direccion = model.Direccion,
                     TelefonoDomicilio = model.TelefonoDomicilio,
@@ -155,11 +156,11 @@ namespace TransrodenProyecto.Controllers
             ViewBag.Id_Envio = new SelectList(db.Envios, "Id_Envio", "Id_Envio", paquete.Id_Envio);
             return View(paquete);
         }
-
+        /* Solucion real
         // POST: Paquetes/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id_Paquete,NumeroRastreo,Tipo,NombreEmisor,CedulaEmisor,NombreReceptor,CedulaReceptor,Domicilio,Direccion,TelefonoDomicilio,Cantidad,Pago,Descripcion,Id_Carga,Id_Envio,fecha_recibo,fecha_entrega")] Paquete paquete)
+        public ActionResult Edit([Bind(Include = "Id_Paquete,NumeroRastreo,Tipo,NombreEmisor,CedulaEmisor,NombreReceptor,CedulaReceptor,Estado,Domicilio,Direccion,TelefonoDomicilio,Cantidad,Pago,Descripcion,Id_Carga,Id_Envio,fecha_recibo,fecha_entrega")] Paquete paquete)
         {
             if (ModelState.IsValid)
             {
@@ -171,6 +172,64 @@ namespace TransrodenProyecto.Controllers
             ViewBag.Id_Envio = new SelectList(db.Envios, "Id_Envio", "Id_Envio", paquete.Id_Envio);
             return View(paquete);
         }
+        */
+
+        // POST: Paquetes/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit([Bind(Include = "Id_Paquete,NumeroRastreo,Tipo,NombreEmisor,CedulaEmisor,NombreReceptor,CedulaReceptor,Domicilio,Direccion,TelefonoDomicilio,Cantidad,Pago,Descripcion,Id_Carga,Id_Envio,fecha_recibo,fecha_entrega,Estado")] Paquete paquete)
+        {
+            if (ModelState.IsValid)
+            {
+                // Buscar el paquete existente
+                var paqueteExistente = db.Paquetes.Find(paquete.Id_Paquete);
+
+                if (paqueteExistente != null)
+                {
+                    // Actualizar los detalles del paquete
+                    paqueteExistente.NumeroRastreo = paquete.NumeroRastreo;
+                    paqueteExistente.Tipo = paquete.Tipo;
+                    paqueteExistente.NombreEmisor = paquete.NombreEmisor;
+                    paqueteExistente.CedulaEmisor = paquete.CedulaEmisor;
+                    paqueteExistente.NombreReceptor = paquete.NombreReceptor;
+                    paqueteExistente.CedulaReceptor = paquete.CedulaReceptor;
+                    paqueteExistente.Domicilio = paquete.Domicilio;
+                    paqueteExistente.Direccion = paquete.Direccion;
+                    paqueteExistente.TelefonoDomicilio = paquete.TelefonoDomicilio;
+                    paqueteExistente.Cantidad = paquete.Cantidad;
+                    paqueteExistente.Pago = paquete.Pago;
+                    paqueteExistente.Descripcion = paquete.Descripcion;
+                    paqueteExistente.fecha_recibo = paquete.fecha_recibo;
+                    paqueteExistente.fecha_entrega = paquete.fecha_entrega;
+                    paqueteExistente.Estado = paquete.Estado;
+
+                    // Guardar los cambios en el paquete
+                    db.Entry(paqueteExistente).State = EntityState.Modified;
+
+                    // Buscar la facturación asociada usando el Id_Paquete
+                    var facturacionExistente = await db.Facturaciones.FirstOrDefaultAsync(f => f.Id_Paquete == paquete.Id_Paquete);
+
+                    // Si existe una factura, eliminarla
+                    if (facturacionExistente != null)
+                    {
+                        db.Facturaciones.Remove(facturacionExistente);
+                        await db.SaveChangesAsync();
+                    }
+
+                    // Guardar cambios en el paquete después de eliminar la factura
+                    await db.SaveChangesAsync();
+
+                    // Redirigir a la acción de generar una nueva factura
+                    return RedirectToAction("GenerarFactura", "Facturacions", new { idPaquete = paquete.Id_Paquete });
+                }
+            }
+
+            // Si la validación falla o el paquete no existe, volver a mostrar el formulario
+            ViewBag.Id_Carga = new SelectList(db.Cargas, "Id_Carga", "Id_Carga", paquete.Id_Carga);
+            ViewBag.Id_Envio = new SelectList(db.Envios, "Id_Envio", "Id_Envio", paquete.Id_Envio);
+            return View(paquete);
+        }
+
 
         // GET: Paquetes/Delete/5
         public ActionResult Delete(int? id)
