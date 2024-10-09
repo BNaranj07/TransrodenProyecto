@@ -19,9 +19,17 @@ namespace TransrodenProyecto.Models
         public Usuario Usuario { get; set; }
 
 
+        public string Direccion { get; set; }
+
+
+        public int NumeroPaquetes { get; set; }
+
         //Enum
         [Required]
-        public int Estado { get; set; }
+        public EstadoCarga Estado { get; set; }
+
+
+        public DateTime fecha_recibo { get; set; }
 
 
         public List<Paquete> Paquetes { get; set; }

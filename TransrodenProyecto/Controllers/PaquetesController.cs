@@ -60,6 +60,7 @@ namespace TransrodenProyecto.Controllers
                 {
                     NumeroRastreo = GenerarNumeroRastreo(),
                     Tipo = model.Tipo,
+                    Estado = model.Estado,
                     NombreEmisor = model.NombreEmisor,
                     CedulaEmisor = model.CedulaEmisor,
                     NombreReceptor = model.NombreReceptor,
@@ -120,7 +121,7 @@ namespace TransrodenProyecto.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id_Paquete,NumeroRastreo,Tipo,NombreEmisor,CedulaEmisor,NombreReceptor,CedulaReceptor,Domicilio,Direccion,TelefonoDomicilio,Cantidad,Pago,Descripcion,Id_Carga,Id_Envio,fecha_recibo,fecha_entrega")] Paquete paquete)
+        public ActionResult Create([Bind(Include = "Id_Paquete,NumeroRastreo,Tipo,Estado,NombreEmisor,CedulaEmisor,NombreReceptor,CedulaReceptor,Domicilio,Direccion,TelefonoDomicilio,Cantidad,Pago,Descripcion,Id_Carga,Id_Envio,fecha_recibo,fecha_entrega")] Paquete paquete)
         {
             if (ModelState.IsValid)
             {
