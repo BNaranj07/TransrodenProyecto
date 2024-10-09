@@ -16,9 +16,15 @@ namespace TransrodenProyecto.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Facturacions
-        public ActionResult Index()
+        public ActionResult Index(int? searchId )
         {
             var facturaciones = db.Facturaciones.Include(f => f.Paquete).Include(f => f.Usuario);
+
+            if (searchId.HasValue)
+            {
+                facturaciones = facturaciones.Where(f => f.Id_Facturacion == searchId.Value);
+            }
+
             return View(facturaciones.ToList());
         }
 

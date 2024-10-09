@@ -15,6 +15,17 @@
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
+
+    <!-- Barra de búsqueda -->
+    <form method="get" action="@Url.Action("Index", "Facturacions")">
+        <div class="form-group">
+            <label for="searchId">Buscar Factura:</label>
+            <input type="number" name="searchId" id="searchId" class="form-control" placeholder="Ingrese ID de la Factura" />
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </div>
+    </form>
+    <br>
+    <br>
     <table class="table">
         <tr>
             <th>
