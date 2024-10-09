@@ -20,7 +20,12 @@ namespace TransrodenProyecto.Models
 
         //Enum
         [Required]
-        public int Tipo { get; set; }
+        public TipoPaquete Tipo { get; set; }
+
+
+        //Enum
+        [Required]
+        public EstadoPaquete Estado { get; set; }
 
 
         [Required]
