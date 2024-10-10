@@ -16,9 +16,15 @@ namespace TransrodenProyecto.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Facturacions
-        public ActionResult Index()
+        public ActionResult Index(int? searchId )
         {
             var facturaciones = db.Facturaciones.Include(f => f.Paquete).Include(f => f.Usuario);
+
+            if (searchId.HasValue)
+            {
+                facturaciones = facturaciones.Where(f => f.Id_Facturacion == searchId.Value);
+            }
+
             return View(facturaciones.ToList());
         }
 
@@ -66,7 +72,7 @@ namespace TransrodenProyecto.Controllers
                 Id_Usuario = usuario?.Id_Usuario, // Si el usuario existe, se asigna; si no, queda null
                 Cantidad = paquete.Cantidad,
                 Precio = 0,
-                Subtotal = 0,
+                Iva = 0,
                 Total = 0,
                 Fecha = DateTime.Now
             };
@@ -82,6 +88,12 @@ namespace TransrodenProyecto.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                // Para validar que el calculo es correcto
+                var precio = model.Precio;
+                var iva = precio * 0.13m; 
+                var total = precio + iva;
+
                 // Crear la factura
                 var nuevaFactura = new Facturacion
                 {
@@ -91,7 +103,7 @@ namespace TransrodenProyecto.Controllers
                     CedulaEmisor = model.CedulaEmisor,
                     Cantidad = model.Cantidad,
                     Precio = model.Precio,
-                    Subtotal = model.Subtotal,
+                    Iva = model.Iva,
                     Total = model.Total,
                     Fecha = model.Fecha
                 };
@@ -146,7 +158,7 @@ namespace TransrodenProyecto.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id_Facturacion,Id_Paquete,Id_Usuario,NombreEmisor,CedulaEmisor,Cantidad,Precio,Subtotal,Total,Fecha")] Facturacion facturacion)
+        public ActionResult Create([Bind(Include = "Id_Facturacion,Id_Paquete,Id_Usuario,NombreEmisor,CedulaEmisor,Cantidad,Precio,Iva,Total,Fecha")] Facturacion facturacion)
         {
             if (ModelState.IsValid)
             {
@@ -186,7 +198,7 @@ namespace TransrodenProyecto.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id_Facturacion,Id_Paquete,Id_Usuario,NombreEmisor,CedulaEmisor,Cantidad,Precio,Subtotal,Total,Fecha")] Facturacion facturacion)
+        public ActionResult Edit([Bind(Include = "Id_Facturacion,Id_Paquete,Id_Usuario,NombreEmisor,CedulaEmisor,Cantidad,Precio,Iva,Total,Fecha")] Facturacion facturacion)
         {
             if (ModelState.IsValid)
             {

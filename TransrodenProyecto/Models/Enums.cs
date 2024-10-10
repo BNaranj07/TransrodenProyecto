@@ -23,4 +23,23 @@ namespace TransrodenProyecto.Models
         Entregado = 6
     }
 
+    public enum EstadoCarga
+    {
+        Asignado = 0,
+        EnTransito = 1,
+        BodegaPZ = 2,
+        BodegaSJ = 3,
+        Entregado = 4
+    }
+
+    public enum EstadoEnvio
+    {
+        Asignado = 0,
+        EnTransito = 1,
+        BodegaPZ = 2,
+        BodegaSJ = 3,
+        Entregado = 4
+    }
+
+
 }
