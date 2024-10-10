@@ -136,6 +136,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccesoController.cs" />
     <Compile Include="Controllers\CalculadorasController.cs" />
     <Compile Include="Controllers\CamionsController.cs" />
     <Compile Include="Controllers\CargasController.cs" />
@@ -149,6 +150,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logica\LO_Usuario.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Calculadora.cs" />
     <Compile Include="Models\Camion.cs" />
@@ -159,6 +161,7 @@
     <Compile Include="Models\Historial.cs" />
     <Compile Include="Models\Paquete.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Permisos\PermisosRolAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\PaqueteCargaViewModel.cs" />
   </ItemGroup>
@@ -257,9 +260,13 @@
     <Content Include="Views\Usuarios\Edit.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
     <Content Include="Views\PaquetesCargasController\AsignarPaqueteCarga.cshtml" />
+    <Content Include="Views\Acceso\Index.cshtml" />
+    <Content Include="Views\Home\SinPermiso.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Login\" />
+    <Folder Include="Views\View\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
