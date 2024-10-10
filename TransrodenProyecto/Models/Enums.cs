@@ -40,6 +40,12 @@ namespace TransrodenProyecto.Models
         BodegaSJ = 3,
         Entregado = 4
     }
-
+    public enum Rol
+    {
+        Administrador = 0,
+        Bodeguero = 1,
+        Transportista = 2,
+        Cliente = 3
+    }
 
 }

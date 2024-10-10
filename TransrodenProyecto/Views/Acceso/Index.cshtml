@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <div class="login-form">
+            <h2>Iniciar sesión</h2>
+
+            <form action="@Url.Action("Index","Acceso")" method="post">
+
+                <input type="text" name="correo" placeholder="Nombre de usuario" required>
+                <input type="password" name="clave" placeholder="Contraseña" required>
+
+                <button type="submit">Iniciar sesión</button>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>
