@@ -34,13 +34,26 @@
             </div>
         </div>
 
+
+        <!-- Comboboxes -->
+        <!-- Tipo del Paquete -->
         <div class="form-group">
-            @Html.LabelFor(model => model.Tipo, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Estado, "Tipo del Paquete", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Tipo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EnumDropDownListFor(model => model.Tipo, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Tipo, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        <!-- Estado del Paquete -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.Estado, "Estado del Paquete", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Estado, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <!--Fin de Comboxoeds-->
 
         <div class="form-group">
             @Html.LabelFor(model => model.NombreEmisor, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -162,7 +175,8 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <!--<input type="submit" value="Save" class="btn btn-default" /> -->
+                <input type="submit" value="Save" class="btn btn-primary" onclick="return confirm('Esto eliminará la factura actual y generará una nueva. ¿Desea continuar?');" />
             </div>
         </div>
     </div>

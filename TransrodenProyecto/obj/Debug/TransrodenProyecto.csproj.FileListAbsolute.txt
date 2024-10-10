@@ -268,3 +268,12 @@ C:\Users\Anthony\Desktop\Universidad\Trilogia Final\II Desarrollo e Implementaci
 C:\Users\Anthony\Desktop\Universidad\Trilogia Final\II Desarrollo e Implementacion\Proyecto\TransrodenProyecto\TransrodenProyecto\obj\Debug\Transrod.73BF59FF.Up2Date
 C:\Users\Anthony\Desktop\Universidad\Trilogia Final\II Desarrollo e Implementacion\Proyecto\TransrodenProyecto\TransrodenProyecto\obj\Debug\TransrodenProyecto.dll
 C:\Users\Anthony\Desktop\Universidad\Trilogia Final\II Desarrollo e Implementacion\Proyecto\TransrodenProyecto\TransrodenProyecto\obj\Debug\TransrodenProyecto.pdb
+C:\Users\Anthony\Desktop\Universidad\Trilogia Final\II Desarrollo e Implementacion\Proyecto\TransrodenProyecto\TransrodenProyecto\bin\System.Net.Http.Formatting.dll
+C:\Users\Anthony\Desktop\Universidad\Trilogia Final\II Desarrollo e Implementacion\Proyecto\TransrodenProyecto\TransrodenProyecto\bin\System.Web.Http.dll
+C:\Users\Anthony\Desktop\Universidad\Trilogia Final\II Desarrollo e Implementacion\Proyecto\TransrodenProyecto\TransrodenProyecto\bin\System.Web.Http.WebHost.dll
+C:\Users\Anthony\Desktop\Universidad\Trilogia Final\II Desarrollo e Implementacion\Proyecto\TransrodenProyecto\TransrodenProyecto\bin\System.Net.Http.Formatting.xml
+C:\Users\Anthony\Desktop\Universidad\Trilogia Final\II Desarrollo e Implementacion\Proyecto\TransrodenProyecto\TransrodenProyecto\bin\System.Web.Http.xml
+C:\Users\Anthony\Desktop\Universidad\Trilogia Final\II Desarrollo e Implementacion\Proyecto\TransrodenProyecto\TransrodenProyecto\bin\System.Web.Http.WebHost.xml
+C:\Users\Anthony\Desktop\Universidad\Trilogia Final\II Desarrollo e Implementacion\Proyecto\TransrodenProyecto\TransrodenProyecto\bin\es\System.Net.Http.Formatting.resources.dll
+C:\Users\Anthony\Desktop\Universidad\Trilogia Final\II Desarrollo e Implementacion\Proyecto\TransrodenProyecto\TransrodenProyecto\bin\es\System.Web.Http.resources.dll
+C:\Users\Anthony\Desktop\Universidad\Trilogia Final\II Desarrollo e Implementacion\Proyecto\TransrodenProyecto\TransrodenProyecto\bin\es\System.Web.Http.WebHost.resources.dll

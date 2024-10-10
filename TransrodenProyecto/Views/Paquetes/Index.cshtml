@@ -60,6 +60,8 @@
     @Html.ActionLink("Registrar Nuevo Paquete", "RegistrarPaquete", null, new { @class = "btn btn-primary" })
 </p>
 
+<h2>Lsita de Paquetes</h2>
+
 @if (ViewBag.NoResults != null)
 {
     <p class="text-danger">@ViewBag.NoResults</p>
@@ -72,6 +74,7 @@ else
             <th>@Html.DisplayNameFor(model => model.First().Envio.Id_Envio)</th>
             <th>@Html.DisplayNameFor(model => model.First().NumeroRastreo)</th>
             <th>@Html.DisplayNameFor(model => model.First().Tipo)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Estado)</th>
             <th>@Html.DisplayNameFor(model => model.First().NombreEmisor)</th>
             <th>@Html.DisplayNameFor(model => model.First().CedulaEmisor)</th>
             <th>@Html.DisplayNameFor(model => model.First().NombreReceptor)</th>
@@ -93,6 +96,7 @@ else
                 <td>@Html.DisplayFor(modelItem => item.Envio.Id_Envio)</td>
                 <td>@Html.DisplayFor(modelItem => item.NumeroRastreo)</td>
                 <td>@Html.DisplayFor(modelItem => item.Tipo)</td>
+                <td>@Html.DisplayFor(modelItem => item.Estado)</td>
                 <td>@Html.DisplayFor(modelItem => item.NombreEmisor)</td>
                 <td>@Html.DisplayFor(modelItem => item.CedulaEmisor)</td>
                 <td>@Html.DisplayFor(modelItem => item.NombreReceptor)</td>
