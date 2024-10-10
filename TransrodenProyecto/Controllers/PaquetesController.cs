@@ -90,7 +90,6 @@ namespace TransrodenProyecto.Controllers
                     CedulaEmisor = model.CedulaEmisor,
                     NombreReceptor = model.NombreReceptor,
                     CedulaReceptor = model.CedulaReceptor,
-                    Estado = model.Estado,
                     Domicilio = model.Domicilio,
                     Direccion = model.Direccion,
                     TelefonoDomicilio = model.TelefonoDomicilio,
