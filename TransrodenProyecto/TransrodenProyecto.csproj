@@ -140,6 +140,7 @@
     <Compile Include="Controllers\CalculadorasController.cs" />
     <Compile Include="Controllers\CamionsController.cs" />
     <Compile Include="Controllers\CargasController.cs" />
+    <Compile Include="Controllers\CuentaController.cs" />
     <Compile Include="Controllers\EnviosController.cs" />
     <Compile Include="Controllers\FacturacionsController.cs" />
     <Compile Include="Controllers\HistorialsController.cs" />
@@ -262,6 +263,8 @@
     <Content Include="Views\PaquetesCargasController\AsignarPaqueteCarga.cshtml" />
     <Content Include="Views\Acceso\Index.cshtml" />
     <Content Include="Views\Home\SinPermiso.cshtml" />
+    <Content Include="Views\Cuenta\Register.cshtml" />
+    <Content Include="Views\Cuenta\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

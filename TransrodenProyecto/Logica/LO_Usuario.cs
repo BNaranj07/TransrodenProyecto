@@ -39,7 +39,7 @@ namespace TransrodenProyecto.Logica
                             Correo = dr["Correo"].ToString(),
                             Clave = dr["Clave"].ToString(),
                             Telefono = dr["Telefono"].ToString(),
-                            Rol = (int)(Rol)dr["Rol"], //Revisar si esto sirve
+                            //Rol = (int)(Rol)dr["Rol"], //Revisar si esto sirve
 
                         };
                     

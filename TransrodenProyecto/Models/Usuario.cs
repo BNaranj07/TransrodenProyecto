@@ -39,7 +39,7 @@ namespace TransrodenProyecto.Models
 
         //Enum
         [Required]
-        public int Rol { get; set; }
+        public Rol Rol { get; set; }
 
 
         public List<Facturacion> Facturaciones { get; set; }

@@ -1,0 +1,50 @@
+﻿@model TransrodenProyecto.Models.Usuario
+
+@{
+    ViewBag.Title = "Registro";
+}
+
+<h2>Registro</h2>
+
+@using (Html.BeginForm("Register", "Cuenta", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Nombre)
+        @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Nombre)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Apellidos)
+        @Html.TextBoxFor(m => m.Apellidos, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Apellidos)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Cedula)
+        @Html.TextBoxFor(m => m.Cedula, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Cedula)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Correo)
+        @Html.TextBoxFor(m => m.Correo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Correo)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Clave)
+        @Html.PasswordFor(m => m.Clave, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Clave)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Telefono)
+        @Html.TextBoxFor(m => m.Telefono, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Telefono)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Registrar</button>
+}
