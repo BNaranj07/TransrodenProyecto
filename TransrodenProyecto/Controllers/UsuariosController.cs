@@ -4,6 +4,8 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using TransrodenProyecto.Models;
@@ -50,6 +52,8 @@ namespace TransrodenProyecto.Controllers
         {
             if (ModelState.IsValid)
             {
+                usuario.Clave = ConvertirSha256(usuario.Clave);
+
                 db.Usuarios.Add(usuario);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -123,5 +127,26 @@ namespace TransrodenProyecto.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+        public static string ConvertirSha256(string texto)
+        {
+            //using System.Text;
+            //USAR LA REFERENCIA DE "System.Security.Cryptography"
+
+            StringBuilder Sb = new StringBuilder();
+            using (SHA256 hash = SHA256Managed.Create())
+            {
+                Encoding enc = Encoding.UTF8;
+                byte[] result = hash.ComputeHash(enc.GetBytes(texto));
+
+                foreach (byte b in result)
+                    Sb.Append(b.ToString("x2"));
+            }
+
+            return Sb.ToString();
+        }
+
+
     }
 }
