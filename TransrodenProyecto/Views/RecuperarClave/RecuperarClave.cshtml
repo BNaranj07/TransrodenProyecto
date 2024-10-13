@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "RecuperarClave";
+}
+
+
+@using (Html.BeginForm("RecuperarClave", "RecuperarClave", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <h2>Recuperar contraseña</h2>
+
+    <div class="form-group">
+        
+            <label for="correo">Correo:</label>
+            <input type="email" name="correo" class="form-control" required />
+            <button type="submit" class="btn btn-primary">Recuperar contraseña</button>
+        
+    </div>
+}
