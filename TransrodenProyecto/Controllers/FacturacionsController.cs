@@ -138,6 +138,35 @@ namespace TransrodenProyecto.Controllers
         }
 
 
+        public async Task<ActionResult> FacturasUsuario()
+        {
+
+            int? usuarioId = Session["UsuarioId"] as int?;
+
+
+            if (usuarioId == null)
+            {
+                return RedirectToAction("Login", "Cuenta");
+            }
+
+
+            var facturas = await db.Facturaciones
+                .Where(f => f.Id_Usuario == usuarioId)
+                .Include(f => f.Paquete)
+                .ToListAsync();
+
+            if (!facturas.Any())
+            {
+                ViewBag.Message = "No hay facturas asociadas a su cuenta.";
+            }
+
+            return View(facturas);
+        }
+
+
+
+
+
 
         ///  ++++++++++++++++++++++++++++++++++++++++++++++++++ Final Mis Cambios +++++++++++++++++++++++++++++++++++++++++++++++++
 

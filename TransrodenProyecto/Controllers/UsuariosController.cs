@@ -17,9 +17,23 @@ namespace TransrodenProyecto.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Usuarios
-        public ActionResult Index()
+        public ActionResult Index(string searchCed)
         {
-            return View(db.Usuarios.ToList());
+
+            //Esto es una asignacion de pesos para ordenar, siendo el cliente con el peso mas alto lo que lo hace ultimo en listarse
+            var usuarios = db.Usuarios.ToList()
+                .OrderBy(u => u.Rol == Rol.Cliente ? 4 :
+                              u.Rol == Rol.Transportista ? 3 :
+                              u.Rol == Rol.Bodeguero ? 2 : 1) 
+                .ToList();
+
+            if (!string.IsNullOrEmpty(searchCed))
+            {
+                usuarios = usuarios.Where(u => u.Cedula.Contains(searchCed)).ToList();
+            }
+
+
+            return View(usuarios);
         }
 
         // GET: Usuarios/Details/5

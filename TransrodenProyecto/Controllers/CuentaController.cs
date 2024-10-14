@@ -5,7 +5,6 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
-using TransrodenProyecto.Logica;
 using TransrodenProyecto.Models;
 
 namespace TransrodenProyecto.Controllers
@@ -70,11 +69,27 @@ namespace TransrodenProyecto.Controllers
             var usuario = db.Usuarios.FirstOrDefault(u => u.Correo == correo && u.Clave == ClaveEncryt);
             if (usuario != null)
             {
+                //Inicio session
                 Session["UsuarioId"] = usuario.Id_Usuario;
                 Session["UsuarioRol"] = usuario.Rol;
+                Session["Usuario"] = $"{usuario.Nombre}";
 
-                return RedirectToAction("Index", "Home");
+
+                //Redireccion de vistas
+                if (usuario.Rol == Rol.Administrador || usuario.Rol == Rol.Bodeguero)
+                {
+                    return RedirectToAction("IndexAdmin", "Admin");
+                }
+                else if (usuario.Rol == Rol.Cliente)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else if (usuario.Rol == Rol.Transportista)
+                {
+                    return RedirectToAction("IndexTransportista", "Admin");
+                }
             }
+
 
             ModelState.AddModelError("", "Correo o clave incorrectos.");
             return View();

@@ -1,33 +1,571 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    Layout = null;
 }
 
-<main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-    </section>
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </section>
+<head>
+    <meta charset="utf-8">
+    <title>Transroden Express SA</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="~/Content/assets/lib/animate/animate.min.css" />
+    <link href="~/Content/assets/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="~/Content/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="~/Content/assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="~/Content/assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
     </div>
-</main>
+    <!-- Spinner End -->
+    <!-- Topbar -->
+    <div class="container-fluid topbar px-0 px-lg-4 bg-light py-2 d-none d-lg-block">
+        <div class="container">
+            <div class="row gx-0 align-items-center">
+                <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+                    <div class="d-flex flex-wrap">
+                        <div class="border-end border-primary pe-3">
+                            <a href="#" class="text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i>San Isidro - Perez Zeledon, Barrio Mexico - San Jose</a>
+                        </div>
+                        <div class="ps-3">
+                            <a href="mailto:example@gmail.com" class="text-muted small"><i class="fas fa-envelope text-primary me-2"></i>transroden@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <div class="d-flex justify-content-end">
+                        <div class="d-flex border-end border-primary pe-3">
+                            <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <!--
+                        <div class="dropdown ms-3">
+                            <a href="#" class="dropdown-toggle text-dark" data-bs-toggle="dropdown"><small><i class="fas fa-globe-europe text-primary me-2"></i> English</small></a>
+                            <div class="dropdown-menu rounded">
+                                <a href="#" class="dropdown-item">English</a>
+                                <a href="#" class="dropdown-item">Bangla</a>
+                                <a href="#" class="dropdown-item">French</a>
+                                <a href="#" class="dropdown-item">Spanish</a>
+                                <a href="#" class="dropdown-item">Arabic</a>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar -->
+    <!-- Navbar -->
+    <div class="container-fluid nav-bar px-0 px-lg-0 py-lg-0" id="maincontainer">
+        <div class="container" id="containertop">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <!-- <a href="#" class="navbar-brand p-0"> -->
+                <!--<h1 class="text-primary mb-0"><i class="fab fa-slack me-2"></i> LifeSure</h1> -->
+                <img src="~/Content/assets/img/Logo.png" alt="Logo" width="230" height="150">
+                <!-- </a> -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+
+                    <div class="navbar-nav mx-0 mx-lg-auto">
+                        <!-- <a href="index.html" class="nav-item nav-link active">Inicio</a> -->
+                        <a href="@Url.Action("Index", "Home")" class="nav-item nav-link active">
+                            <span class="d-block"><i class="fas fa-home"></i></span>
+                            Inicio
+                        </a>
+
+                        <a href="@Url.Action("Sucursales", "Home")" class="nav-item nav-link">
+                            <span class="d-block"><i class="fas fa-map-marker-alt"></i></span>
+                            Sucursales
+                        </a>
+                        <!-- <a href="about.html" class="nav-item nav-link">Sucursales</a> -->
+
+                        <a href="@Url.Action("Tracking", "Home")" class="nav-item nav-link">
+                            <span class="d-block"><i class="fas fa-truck"></i></span>
+                            Rastreo
+                        </a>
+
+                        <!-- <a href="service.html" class="nav-item nav-link">Rastreo</a> -->
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                                <span class="dropdown-toggle">Servicios</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="@Url.Action("FacturasUsuario", "Facturacions")" class="dropdown-item">Mis Facturas</a>
+                            </div>
+                        </div>
+
+                        <a href="@Url.Action("Nosotros","Home")" class="nav-item nav-link">
+                            <span class="d-block"><i class="fas fa-info-circle"></i></span>
+                            Nosotros
+                        </a>
+
+
+                        @if (Session["Usuario"] != null)
+                        {
+                            <a href="@Url.Action("Logout", "Cuenta")" class="nav-item nav-link">
+                                <span class="d-block"><i class="fas fa-sign-out-alt"></i></span>
+                                @Session["Usuario"]
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Login", "Cuenta")" class="nav-item nav-link">
+                                <span class="d-block"><i class="fas fa-user"></i></span>
+                                Cuenta
+                            </a>
+                        }
+
+                    </div>
+                </div>
+                <div class="d-none d-xl-flex flex-shrink-0 ps-4">
+                    <a href="#" class="btn btn-light btn-lg-square rounded-circle position-relative wow tada" data-wow-delay=".9s">
+                        <i class="fa fa-phone-alt fa-2x"></i>
+                        <div class="position-absolute" style="top: 7px; right: 12px;">
+                            <span><i class="fa fa-comment-dots text-secondary"></i></span>
+                        </div>
+                    </a>
+                    <div class="d-flex flex-column ms-3">
+                        <span>Centro de Atencion</span>
+                        <a href="tel:+ 0123 456 7890"><span class="text-dark">Tel: +506 0000 0000</span></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar -->
+
+    <div class="container mt-5">
+
+        @if (Session["Usuario"] != null)
+        {
+            <H2 class="navbar-text">Bienvenido, @Session["Usuario"]!</H2>
+        }
+    </div>
+
+
+        <!-- Carousel Start -->
+        <div class="header-carousel owl-carousel">
+            <div class="header-carousel-item bg-primary">
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-lg-7 animated fadeInLeft">
+                                <div class="text-sm-center text-md-start">
+                                    <h3 class="text-white text-uppercase fw-bold mb-4">Transroden Express SA</h3>
+                                    <h1 class="display-1 text-white mb-4">30 años de experiencia brindando el mejor servicio!</h1>
+                                    <p class="mb-5 fs-5">
+                                        Le agradece a nuestros clientes la fidelidad y la confianza a nuestra empresa
+                                    </p>
+                                    <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
+                                        <!-- <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a> -->
+                                        <a class="btn btn-dark rounded-pill py-3 px-4 px-md-5 ms-2" href="#">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 animated fadeInRight">
+                                <div class="calrousel-img" style="object-fit: cover;">
+                                    <img src="~/Content/assets/img/camion.jpg" class="img-fluid w-100" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-carousel-item bg-primary">
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row gy-4 gy-lg-0 gx-0 gx-lg-5 align-items-center">
+                            <div class="col-lg-5 animated fadeInLeft">
+                                <div class="calrousel-img" style="object-fit: cover;">
+                                    <img src="~/Content/assets/img/entrega.jpg" class="img-fluid w-100" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-7 animated fadeInRight">
+                                <div class="text-sm-center text-md-end">
+                                    <h3 class="text-white text-uppercase fw-bold mb-4">Transroden Express SA</h3>
+                                    <h1 class="display-1 text-white mb-4">Calidad Experiencia y Servicio</h1>
+                                    <p class="mb-5 fs-5">
+                                        Trasporte de encomiendas San José - Pérez Zeledón - Buenos Aires - San Vito
+                                    </p>
+                                    <div class="d-flex justify-content-center justify-content-md-end flex-shrink-0 mb-4">
+                                        <!--<a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a> -->
+                                        <a class="btn btn-dark rounded-pill py-3 px-4 px-md-5 ms-2" href="#">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel End -->
+        <!-- Service Start -->
+        <div class="container-fluid service py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Nuestros Servicios</h4>
+                    <h1 class="display-4 mb-4">Proveemos del mejor servicio de encomiendas</h1>
+                    <p class="mb-0">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
+                    </p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="service-item">
+                            <div class="service-img">
+                                <img src="~/Content/assets/img/envioencomienda.png" class="img-fluid rounded-top w-100" alt="">
+                                <div class="service-icon p-3">
+                                    <i class="fa fa-truck fa-2x"></i>
+                                </div>
+                            </div>
+                            <div class="service-content p-4">
+                                <div class="service-content-inner">
+                                    <a href="#" class="d-inline-block h4 mb-4">Envio de encomiendas</a>
+                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
+                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Conocer mas</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="service-item">
+                            <div class="service-img">
+                                <img src="~/Content/assets/img/domicilio.jpg" class="img-fluid rounded-top w-100" alt="">
+                                <div class="service-icon p-3">
+                                    <i class="fa fa-people-carry fa-2x"></i>
+                                </div>
+                            </div>
+                            <div class="service-content p-4">
+                                <div class="service-content-inner">
+                                    <a href="#" class="d-inline-block h4 mb-4">Servicio a domicilio</a>
+                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
+                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Conocer Mas</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="service-item">
+                            <div class="service-img">
+                                <img src="~/Content/assets/img/pyme.jpg" class="img-fluid rounded-top w-100" alt="">
+                                <div class="service-icon p-3">
+                                    <i class="fa fa-home fa-2x"></i>
+                                </div>
+                            </div>
+                            <div class="service-content p-4">
+                                <div class="service-content-inner">
+                                    <a href="#" class="d-inline-block h4 mb-4">Pymes</a>
+                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
+                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Conocer Mas</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="service-item">
+                            <div class="service-img">
+                                <img src="~/Content/assets/img/corporativo.png" class="img-fluid rounded-top w-100" alt="">
+                                <div class="service-icon p-3">
+                                    <i class="fa fa-industry fa-2x"></i>
+                                </div>
+                            </div>
+                            <div class="service-content p-4">
+                                <div class="service-content-inner">
+                                    <a href="#" class="d-inline-block h4 mb-4">Servicios Corporativos</a>
+                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
+                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Conocer Mas</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="#">More Services</a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+        <!-- FAQs Start -->
+        <div class="container-fluid faq-section bg-light py-5">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+                        <div class="h-100">
+                            <div class="mb-5">
+                                <h4 class="text-primary">Some Important FAQ's</h4>
+                                <h1 class="display-4 mb-0">Preguntas frecuentes</h1>
+                            </div>
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            P: Que dias se realizan envios?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show active" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body rounded">
+                                            R: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            P: Hacia donde realizan envios?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            R: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            P: Cual es el horario de atencion?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            R: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
+                        <img src="~/Content/assets/img/preguntas.jpg" class="img-fluid w-100" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-xl-9">
+                        <div class="mb-5">
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-6 col-xl-5">
+                                    <div class="footer-item">
+                                        <a href="index.html" class="p-0">
+                                            <h3 class="text-white"><i class="fas fa-truck-loading me-3"></i> Transroden Express SA</h3>
+                                            <!-- <img src="~/Content/assets/img/logo.png" alt="Logo"> -->
+                                        </a>
+                                        <p class="text-white mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
+                                        <div class="footer-btn d-flex">
+                                            <a class="btn btn-md-square rounded-circle me-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                                            <a class="btn btn-md-square rounded-circle me-3" href="#"><i class="fab fa-twitter"></i></a>
+                                            <a class="btn btn-md-square rounded-circle me-3" href="#"><i class="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6 col-xl-3">
+                                    <div class="footer-item">
+                                        <h4 class="text-white mb-4">Acceso Rapido</h4>
+                                        <a href="#" class="text-white"><i class="text-white fas fa-angle-right me-2"></i> Inicio </a>
+                                        <a href="#" class="text-white"><i class="text-white fas fa-angle-right me-2"></i> Sucursal </a>
+                                        <a href="#" class="text-white"><i class="text-white fas fa-angle-right me-2"></i> Rastreo </a>
+                                        <a href="#" class="text-white"><i class="text-white fas fa-angle-right me-2"></i> Servicios </a>
+                                        <a href="#" class="text-white"><i class="text-white fas fa-angle-right me-2"></i> Nosotros </a>
+                                        <a href="#" class="text-white"><i class="text-white fas fa-angle-right me-2"></i> Cuenta </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6 col-xl-4">
+                                    <div class="footer-item">
+                                        <h4 class="mb-4 text-white">Facebook</h4>
+                                        <div class="row g-3">
+                                            <div class="col-4">
+                                                <div class="footer-instagram rounded">
+                                                    <img src="~/Content/assets/img/instagram-footer-1.jpg" class="img-fluid w-100" alt="">
+                                                    <div class="footer-search-icon">
+                                                        <a href="~/Content/assets/img/instagram-footer-1.jpg" data-lightbox="footerInstagram-1" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="footer-instagram rounded">
+                                                    <img src="~/Content/assets/img/instagram-footer-2.jpg" class="img-fluid w-100" alt="">
+                                                    <div class="footer-search-icon">
+                                                        <a href="~/Content/assets/img/instagram-footer-2.jpg" data-lightbox="footerInstagram-2" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="footer-instagram rounded">
+                                                    <img src="~/Content/assets/img/instagram-footer-3.jpg" class="img-fluid w-100" alt="">
+                                                    <div class="footer-search-icon">
+                                                        <a href="~/Content/assets/img/instagram-footer-3.jpg" data-lightbox="footerInstagram-3" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="footer-instagram rounded">
+                                                    <img src="~/Content/assets/img/instagram-footer-4.jpg" class="img-fluid w-100" alt="">
+                                                    <div class="footer-search-icon">
+                                                        <a href="~/Content/assets/img/instagram-footer-4.jpg" data-lightbox="footerInstagram-4" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="footer-instagram rounded">
+                                                    <img src="~/Content/assets/img/instagram-footer-5.jpg" class="img-fluid w-100" alt="">
+                                                    <div class="footer-search-icon">
+                                                        <a href="~/Content/assets/img/instagram-footer-5.jpg" data-lightbox="footerInstagram-5" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="footer-instagram rounded">
+                                                    <img src="~/Content/assets/img/instagram-footer-6.jpg" class="img-fluid w-100" alt="">
+                                                    <div class="footer-search-icon">
+                                                        <a href="~/Content/assets/img/instagram-footer-6.jpg" data-lightbox="footerInstagram-6" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-5" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+                            <div class="row g-0">
+                                <div class="col-12">
+                                    <div class="row g-4">
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="d-flex">
+                                                <div class="btn-xl-square bg-primary text-white rounded p-4 me-4">
+                                                    <i class="fas fa-map-marker-alt fa-2x"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="text-white">Direccion</h4>
+                                                    <p class=" text-white mb-0">San Isidro - Perez Zeledon, Barrio Mexico - San Jose</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="d-flex">
+                                                <div class="btn-xl-square bg-primary text-white rounded p-4 me-4">
+                                                    <i class="fas fa-envelope fa-2x"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="text-white">Escribenos</h4>
+                                                    <p class="text-white mb-0">transroden@gmail.com</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="d-flex">
+                                                <div class="btn-xl-square bg-primary text-white rounded p-4 me-4">
+                                                    <i class="fa fa-phone-alt fa-2x"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="text-white">Telefono</h4>
+                                                    <p class=" text-white mb-0">+506 0000 0000</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3">
+                        <div class="footer-item">
+                            <h4 class="text-white mb-4">Novedades!!</h4>
+                            <p class="text-white mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <div class="position-relative rounded-pill mb-4">
+                                <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Ingresa tu correo">
+                                <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">Login</button>
+                            </div>
+                            <div class="d-flex flex-shrink-0">
+                                <div class="footer-btn">
+                                    <a href="#" class="btn btn-lg-square rounded-circle position-relative wow tada" data-wow-delay=".9s">
+                                        <i class="fa fa-phone-alt fa-2x"></i>
+                                        <div class="position-absolute" style="top: 2px; right: 12px;">
+                                            <span><i class="fa fa-comment-dots text-secondary"></i></span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="d-flex flex-column ms-3 flex-shrink-0">
+                                    <span class="text-white">Centro de Atencion</span>
+                                    <a href="tel:+ 0123 456 7890"><span class="text-white">Free: + 0123 456 7890</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-end mb-md-0">
+                        <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>transroden.com</a>, Todos los derechos reservados 2024.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-start text-body">
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        <!-- Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom text-white" href="https://themewagon.com">ThemeWagon</a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/Content/assets/lib/wow/wow.min.js"></script>
+        <script src="~/Content/assets/lib/easing/easing.min.js"></script>
+        <script src="~/Content/assets/lib/waypoints/waypoints.min.js"></script>
+        <script src="~/Content/assets/lib/counterup/counterup.min.js"></script>
+        <script src="~/Content/assets/lib/lightbox/js/lightbox.min.js"></script>
+        <script src="~/Content/assets/lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+        <!-- Template Javascript -->
+        <script src="~/Content/assets/js/main.js"></script>
+</body>
+
+</html>

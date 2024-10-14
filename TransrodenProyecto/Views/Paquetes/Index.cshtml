@@ -1,129 +1,417 @@
 ﻿@model IEnumerable<TransrodenProyecto.Models.Paquete>
 
 @{
-    ViewBag.Title = "Paquetes";
+    Layout = null;
 }
 
-<h2>Paquetes</h2>
 
-@using (Html.BeginForm("Index", "Paquetes", FormMethod.Get))
-{
-    <div class="form-horizontal">
-        <h4>Buscar Paquetes</h4>
-        <hr />
+<!DOCTYPE html>
+<html lang="en">
 
-        <div class="form-group">
-            @Html.Label("Número de Rastreo", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBox("searchString", "", new { @class = "form-control" })
-            </div>
+<head>
+    <meta charset="utf-8">
+    <title>LifeSure - Life Insurance Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="~/Content/assets/lib/animate/animate.min.css" />
+    <link href="~/Content/assets/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="~/Content/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="~/Content/assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="~/Content/assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
-
-        <div class="form-group">
-            @Html.Label("Nombre del Cliente", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBox("searchName", "", new { @class = "form-control" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.Label("Cédula", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBox("searchCedula", "", new { @class = "form-control" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.Label("Fecha Inicio", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBox("startDate", "", new { @class = "form-control", @type = "date" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.Label("Fecha Fin", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBox("endDate", "", new { @class = "form-control", @type = "date" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Buscar" class="btn btn-default" />
-                <input type="button" value="Limpiar" onclick="limpiarBusqueda()" class="btn btn-default" />
+    </div>
+    <!-- Spinner End -->
+    <!-- Topbar -->
+    <div class="container-fluid topbar px-0 px-lg-4 bg-light py-2 d-none d-lg-block">
+        <div class="container">
+            <div class="row gx-0 align-items-center">
+                <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+                    <div class="d-flex flex-wrap">
+                        <div class="border-end border-primary pe-3">
+                            <a href="#" class="text-muted small"><i class="fas fa-house-user text-primary me-2"></i>ESTE ES EL MODULO DE ADMINISTRATIVO</a>
+                        </div>
+                        <div class="ps-3">
+                            <a href="mailto:example@gmail.com" class="text-muted small"></i> <!-- Aqui puede ir el nombre del usuario--></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <div class="d-flex justify-content-end">
+                        <div class="d-flex border-end border-primary pe-3">
+                            <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <!--
+                        <div class="dropdown ms-3">
+                            <a href="#" class="dropdown-toggle text-dark" data-bs-toggle="dropdown"><small><i class="fas fa-globe-europe text-primary me-2"></i> English</small></a>
+                            <div class="dropdown-menu rounded">
+                                <a href="#" class="dropdown-item">English</a>
+                                <a href="#" class="dropdown-item">Bangla</a>
+                                <a href="#" class="dropdown-item">French</a>
+                                <a href="#" class="dropdown-item">Spanish</a>
+                                <a href="#" class="dropdown-item">Arabic</a>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-}
+    <!-- Topbar -->
+    <!-- Navbar -->
+    <div class="container-fluid nav-bar px-0 px-lg-0 py-lg-0" id="maincontainer">
+        <div class="container" id="containertop">
+            <nav class="navbar navbar-expand-lg navbar-light">
 
-<p>
-    @Html.ActionLink("Registrar Nuevo Paquete", "RegistrarPaquete", null, new { @class = "btn btn-primary" })
-</p>
+                <img src="~/Content/assets/img/Logo.png" alt="Logo" width="230" height="150">
 
-<h2>Lsita de Paquetes</h2>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
 
-@if (ViewBag.NoResults != null)
-{
-    <p class="text-danger">@ViewBag.NoResults</p>
-}
-else
-{
-    <table class="table">
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.First().Carga.Id_Carga)</th>
-            <th>@Html.DisplayNameFor(model => model.First().Envio.Id_Envio)</th>
-            <th>@Html.DisplayNameFor(model => model.First().NumeroRastreo)</th>
-            <th>@Html.DisplayNameFor(model => model.First().Tipo)</th>
-            <th>@Html.DisplayNameFor(model => model.First().Estado)</th>
-            <th>@Html.DisplayNameFor(model => model.First().NombreEmisor)</th>
-            <th>@Html.DisplayNameFor(model => model.First().CedulaEmisor)</th>
-            <th>@Html.DisplayNameFor(model => model.First().NombreReceptor)</th>
-            <th>@Html.DisplayNameFor(model => model.First().CedulaReceptor)</th>
-            <th>@Html.DisplayNameFor(model => model.First().Domicilio)</th>
-            <th>@Html.DisplayNameFor(model => model.First().Direccion)</th>
-            <th>@Html.DisplayNameFor(model => model.First().TelefonoDomicilio)</th>
-            <th>@Html.DisplayNameFor(model => model.First().Cantidad)</th>
-            <th>@Html.DisplayNameFor(model => model.First().Pago)</th>
-            <th>@Html.DisplayNameFor(model => model.First().Descripcion)</th>
-            <th>@Html.DisplayNameFor(model => model.First().fecha_recibo)</th>
-            <th></th>
-        </tr>
+                    <div class="navbar-nav mx-0 mx-lg-auto">
 
-        @foreach (var item in Model)
+                        <a href="@Url.Action("IndexAdmin", "Admin")" class="nav-item nav-link">
+                            Inicio
+                        </a>
+
+                        <a href="@Url.Action("Index","Usuarios")" class="nav-item nav-link">
+                            Usuarios
+                        </a>
+
+                        <a href="@Url.Action("Index","Paquetes")" class="nav-item nav-link active">
+                            Paqueteria
+                        </a>
+
+                        <a href="@Url.Action("Index","Facturacions")" class="nav-item nav-link">
+                            Facturacion
+                        </a>
+
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                                <span class="dropdown-toggle">Contabilidad</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="@Url.Action("ContaAdminAnual", "Modulo5")" class="dropdown-item">Consulta Diaria</a>
+                                <a href="@Url.Action("ContaAdminSemanal", "Modulo5")" class="dropdown-item">Consulta Semanal</a>
+                                <a href="@Url.Action("ContaAdminMensual", "Modulo5")" class="dropdown-item">Consulta Mensual</a>
+                                <a href="@Url.Action("ContaAdminAnual", "Modulo5")" class="dropdown-item">Consulta Anual</a>
+                            </div>
+                        </div>
+
+
+
+
+                        <a href="@Url.Action("Marketing","Modulo6")" class="nav-item nav-link" id="contact">
+                            Mercadeo
+                        </a>
+
+
+
+                        @if (Session["Usuario"] != null)
+                        {
+                            <a href="@Url.Action("Logout", "Cuenta")" class="nav-item nav-link">
+                                <span class="d-block"><i class="fas fa-sign-out-alt"></i></span>
+                                @Session["Usuario"]
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Login", "Cuenta")" class="nav-item nav-link">
+                                <span class="d-block"><i class="fas fa-user"></i></span>
+                                Cuenta
+                            </a>
+                        }
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar -->
+
+
+    <div class="container mt-5">
+
+        <h2>Paquetes</h2>
+
+
+        <div class="d-flex justify-content-end mb-4">
+            <a href="@Url.Action("RegistrarPaquete", "Paquetes")" class="btn btn-danger">
+                <i class="fas fa-box"></i> Agregar Paquete
+            </a>
+        </div>
+
+
+
+        @using (Html.BeginForm("Index", "Paquetes", FormMethod.Get))
         {
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.Carga.Id_Carga)</td>
-                <td>@Html.DisplayFor(modelItem => item.Envio.Id_Envio)</td>
-                <td>@Html.DisplayFor(modelItem => item.NumeroRastreo)</td>
-                <td>@Html.DisplayFor(modelItem => item.Tipo)</td>
-                <td>@Html.DisplayFor(modelItem => item.Estado)</td>
-                <td>@Html.DisplayFor(modelItem => item.NombreEmisor)</td>
-                <td>@Html.DisplayFor(modelItem => item.CedulaEmisor)</td>
-                <td>@Html.DisplayFor(modelItem => item.NombreReceptor)</td>
-                <td>@Html.DisplayFor(modelItem => item.CedulaReceptor)</td>
-                <td>@Html.DisplayFor(modelItem => item.Domicilio)</td>
-                <td>@Html.DisplayFor(modelItem => item.Direccion)</td>
-                <td>@Html.DisplayFor(modelItem => item.TelefonoDomicilio)</td>
-                <td>@Html.DisplayFor(modelItem => item.Cantidad)</td>
-                <td>@Html.DisplayFor(modelItem => item.Pago)</td>
-                <td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
-                <td>@Html.DisplayFor(modelItem => item.fecha_recibo)</td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id_Paquete }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id_Paquete }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id_Paquete })
-                </td>
-            </tr>
-        }
-    </table>
-}
+            <div class="form-horizontal">
+                <br>
+                <h4>Buscar Paquetes</h4>
+                <hr />
 
-<script>
-    function limpiarBusqueda() {
-        document.querySelector('input[name="searchString"]').value = '';
-        document.querySelector('input[name="searchName"]').value = '';
-        document.querySelector('input[name="searchCedula"]').value = '';
-        document.querySelector('input[name="startDate"]').value = '';
-        document.querySelector('input[name="endDate"]').value = '';
-    }
-</script>
+                <div class="form-group">
+                    @Html.Label("Número de Rastreo", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBox("searchString", "", new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Nombre del Cliente", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBox("searchName", "", new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Cédula", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBox("searchCedula", "", new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Fecha Inicio", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBox("startDate", "", new { @class = "form-control", @type = "date" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Fecha Fin", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBox("endDate", "", new { @class = "form-control", @type = "date" })
+                    </div>
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Buscar" class="btn btn-success" />
+                        <input type="button" value="Limpiar" onclick="limpiarBusqueda()" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+            <br>
+        }
+
+
+        <br>
+        <h2>Lista de Paquetes</h2>
+
+        @if (ViewBag.NoResults != null)
+        {
+            <p class="text-danger">@ViewBag.NoResults</p>
+        }
+        else
+        {
+            <table class="table">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.First().NumeroRastreo)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Tipo)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Estado)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().NombreEmisor)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().CedulaEmisor)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Domicilio)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Direccion)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().TelefonoDomicilio)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Cantidad)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Pago)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Descripcion)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().fecha_recibo)</th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.NumeroRastreo)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Tipo)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Estado)</td>
+                        <td>@Html.DisplayFor(modelItem => item.NombreEmisor)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CedulaEmisor)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Domicilio)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Direccion)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TelefonoDomicilio)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Cantidad)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Pago)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
+                        <td>@Html.DisplayFor(modelItem => item.fecha_recibo)</td>
+                        <td>
+                            @Html.ActionLink("Editar", "Edit", new { id = item.Id_Paquete }, new { @class = "btn btn-success" })
+                            @Html.ActionLink("Detalles", "Details", new { id = item.Id_Paquete }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Borrar", "Delete", new { id = item.Id_Paquete }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+
+        <script>
+            function limpiarBusqueda() {
+                document.querySelector('input[name="searchString"]').value = '';
+                document.querySelector('input[name="searchName"]').value = '';
+                document.querySelector('input[name="searchCedula"]').value = '';
+                document.querySelector('input[name="startDate"]').value = '';
+                document.querySelector('input[name="endDate"]').value = '';
+            }
+        </script>
+
+
+    </div>
+
+
+
+    <!--
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-xl-9">
+                    <div class="mb-5">
+                        <div class="row g-4">
+                            <div class="col-md-6 col-lg-6 col-xl-5">
+                                <div class="footer-item">
+                                    <a href="index.html" class="p-0">
+                                        <h3 class="text-white"><i class="fas fa-truck-loading me-3"></i> Transroden Express SA</h3>
+                                        <!-- <img src="~/Content/assets/img/logo.png" alt="Logo"> -->
+                                    </a>
+                                    <p class="text-white mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-3">
+                                <div class="footer-item">
+                                    <h4 class="text-white mb-4">Acceso Rapido</h4>
+                                    <a href="#" class="text-white"><i class="text-white fas fa-angle-right me-2"></i> Inicio </a>
+                                    <a href="#" class="text-white"><i class="text-white fas fa-angle-right me-2"></i> Administracion </a>
+                                    <a href="#" class="text-white"><i class="text-white fas fa-angle-right me-2"></i> Clientes </a>
+                                    <a href="#" class="text-white"><i class="text-white fas fa-angle-right me-2"></i> Inventario </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-3">
+                                <div class="footer-item">
+                                    <h4 class="mb-4" style="color: rgb(192, 27, 28);">Acceso Rápido</h4>
+                                    <a href="#" class="text-white"><i class="text-white fas fa-angle-right me-2"></i> Tracking </a>
+                                    <a href="#" class="text-white"><i class="text-white fas fa-angle-right me-2"></i> Contabilidad </a>
+                                    <a href="#" class="text-white"><i class="text-white fas fa-angle-right me-2"></i> Mercadeo </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--
+                    <div class="pt-5" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+                        <div class="row g-0">
+                            <div class="col-12">
+                                <div class="row g-4">
+                                    <div class="col-lg-6 col-xl-4">
+                                        <div class="d-flex">
+                                            <div class="btn-xl-square bg-primary text-white rounded p-4 me-4">
+                                                <i class="fas fa-map-marker-alt fa-2x"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="text-white">Address</h4>
+                                                <p class=" text-white mb-0">San Isidro - Perez Zeledon, Barrio Mexico - San Jose</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-xl-4">
+                                        <div class="d-flex">
+                                            <div class="btn-xl-square bg-primary text-white rounded p-4 me-4">
+                                                <i class="fas fa-envelope fa-2x"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="text-white">Correo</h4>
+                                                <p class="text-white mb-0">transroden@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-xl-4">
+                                        <div class="d-flex">
+                                            <div class="btn-xl-square bg-primary text-white rounded p-4 me-4">
+                                                <i class="fa fa-phone-alt fa-2x"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="text-white">Telefono</h4>
+                                                <p class=" text-white mb-0">+506 0000 0000</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-end mb-md-0">
+                    <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>transroden.com</a>, Todos los derechos reservados 2024.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-start text-body">
+                    <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                    <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                    <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                    <!-- Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom text-white" href="https://themewagon.com">ThemeWagon</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets/lib/wow/wow.min.js"></script>
+    <script src="~/Content/assets/lib/easing/easing.min.js"></script>
+    <script src="~/Content/assets/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/Content/assets/lib/counterup/counterup.min.js"></script>
+    <script src="~/Content/assets/lib/lightbox/js/lightbox.min.js"></script>
+    <script src="~/Content/assets/lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="~/Content/assets/js/main.js"></script>
+</body>
+
+</html>
+
