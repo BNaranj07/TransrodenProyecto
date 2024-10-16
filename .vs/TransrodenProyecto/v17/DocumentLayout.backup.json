@@ -3,116 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\personal\\desktop\\transroden\\transrodenproyecto\\transrodenproyecto\\permisos\\permisosrolattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\permisos\\permisosrolattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\views\\cuenta\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\cuenta\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\personal\\desktop\\transroden\\transrodenproyecto\\transrodenproyecto\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\personal\\desktop\\transroden\\transrodenproyecto\\transrodenproyecto\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\personal\\desktop\\transroden\\transrodenproyecto\\transrodenproyecto\\logica\\lo_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\logica\\lo_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\personal\\desktop\\transroden\\transrodenproyecto\\transrodenproyecto\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\personal\\desktop\\transroden\\transrodenproyecto\\transrodenproyecto\\views\\cuenta\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\cuenta\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\personal\\desktop\\transroden\\transrodenproyecto\\transrodenproyecto\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\personal\\desktop\\transroden\\transrodenproyecto\\transrodenproyecto\\views\\acceso\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\acceso\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\personal\\desktop\\transroden\\transrodenproyecto\\transrodenproyecto\\controllers\\cuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\controllers\\cuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\personal\\desktop\\transroden\\transrodenproyecto\\transrodenproyecto\\models\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\models\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\personal\\desktop\\transroden\\transrodenproyecto\\transrodenproyecto\\views\\home\\sinpermiso.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\home\\sinpermiso.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\personal\\desktop\\transroden\\transrodenproyecto\\transrodenproyecto\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\views\\facturacions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\facturacions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\personal\\desktop\\transroden\\transrodenproyecto\\transrodenproyecto\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\personal\\desktop\\transroden\\transrodenproyecto\\transrodenproyecto\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\views\\admin\\indexadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\admin\\indexadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|c:\\users\\personal\\desktop\\transroden\\transrodenproyecto\\transrodenproyecto\\views\\facturacions\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\facturacions\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\views\\facturacions\\detallefacturacion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\facturacions\\detallefacturacion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\views\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\views\\facturacions\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\facturacions\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\views\\facturacions\\generarfactura.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\facturacions\\generarfactura.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\controllers\\facturacionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\controllers\\facturacionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\views\\paquetes\\registrarpaquete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\paquetes\\registrarpaquete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\models\\facturacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\models\\facturacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\controllers\\paquetescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\controllers\\paquetescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\views\\paquetes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\paquetes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\models\\paquete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\models\\paquete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\views\\paquetes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\paquetes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\views\\usuarios\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\usuarios\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\views\\paquetes\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\paquetes\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\views\\paquetes\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\paquetes\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\views\\paquetes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\paquetes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\controllers\\calculadorascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\controllers\\calculadorascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\views\\cargas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\cargas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\models\\historial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\models\\historial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\transrodenproyecto\\views\\admin\\asigntransportista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D216F80-D4D7-468A-91CD-868B87A421DF}|TransrodenProyecto\\TransrodenProyecto.csproj|solutionrelative:transrodenproyecto\\views\\admin\\asigntransportista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -122,7 +70,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 58,
           "Children": [
             {
               "$type": "Bookmark",
@@ -153,99 +101,204 @@
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "SinPermiso.cshtml",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Home\\SinPermiso.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Home\\SinPermiso.cshtml",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Home\\SinPermiso.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Home\\SinPermiso.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-09T22:46:30.695Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PermisosRolAttribute.cs",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Permisos\\PermisosRolAttribute.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Permisos\\PermisosRolAttribute.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Permisos\\PermisosRolAttribute.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Permisos\\PermisosRolAttribute.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAlwCIAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T22:34:35.73Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAlwCYAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T19:40:21.271Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-09T19:38:20.885Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Acceso\\Index.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Acceso\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Acceso\\Index.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Acceso\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-09T15:31:30.757Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LO_Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Logica\\LO_Usuario.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Logica\\LO_Usuario.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Logica\\LO_Usuario.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Logica\\LO_Usuario.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T12:45:32.289Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:14:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{809f6ff3-8092-454a-8003-6d4091f9b5bb}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{809f6ff3-8092-454a-8003-6d4091f9b5bb}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:140:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:139:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:140:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:141:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:142:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:143:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:144:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:145:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:146:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:147:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:148:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:151:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:149:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:150:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:152:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:153:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:154:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:155:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:156:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:159:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{ca8cc5c7-0231-406a-95cd-aa5ed6ac0190}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AccesoController.cs",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\AccesoController.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\AccesoController.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\AccesoController.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Controllers\\AccesoController.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAgwB4AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T15:28:35.054Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "RouteConfig.cs",
               "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\App_Start\\RouteConfig.cs",
               "RelativeDocumentMoniker": "TransrodenProyecto\\App_Start\\RouteConfig.cs",
@@ -253,252 +306,196 @@
               "RelativeToolTip": "TransrodenProyecto\\App_Start\\RouteConfig.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T15:30:19.689Z",
+              "WhenOpened": "2024-10-16T23:44:15.719Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Enums.cs",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Models\\Enums.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Enums.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Models\\Enums.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Models\\Enums.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T03:59:40.249Z",
+              "DocumentIndex": 1,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Cuenta\\Register.cshtml",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Cuenta\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Cuenta\\Register.cshtml",
+              "RelativeToolTip": "TransrodenProyecto\\Views\\Cuenta\\Register.cshtml",
+              "ViewState": "AgIAAKwBAAAAAAAAAAAUwPUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-16T23:29:43.836Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Web.config",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Web.config",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Web.config",
-              "RelativeToolTip": "TransrodenProyecto\\Web.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-10-03T01:41:53.395Z",
+              "DocumentIndex": 0,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Cuenta\\Login.cshtml",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Cuenta\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Cuenta\\Login.cshtml*",
+              "RelativeToolTip": "TransrodenProyecto\\Views\\Cuenta\\Login.cshtml*",
+              "ViewState": "AgIAAMQAAAAAAAAAAAAAAJcBAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-13T19:05:34.118Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DetalleFacturacion.cshtml",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\DetalleFacturacion.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Facturacions\\DetalleFacturacion.cshtml",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\DetalleFacturacion.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Facturacions\\DetalleFacturacion.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAFoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-04T00:43:34.106Z",
+              "DocumentIndex": 3,
+              "Title": "CuentaController.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\CuentaController.cs",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\CuentaController.cs",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\CuentaController.cs",
+              "RelativeToolTip": "TransrodenProyecto\\Controllers\\CuentaController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAhwDgAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T23:27:31.413Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "GenerarFactura.cshtml",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\GenerarFactura.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Facturacions\\GenerarFactura.cshtml",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\GenerarFactura.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Facturacions\\GenerarFactura.cshtml",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAwwCsAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-04T00:42:04.15Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Delete.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Paquetes\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Delete.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Paquetes\\Delete.cshtml",
-              "ViewState": "AQIAAFsAAAAAAAAAAAAuwHAAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-03T02:14:17.139Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "FacturacionsController.cs",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\FacturacionsController.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\FacturacionsController.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\FacturacionsController.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Controllers\\FacturacionsController.cs",
-              "ViewState": "AQIAAE0AAAAAAAAAAAAgwFIAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T02:01:33.828Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "PaquetesController.cs",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\PaquetesController.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\PaquetesController.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\PaquetesController.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Controllers\\PaquetesController.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAAgwKQAAAC2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T01:46:55.572Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Index.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Paquetes\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Index.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Paquetes\\Index.cshtml",
-              "ViewState": "AQIAAFUAAAAAAAAAAEBVwGoAAAA7AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-03T01:40:33.162Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Paquete.cs",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Models\\Paquete.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Paquete.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Models\\Paquete.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Models\\Paquete.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T00:49:21.333Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Usuarios\\Index.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Usuarios\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Usuarios\\Index.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Usuarios\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-03T01:58:47.301Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "RegistrarPaquete.cshtml",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\RegistrarPaquete.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Paquetes\\RegistrarPaquete.cshtml",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\RegistrarPaquete.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Paquetes\\RegistrarPaquete.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-03T02:14:39.377Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Usuarios\\Edit.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Usuarios\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Usuarios\\Edit.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Usuarios\\Edit.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-03T02:25:16.082Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Facturacion.cs",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Models\\Facturacion.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Facturacion.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Models\\Facturacion.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Models\\Facturacion.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAowCUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T00:47:57.924Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Edit.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Paquetes\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Edit.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Paquetes\\Edit.cshtml",
-              "ViewState": "AQIAAJwAAAAAAAAAAAAAAIYAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-03T02:14:50.667Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Create.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Paquetes\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Create.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Paquetes\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-03T02:14:35.533Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Details.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Paquetes\\Details.cshtml",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Paquetes\\Details.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Paquetes\\Details.cshtml",
-              "ViewState": "AQIAAFwAAAAAAAAAAAAuwGwAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-03T02:15:46.394Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Cargas\\Index.cshtml",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Cargas\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Cargas\\Index.cshtml",
-              "RelativeToolTip": "TransrodenProyecto\\Views\\Cargas\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-28T22:35:31.345Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Historial.cs",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Models\\Historial.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\Historial.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Models\\Historial.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Models\\Historial.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T00:48:38.229Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 8,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Models\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "TransrodenProyecto\\Models\\ApplicationDbContext.cs",
               "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Models\\ApplicationDbContext.cs",
               "RelativeToolTip": "TransrodenProyecto\\Models\\ApplicationDbContext.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAzwEAAAAAFAAAA",
+              "ViewState": "AgIAABwAAAAAAAAAAAAYwBsAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T00:51:17.111Z"
+              "WhenOpened": "2024-10-16T22:56:52.478Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "CalculadorasController.cs",
-              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\CalculadorasController.cs",
-              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\CalculadorasController.cs",
-              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\CalculadorasController.cs",
-              "RelativeToolTip": "TransrodenProyecto\\Controllers\\CalculadorasController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 4,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Web.config",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Web.config",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Web.config",
+              "RelativeToolTip": "TransrodenProyecto\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-10-16T22:52:59.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\Delete.cshtml",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Facturacions\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\Delete.cshtml",
+              "RelativeToolTip": "TransrodenProyecto\\Views\\Facturacions\\Delete.cshtml",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAuwJ4AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-13T22:48:41.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DetalleFacturacion.cshtml",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\DetalleFacturacion.cshtml",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Facturacions\\DetalleFacturacion.cshtml",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\DetalleFacturacion.cshtml",
+              "RelativeToolTip": "TransrodenProyecto\\Views\\Facturacions\\DetalleFacturacion.cshtml",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAuwKMAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-13T22:48:39.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\Edit.cshtml",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Facturacions\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\Edit.cshtml",
+              "RelativeToolTip": "TransrodenProyecto\\Views\\Facturacions\\Edit.cshtml",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAuwJ4AAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-13T22:48:38.591Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "TransrodenProyecto\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAKUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-13T22:30:37.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "GenerarFactura.cshtml",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\GenerarFactura.cshtml",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Facturacions\\GenerarFactura.cshtml",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\GenerarFactura.cshtml",
+              "RelativeToolTip": "TransrodenProyecto\\Views\\Facturacions\\GenerarFactura.cshtml",
+              "ViewState": "AQIAAGoAAAAAAAAAAAAuwGoAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-13T22:48:28.171Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\Index.cshtml",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Facturacions\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Facturacions\\Index.cshtml",
+              "RelativeToolTip": "TransrodenProyecto\\Views\\Facturacions\\Index.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAFYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-13T22:48:27.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UsuariosController.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\UsuariosController.cs",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Controllers\\UsuariosController.cs",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Controllers\\UsuariosController.cs",
+              "RelativeToolTip": "TransrodenProyecto\\Controllers\\UsuariosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T01:03:47.145Z"
+              "WhenOpened": "2024-10-16T22:56:59.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IndexAdmin.cshtml",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Admin\\IndexAdmin.cshtml",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Admin\\IndexAdmin.cshtml",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Admin\\IndexAdmin.cshtml",
+              "RelativeToolTip": "TransrodenProyecto\\Views\\Admin\\IndexAdmin.cshtml",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-13T22:25:29.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AsignTransportista.cshtml",
+              "DocumentMoniker": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Admin\\AsignTransportista.cshtml",
+              "RelativeDocumentMoniker": "TransrodenProyecto\\Views\\Admin\\AsignTransportista.cshtml",
+              "ToolTip": "C:\\Users\\Personal\\Desktop\\Transroden\\TransrodenProyecto\\TransrodenProyecto\\Views\\Admin\\AsignTransportista.cshtml",
+              "RelativeToolTip": "TransrodenProyecto\\Views\\Admin\\AsignTransportista.cshtml",
+              "ViewState": "AQIAAGwAAAAAAAAAAAAuwIMAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-13T21:53:47.496Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }
