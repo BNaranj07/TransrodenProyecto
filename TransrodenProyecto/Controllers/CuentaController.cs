@@ -8,6 +8,8 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using TransrodenProyecto.Models;
+using TransrodenProyecto.Controllers;
+using System.Threading;
 
 namespace TransrodenProyecto.Controllers
 {
@@ -53,6 +55,7 @@ namespace TransrodenProyecto.Controllers
 
                 db.Usuarios.Add(usuario);
                 db.SaveChanges();
+                Thread.Sleep(3000);
 
                 return RedirectToAction("Login", "Cuenta");
             }
