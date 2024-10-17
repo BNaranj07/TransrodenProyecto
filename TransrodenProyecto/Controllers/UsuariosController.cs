@@ -100,6 +100,9 @@ namespace TransrodenProyecto.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Encriptar la contraseña antes de actualizar
+                usuario.Clave = ConvertirSha256(usuario.Clave);
+
                 db.Entry(usuario).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
