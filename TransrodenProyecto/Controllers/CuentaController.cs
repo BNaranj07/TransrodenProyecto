@@ -63,37 +63,70 @@ namespace TransrodenProyecto.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(string correo, string clave)
         {
+            var usuario = db.Usuarios.FirstOrDefault(u => u.Correo == correo);
 
-            string ClaveEncryt = ConvertirSha256(clave);
-
-            var usuario = db.Usuarios.FirstOrDefault(u => u.Correo == correo && u.Clave == ClaveEncryt);
             if (usuario != null)
             {
-                //Inicio session
-                Session["UsuarioId"] = usuario.Id_Usuario;
-                Session["UsuarioRol"] = usuario.Rol;
-                Session["Usuario"] = $"{usuario.Nombre}";
-
-
-                //Redireccion de vistas
-                if (usuario.Rol == Rol.Administrador || usuario.Rol == Rol.Bodeguero)
+                // Verificar si el usuario está bloqueado
+                if (usuario.LockoutEnabled && usuario.LockoutEnd.HasValue && usuario.LockoutEnd.Value > DateTime.Now)
                 {
-                    return RedirectToAction("IndexAdmin", "Admin");
+                    ModelState.AddModelError("", "Su cuenta está bloqueada. Intente de nuevo más tarde.");
+                    return View();
                 }
-                else if (usuario.Rol == Rol.Cliente)
+
+                // Encriptar la clave ingresada
+                string ClaveEncryt = ConvertirSha256(clave);
+
+                // Verificar si la clave es correcta
+                if (usuario.Clave == ClaveEncryt)
                 {
-                    return RedirectToAction("Index", "Home");
+                    // Restablecer el contador de intentos fallidos
+                    usuario.AccessFailedCount = 0;
+                    usuario.LockoutEnd = null;
+                    db.SaveChanges();
+
+                    // Iniciar sesión
+                    Session["UsuarioId"] = usuario.Id_Usuario;
+                    Session["UsuarioRol"] = usuario.Rol;
+                    Session["Usuario"] = $"{usuario.Nombre}";
+
+                    // Redireccionar según el rol del usuario
+                    if (usuario.Rol == Rol.Administrador || usuario.Rol == Rol.Bodeguero)
+                    {
+                        return RedirectToAction("IndexAdmin", "Admin");
+                    }
+                    else if (usuario.Rol == Rol.Cliente)
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else if (usuario.Rol == Rol.Transportista)
+                    {
+                        return RedirectToAction("IndexTransportista", "Admin");
+                    }
                 }
-                else if (usuario.Rol == Rol.Transportista)
+                else
                 {
-                    return RedirectToAction("IndexTransportista", "Admin");
+                    // Incrementar el contador de intentos fallidos
+                    usuario.AccessFailedCount++;
+
+                    // Si el usuario ha fallado 2 veces, bloquear la cuenta por 1 minuto
+                    if (usuario.AccessFailedCount >= 2)
+                    {
+                        usuario.LockoutEnd = DateTime.Now.AddMinutes(1);
+                    }
+                    db.SaveChanges();
+
+                    ModelState.AddModelError("", "Correo o clave incorrectos.");
                 }
             }
+            else
+            {
+                ModelState.AddModelError("", "Correo o clave incorrectos.");
+            }
 
-
-            ModelState.AddModelError("", "Correo o clave incorrectos.");
             return View();
         }
+
 
 
         public ActionResult Logout()

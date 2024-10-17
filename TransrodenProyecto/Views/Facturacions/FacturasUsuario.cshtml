@@ -200,7 +200,7 @@
                         <td>@factura.Total</td>
                         <td>@factura.Fecha.ToString("dd/MM/yyyy")</td>
                         <td>
-                            @Html.ActionLink("Detalles", "DetalleFacturacion", new { id = factura.Id_Facturacion }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Detalles", "DetalleFacturacionUsuario", new { id = factura.Id_Facturacion }, new { @class = "btn btn-primary" })
                         </td>
                     </tr>
                 }

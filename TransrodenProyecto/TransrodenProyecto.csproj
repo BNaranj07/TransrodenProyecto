@@ -425,6 +425,7 @@
     <Content Include="Views\Admin\IndexTransportista.cshtml" />
     <Content Include="Views\Facturacions\FacturasUsuario.cshtml" />
     <Content Include="Views\Admin\AsignTransportista.cshtml" />
+    <Content Include="Views\Facturacions\DetalleFacturacionUsuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

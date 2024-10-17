@@ -223,40 +223,10 @@
             </div>
         </div>
 
-        @if (Model.Usuario != null)
-        {
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Detalles del Usuario Asociado</h3>
-                </div>
-                <div class="panel-body">
-                    <dl class="dl-horizontal">
-                        <dt>Usuario N°:</dt>
-                        <dd>@Model.Usuario.Id_Usuario</dd>
 
-                        <dt>Nombre:</dt>
-                        <dd>@Model.Usuario.Nombre</dd>
-
-                        <dt>Cédula:</dt>
-                        <dd>@Model.Usuario.Cedula</dd>
-
-                        <dt>Email:</dt>
-                        <dd>@Model.Usuario.Correo</dd>
-                    </dl>
-                </div>
-            </div>
-        }
-        else
-        {
-            <div class="alert alert-warning">
-                <strong>Nota:</strong> No hay un usuario asociado con la cédula del emisor.
-            </div>
-        }
-
-        <a href="@Url.Action("Index", "Facturacions")" class="btn btn-primary">Volver a la lista de facturaciones</a>
+        <a href="@Url.Action("FacturasUsuario", "Facturacions")" class="btn btn-primary">Volver a la lista de facturaciones</a>
     </div>
     <br>
-
 
     <!--
 
