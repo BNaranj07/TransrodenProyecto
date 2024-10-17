@@ -162,6 +162,7 @@
     <Compile Include="Models\Paquete.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controllers\RecuperarClaveController.cs" />
     <Compile Include="ViewModels\PaqueteCargaViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -425,9 +426,11 @@
     <Content Include="Views\Admin\IndexTransportista.cshtml" />
     <Content Include="Views\Facturacions\FacturasUsuario.cshtml" />
     <Content Include="Views\Admin\AsignTransportista.cshtml" />
+    <Content Include="Views\RecuperarClave\RecuperarClave.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Login\" />
     <Folder Include="Views\View\" />
   </ItemGroup>
   <ItemGroup>
