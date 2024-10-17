@@ -49,5 +49,15 @@ namespace TransrodenProyecto.Models
         public List<Carga> Cargas { get; set; }
 
         public List<Camion> Camiones { get; set; }
+
+
+        // Nuevas propiedades para manejo de bloqueo de usuario
+        public int AccessFailedCount { get; set; } = 0;
+
+        public bool LockoutEnabled { get; set; } = true;
+
+        public DateTime? LockoutEnd { get; set; }
+
+
     }
 }

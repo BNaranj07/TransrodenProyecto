@@ -138,6 +138,27 @@ namespace TransrodenProyecto.Controllers
         }
 
 
+
+        // Vista Detalles de la factura para los usuarios
+        public async Task<ActionResult> DetalleFacturacionUsuario(int id)
+        {
+            var facturacion = await db.Facturaciones
+                .Include(f => f.Paquete)
+                .Include(f => f.Usuario)
+                .FirstOrDefaultAsync(f => f.Id_Facturacion == id);
+
+            if (facturacion == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(facturacion);
+        }
+
+
+
+
+
         public async Task<ActionResult> FacturasUsuario()
         {
 

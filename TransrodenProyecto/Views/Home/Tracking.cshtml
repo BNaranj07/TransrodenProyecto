@@ -522,6 +522,43 @@
 
     <!-- Template Javascript -->
     <script src="~/Content/assets/js/main.js"></script>
+
+    <script>
+// Tiempo de inactividad en milisegundos (1 minuto)
+var idleTime = 0;
+var idleLimit = 60; // 1 minuto en segundos
+
+// Incrementar el tiempo de inactividad cada segundo
+var idleInterval = setInterval(timerIncrement, 1000); // 1 segundo
+
+// Función para incrementar el tiempo de inactividad
+function timerIncrement() {
+    idleTime++;
+    if (idleTime >= idleLimit) {
+        // Redirigir al logout
+        window.location.href = '@Url.Action("Logout", "Cuenta")';
+    }
+}
+
+// Función para reiniciar el tiempo de inactividad
+function resetIdleTime() {
+    idleTime = 0;
+}
+
+// Eventos que reinician el contador de inactividad, pero excluyendo inputs
+window.onload = resetIdleTime;
+document.onmousemove = resetIdleTime;
+document.onkeypress = resetIdleTime;
+document.onscroll = resetIdleTime;
+document.onclick = resetIdleTime;
+
+// Añadir eventos a todos los inputs
+const inputs = document.querySelectorAll('input, textarea');
+inputs.forEach(input => {
+    input.onfocus = resetIdleTime; // Reinicia el contador cuando se enfoca un campo de entrada
+});
+    </script>
+
 </body>
 
 </html>

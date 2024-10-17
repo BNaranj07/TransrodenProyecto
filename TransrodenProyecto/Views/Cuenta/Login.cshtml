@@ -195,7 +195,12 @@
                             </div>
                         </div>
 
+
                         <button type="submit" class="btn btn-danger w-100">Iniciar Sesión</button>
+
+                        @* Mostrar mensajes de error *@
+                        @Html.ValidationSummary("", new { @class = "text-danger" })
+
 
                         <h6 class="text-center mt-3">¿No se ha registrado?</h6>
                         <a href="@Url.Action("Register", "Cuenta")" class="btn btn-primary w-100">Registrarse</a>
