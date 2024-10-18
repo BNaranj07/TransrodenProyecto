@@ -426,11 +426,9 @@
     <Content Include="Views\Admin\IndexTransportista.cshtml" />
     <Content Include="Views\Facturacions\FacturasUsuario.cshtml" />
     <Content Include="Views\Admin\AsignTransportista.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\RecuperarClave\RecuperarClave.cshtml" />
-=======
     <Content Include="Views\Facturacions\DetalleFacturacionUsuario.cshtml" />
->>>>>>> Bryan
+    <Content Include="Views\RecuperarClave\CambioClave.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -19,6 +19,13 @@ namespace TransrodenProyecto.Controllers
             return View();
         }
 
+
+        public ActionResult CambioClave()
+        {
+            return View();
+        }
+
+
         [HttpPost]
         public ActionResult RecuperarClave(string correo)
         {
@@ -62,7 +69,8 @@ namespace TransrodenProyecto.Controllers
                 // Enviar el correo (sin cambios)
                 smtpClient.Send(mailMessage);
 
-                return Content("Se ha enviado una nueva contraseña a tu correo.");
+                //return Content("Se ha enviado una nueva contraseña a tu correo.");
+                return RedirectToAction("CambioClave");
             }
             catch (Exception ex)
             {
@@ -70,6 +78,8 @@ namespace TransrodenProyecto.Controllers
                 return Content($"Error al procesar la solicitud: {ex.Message}");
             }
         }
+
+
 
         private string GenerarClaveSegura(int longitud = 12)
         {

@@ -149,6 +149,9 @@
             </nav>
         </div>
     </div>
+
+
+
     <!-- Navbar -->
     <!-- Main Container -->
     <div class="container d-flex align-items-center justify-content-center min-vh-50 py-5">
@@ -157,21 +160,20 @@
             <!-- Ancho de la caja login -->
             <div class="col-lg-4 col-md-6">
                 <div class="bg-white rounded p-4 p-sm-5 shadow-sm">
-                    <h3 class="text-center mb-4">Recuperar contraseña</h3>
+                    <h2 class="text-center mb-4">Recuperacion de contraseña</h2>
 
 
                     @using (Html.BeginForm("RecuperarClave", "RecuperarClave", FormMethod.Post))
                     {
                         @Html.AntiForgeryToken()
 
-                        
+
 
                         <div class="form-group">
 
-                            <label for="correo">Correo:</label>
-                            <input type="email" name="correo" class="form-control" required />
+                            <h1>Se ha enviado una nueva contraseña a tu correo!!</h1>
                             <br>
-                            <button type="submit" class="btn btn-primary">Recuperar contraseña</button>
+                            <a href="@Url.Action("Login", "Cuenta")" class="btn btn-primary">Volver a Login</a>
 
                         </div>
                     }
@@ -179,6 +181,10 @@
             </div>
         </div>
     </div>
+
+
+
+
     <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
         <div class="container py-5">
