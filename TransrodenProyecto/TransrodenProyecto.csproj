@@ -416,7 +416,6 @@
     <Content Include="Views\Usuarios\Details.cshtml" />
     <Content Include="Views\Usuarios\Edit.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
-    <Content Include="Views\PaquetesCargasController\AsignarPaqueteCarga.cshtml" />
     <Content Include="Views\Cuenta\Register.cshtml" />
     <Content Include="Views\Cuenta\Login.cshtml" />
     <Content Include="Views\Home\Sucursales.cshtml" />
@@ -429,6 +428,8 @@
     <Content Include="Views\RecuperarClave\RecuperarClave.cshtml" />
     <Content Include="Views\Facturacions\DetalleFacturacionUsuario.cshtml" />
     <Content Include="Views\RecuperarClave\CambioClave.cshtml" />
+    <Content Include="Views\PaquetesCargasController\AsignarPaqueteSJCarga.cshtml" />
+    <Content Include="Views\PaquetesCargasController\AsignarPaquetePZCarga.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

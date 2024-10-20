@@ -206,6 +206,9 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Rol)
                 </th>
+                <td>
+                    @Html.DisplayNameFor(model => model.Sede)
+                </td>
                 <th></th>
             </tr>
 
@@ -229,6 +232,9 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Rol)
+                    </td>
+                    <td>
+                        @(item.Sede.ToString())
                     </td>
                     <td>
                         @Html.ActionLink("Editar", "Edit", new { id = item.Id_Usuario }, new { @class = "btn btn-success" }) |

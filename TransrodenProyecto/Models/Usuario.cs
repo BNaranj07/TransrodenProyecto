@@ -41,6 +41,9 @@ namespace TransrodenProyecto.Models
         [Required]
         public Rol Rol { get; set; }
 
+        public int? Sede { get; set; }
+        public virtual Sede N_Sede { get; set; }
+
 
         public List<Facturacion> Facturaciones { get; set; }
 

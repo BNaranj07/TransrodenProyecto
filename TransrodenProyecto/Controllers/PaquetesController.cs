@@ -81,11 +81,24 @@ namespace TransrodenProyecto.Controllers
         {
             if (ModelState.IsValid)
             {
+               // Obtener la sede del usuario desde la sesión
+        int? sedeValue = Session["Sede"] as int?;
+        EstadoPaquete estado; // Cambiar a EstadoPaquete
+
+        if (sedeValue.HasValue)
+        {
+            // Dependiendo de la sede, asignar el estado correspondiente
+            estado = sedeValue.Value == (int)Sede.SanJose ? EstadoPaquete.SinAsignarSJ : EstadoPaquete.SinAsignarPZ;
+        }
+        else
+        {
+            estado = EstadoPaquete.SinAsignar; // Valor por defecto si no hay sede
+        }
                 var nuevoPaquete = new Paquete
                 {
                     NumeroRastreo = GenerarNumeroRastreo(),
                     Tipo = model.Tipo,
-                    Estado = model.Estado,
+                    Estado = estado,
                     NombreEmisor = model.NombreEmisor,
                     CedulaEmisor = model.CedulaEmisor,
                     NombreReceptor = model.NombreReceptor,

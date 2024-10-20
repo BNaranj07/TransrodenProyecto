@@ -1,4 +1,4 @@
-﻿
+﻿@using TransrodenProyecto.Models
 @{
     Layout = null;
 }
@@ -107,6 +107,37 @@
                         <a href="@Url.Action("Index","Paquetes")" class="nav-item nav-link">
                             Paqueteria
                         </a>
+
+                        @if (Session["Usuario"] != null)
+                        {
+                            // Obtener la sede del usuario desde la sesión
+                            var sedeUsuario = Session["Sede"] != null ? (Sede)Session["Sede"] : Sede.SanJose; // Valor por defecto
+
+                            // Determinar la URL según la sede
+                            string urlCargas;
+                            if (sedeUsuario == Sede.SanJose)
+                            {
+                                urlCargas = Url.Action("AsignarPaqueteSJCarga", "PaquetesCargasController");
+                            }
+                            else if (sedeUsuario == Sede.PerezZeledon)
+                            {
+                                urlCargas = Url.Action("AsignarPaquetePZCarga", "PaquetesCargasController");
+                            }
+                            else
+                            {
+                                urlCargas = "#"; // En caso de que la sede no sea válida, puedes redirigir a una página de error o similar.
+                            }
+
+                            // Enlace a Cargas
+                            <a href="@urlCargas" class="nav-item nav-link">Cargas</a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Login", "Cuenta")" class="nav-item nav-link">
+                                <span class="d-block"><i class="fas fa-user"></i></span>
+                                Cuenta
+                            </a>
+                        }
 
                         <a href="@Url.Action("Index","Facturacions")" class="nav-item nav-link">
                             Facturacion

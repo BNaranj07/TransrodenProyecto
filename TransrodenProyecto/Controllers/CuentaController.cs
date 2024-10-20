@@ -95,6 +95,12 @@ namespace TransrodenProyecto.Controllers
                     Session["UsuarioRol"] = usuario.Rol;
                     Session["Usuario"] = $"{usuario.Nombre}";
 
+                    // Almacenar la sede si el usuario es Bodeguero
+                    if (usuario.Rol == Rol.Bodeguero)
+                    {
+                        Session["Sede"] = usuario.Sede; // Asegúrate de que el modelo Usuario tenga la propiedad Sede
+                    }
+
                     // Redireccionar según el rol del usuario
                     if (usuario.Rol == Rol.Administrador || usuario.Rol == Rol.Bodeguero)
                     {

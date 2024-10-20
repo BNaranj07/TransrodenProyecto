@@ -15,12 +15,14 @@ namespace TransrodenProyecto.Models
     public enum EstadoPaquete
     {
         SinAsignar = 0,
-        Asignado = 1,
-        EnTransito = 2,
-        BodegaPZ = 3,
-        BodegaSJ = 4,
-        Domicilio = 5,
-        Entregado = 6
+        SinAsignarSJ = 1,
+        SinAsignarPZ = 2,
+        Asignado = 3,
+        EnTransito = 4,
+        BodegaPZ = 5,
+        BodegaSJ = 6,
+        Domicilio = 7,
+        Entregado = 8
     }
 
     public enum EstadoCarga
@@ -46,6 +48,12 @@ namespace TransrodenProyecto.Models
         Bodeguero = 1,
         Transportista = 2,
         Cliente = 3
+    }
+
+    public enum Sede
+    {
+        SanJose = 0,
+        PerezZeledon = 1
     }
 
 }

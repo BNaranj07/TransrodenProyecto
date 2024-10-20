@@ -1,0 +1,71 @@
+﻿@using TransrodenProyecto.Models
+@model TransrodenProyecto.ViewModels.PaqueteCargaViewModel
+
+@{
+    ViewBag.Title = "Asignar Paquetes a Cargas";
+}
+
+<!--<h2>Lista de Paquetes y Cargas</h2>-->
+@if (Session["Usuario"] != null)
+{
+    // Verifica si la sesión contiene un valor y lo convierte a entero
+    int? sedeValue = Session["Sede"] as int?;
+    string sedeTexto = sedeValue.HasValue ?
+        ((Sede)sedeValue.Value == Sede.SanJose ? "San José" : "Perez Zeledón") :
+        "";
+
+    <h2 class="navbar-text">Lista de Paquetes y Cargas @sedeTexto</h2>
+}
+
+
+<div class="row">
+    <div class="col-md-6">
+        <h3>Paquetes</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Número de Rastreo</th>
+                    <th>Emisor</th>
+                    <th>Receptor</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var paquete in Model.Paquetes)
+                {
+                    <tr>
+                        <td>@paquete.NumeroRastreo</td>
+                        <td>@paquete.NombreEmisor</td>
+                        <td>@paquete.NombreReceptor</td>
+                        <td>@paquete.Estado.ToString()</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-md-6">
+        <h3>Cargas</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id Carga</th>
+                    <th>Usuario</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var carga in Model.Cargas)
+                {
+                    <tr>
+                        <td>@carga.Id_Carga</td>
+                        <td>@carga.Usuario.Nombre</td>
+                        <td>@carga.Estado.ToString()</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+</div> <!-- Div Separa las vistas -->
