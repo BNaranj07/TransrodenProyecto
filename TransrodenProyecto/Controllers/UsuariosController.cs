@@ -24,7 +24,7 @@ namespace TransrodenProyecto.Controllers
             var usuarios = db.Usuarios.ToList()
                 .OrderBy(u => u.Rol == Rol.Cliente ? 4 :
                               u.Rol == Rol.Transportista ? 3 :
-                              u.Rol == Rol.Bodeguero ? 2 : 1) 
+                              u.Rol == Rol.Bodeguero ? 2 : 1)
                 .ToList();
 
             if (!string.IsNullOrEmpty(searchCed))
