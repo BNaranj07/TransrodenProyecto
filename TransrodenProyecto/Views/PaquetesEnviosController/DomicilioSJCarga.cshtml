@@ -2,10 +2,192 @@
 @model TransrodenProyecto.ViewModels.PaqueteEnvioViewModel
 
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
 
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <title>LifeSure - Life Insurance Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="~/Content/assets/lib/animate/animate.min.css" />
+    <link href="~/Content/assets/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="~/Content/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="~/Content/assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="~/Content/assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+    <!-- Topbar -->
+    <div class="container-fluid topbar px-0 px-lg-4 bg-light py-2 d-none d-lg-block">
+        <div class="container">
+            <div class="row gx-0 align-items-center">
+                <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+                    <div class="d-flex flex-wrap">
+                        <div class="border-end border-primary pe-3">
+                            <a href="#" class="text-muted small"><i class="fas fa-house-user text-primary me-2"></i>ESTE ES EL MODULO DE ADMINISTRATIVO</a>
+                        </div>
+                        <div class="ps-3">
+                            <a href="mailto:example@gmail.com" class="text-muted small"></i> <!-- Aqui puede ir el nombre del usuario--></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <div class="d-flex justify-content-end">
+                        <div class="d-flex border-end border-primary pe-3">
+                            <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <!--
+                        <div class="dropdown ms-3">
+                            <a href="#" class="dropdown-toggle text-dark" data-bs-toggle="dropdown"><small><i class="fas fa-globe-europe text-primary me-2"></i> English</small></a>
+                            <div class="dropdown-menu rounded">
+                                <a href="#" class="dropdown-item">English</a>
+                                <a href="#" class="dropdown-item">Bangla</a>
+                                <a href="#" class="dropdown-item">French</a>
+                                <a href="#" class="dropdown-item">Spanish</a>
+                                <a href="#" class="dropdown-item">Arabic</a>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar -->
+    <!-- Navbar -->
+    <div class="container-fluid nav-bar px-0 px-lg-0 py-lg-0" id="maincontainer">
+        <div class="container" id="containertop">
+            <nav class="navbar navbar-expand-lg navbar-light">
+
+                <img src="~/Content/assets/img/Logo.png" alt="Logo" width="230" height="150">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+
+                    <div class="navbar-nav mx-0 mx-lg-auto">
+
+                        <a href="@Url.Action("IndexAdmin", "Admin")" class="nav-item nav-link active">
+                            Inicio
+                        </a>
+
+                        <a href="@Url.Action("Index","Usuarios")" class="nav-item nav-link">
+                            Usuarios
+                        </a>
+
+                        <a href="@Url.Action("Index","Paquetes")" class="nav-item nav-link">
+                            Paqueteria
+                        </a>
+
+                        @if (Session["Usuario"] != null)
+                        {
+                            // Obtener la sede del usuario desde la sesión
+                            var sedeUsuario = Session["Sede"] != null ? (Sede)Session["Sede"] : Sede.SanJose; // Valor por defecto
+
+                            // Determinar la URL según la sede
+                            string urlCargas;
+                            if (sedeUsuario == Sede.SanJose)
+                            {
+                                urlCargas = Url.Action("DashboardSJ", "PaquetesCargasController");
+                            }
+                            else if (sedeUsuario == Sede.PerezZeledon)
+                            {
+                                urlCargas = Url.Action("DashBoardPZ", "PaquetesCargasController");
+                            }
+                            else
+                            {
+                                urlCargas = "#"; // En caso de que la sede no sea válida, puedes redirigir a una página de error o similar.
+                            }
+
+                            // Enlace a Cargas
+                            <a href="@urlCargas" class="nav-item nav-link">Tracking</a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Login", "Cuenta")" class="nav-item nav-link">
+                                <span class="d-block"><i class="fas fa-user"></i></span>
+                                Cuenta
+                            </a>
+                        }
+
+                        <a href="@Url.Action("Index","Facturacions")" class="nav-item nav-link">
+                            Facturacion
+                        </a>
+
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                                <span class="dropdown-toggle">Contabilidad</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="@Url.Action("ContabilidadDiaria", "Contabilidad")" class="dropdown-item">Consulta Diaria</a>
+                                <a href="@Url.Action("ContabilidadSemanal", "Contabilidad")" class="dropdown-item">Consulta Semanal</a>
+                                <a href="@Url.Action("ContabilidadMensual", "Contabilidad")" class="dropdown-item">Consulta Mensual</a>
+                                <a href="@Url.Action("ContabilidadAnual", "Contabilidad")" class="dropdown-item">Consulta Anual</a>
+                            </div>
+                        </div>
+
+
+
+
+                        <a href="@Url.Action("Marketing","Marketing")" class="nav-item nav-link" id="contact">
+                            Mercadeo
+                        </a>
+
+
+
+                        @if (Session["Usuario"] != null)
+                        {
+                            <a href="@Url.Action("Logout", "Cuenta")" class="nav-item nav-link">
+                                <span class="d-block"><i class="fas fa-sign-out-alt"></i></span>
+                                @Session["Usuario"]
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Login", "Cuenta")" class="nav-item nav-link">
+                                <span class="d-block"><i class="fas fa-user"></i></span>
+                                Cuenta
+                            </a>
+                        }
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar -->
 
 
     <head>
@@ -213,83 +395,83 @@
                     </a>
                 </div>
             </div>
- 
-                <table class="table">
-                    <thead>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id Carga</th>
+                        <th>Transportista</th>
+                        <th>Estado</th>
+                        <th>Paquetes Asignados</th>
+                        <th>Ver Paquetes</th>
+                        <th>Editar Envio</th>
+                        <th>Cambiar Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="enviosTableBody">
+                    @foreach (var envio in Model.Envios)
+                    {
                         <tr>
-                            <th>Id Carga</th>
-                            <th>Transportista</th>
-                            <th>Estado</th>
-                            <th>Paquetes Asignados</th>
-                            <th>Ver Paquetes</th>
-                            <th>Editar Envio</th>
-                            <th>Cambiar Estado</th>
+                            <td>@envio.Id_Envio</td>
+                            <td>@envio.Usuario.Nombre</td>
+                            <td>@envio.Estado.ToString()</td>
+                            <td>@envio.NumeroPaquetes</td>
+                            <td>
+                                <a href="@Url.Action("EnvioPaquetes", "PaquetesEnviosController", new { idEnvio = envio.Id_Envio })" class="btn btn-success">
+                                    Ver
+                                </a>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("Edit", "Envios", new { id = envio.Id_Envio })" class="btn btn-primary">
+                                    Editar
+                                </a>
+                                <a href="@Url.Action("Delete", "Envios", new { id = envio.Id_Envio })" class="btn btn-danger">
+                                    Borrar
+                                </a>
+                            </td>
+                            <td>
+                                @using (Html.BeginForm("ActualizarEstadoEnvioSJ", "PaquetesEnviosController", FormMethod.Post))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.Hidden("idEnvio", envio.Id_Envio)
+
+                                    <select name="nuevoEstado" class="form-control">
+                                        <option value="">Estado</option>
+                                        <option value="BodegaSJ">BodegaSJ</option>
+                                        <option value="EnTransito">EnTransito</option>
+                                    </select>
+
+                                    <button type="submit" class="btn btn-danger mt-2">Actualizar</button>
+                                }
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody id="enviosTableBody">
-                        @foreach (var envio in Model.Envios)
-                        {
-                            <tr>
-                                <td>@envio.Id_Envio</td>
-                                <td>@envio.Usuario.Nombre</td>
-                                <td>@envio.Estado.ToString()</td>
-                                <td>@envio.NumeroPaquetes</td>
-                                <td>
-                                    <a href="@Url.Action("EnvioPaquetes", "PaquetesEnviosController", new { idEnvio = envio.Id_Envio })" class="btn btn-success">
-                                        Ver
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="@Url.Action("Edit", "Envios", new { id = envio.Id_Envio })" class="btn btn-primary">
-                                        Editar
-                                    </a>
-                                    <a href="@Url.Action("Delete", "Envios", new { id = envio.Id_Envio })" class="btn btn-danger">
-                                        Borrar
-                                    </a>
-                                </td>
-                                <td>
-                                    @using (Html.BeginForm("ActualizarEstadoEnvioSJ", "PaquetesEnviosController", FormMethod.Post))
-                                    {
-                                        @Html.AntiForgeryToken()
-                                        @Html.Hidden("idEnvio", envio.Id_Envio)
-
-                                        <select name="nuevoEstado" class="form-control">
-                                            <option value="">Estado</option>
-                                            <option value="BodegaSJ">BodegaSJ</option>
-                                            <option value="EnTransito">EnTransito</option>
-                                        </select>
-
-                                        <button type="submit" class="btn btn-danger mt-2">Actualizar</button>
-                                    }
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
+                    }
+                </tbody>
+            </table>
         </div>
+    </div>
 
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    const tableBody = document.getElementById('enviosTableBody');
-                    const searchInput = document.getElementById('searchEnviosInput');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tableBody = document.getElementById('enviosTableBody');
+            const searchInput = document.getElementById('searchEnviosInput');
 
-                    // Search functionality
-                    searchInput.addEventListener('input', function () {
-                        const searchTerm = searchInput.value.toLowerCase();
-                        const rows = Array.from(tableBody.querySelectorAll('tr'));
+            // Search functionality
+            searchInput.addEventListener('input', function () {
+                const searchTerm = searchInput.value.toLowerCase();
+                const rows = Array.from(tableBody.querySelectorAll('tr'));
 
-                        rows.forEach(row => {
-                            const idEnvio = row.querySelector('td:first-child').textContent.toLowerCase();
-                            if (idEnvio.includes(searchTerm)) {
-                                row.style.display = '';
-                            } else {
-                                row.style.display = 'none';
-                            }
-                        });
-                    });
+                rows.forEach(row => {
+                    const idEnvio = row.querySelector('td:first-child').textContent.toLowerCase();
+                    if (idEnvio.includes(searchTerm)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
                 });
-            </script>
+            });
+        });
+    </script>
 
     <br>
 

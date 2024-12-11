@@ -2,8 +2,146 @@
 @model TransrodenProyecto.ViewModels.PaqueteEnvioViewModel
 
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>LifeSure - Life Insurance Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="~/Content/assets/lib/animate/animate.min.css" />
+    <link href="~/Content/assets/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="~/Content/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="~/Content/assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="~/Content/assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+    <!-- Topbar -->
+    <div class="container-fluid topbar px-0 px-lg-4 bg-light py-2 d-none d-lg-block">
+        <div class="container">
+            <div class="row gx-0 align-items-center">
+                <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+                    <div class="d-flex flex-wrap">
+                        <div class="border-end border-primary pe-3">
+                            <a href="#" class="text-muted small"><i class="fas fa-house-user text-primary me-2"></i>ESTE ES EL MODULO DE ADMINISTRATIVO</a>
+                        </div>
+                        <div class="ps-3">
+                            <a href="mailto:example@gmail.com" class="text-muted small"></i> <!-- Aqui puede ir el nombre del usuario--></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <div class="d-flex justify-content-end">
+                        <div class="d-flex border-end border-primary pe-3">
+                            <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <!--
+                        <div class="dropdown ms-3">
+                            <a href="#" class="dropdown-toggle text-dark" data-bs-toggle="dropdown"><small><i class="fas fa-globe-europe text-primary me-2"></i> English</small></a>
+                            <div class="dropdown-menu rounded">
+                                <a href="#" class="dropdown-item">English</a>
+                                <a href="#" class="dropdown-item">Bangla</a>
+                                <a href="#" class="dropdown-item">French</a>
+                                <a href="#" class="dropdown-item">Spanish</a>
+                                <a href="#" class="dropdown-item">Arabic</a>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar -->
+    <!-- Navbar -->
+    <div class="container-fluid nav-bar px-0 px-lg-0 py-lg-0" id="maincontainer">
+        <div class="container" id="containertop">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <!-- <a href="#" class="navbar-brand p-0"> -->
+                <!--<h1 class="text-primary mb-0"><i class="fab fa-slack me-2"></i> LifeSure</h1> -->
+                <img src="~/Content/assets/img/Logo.png" alt="Logo" width="230" height="150">
+                <!-- </a> -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+
+                    <div class="navbar-nav mx-0 mx-lg-auto">
+                        <!-- <a href="index.html" class="nav-item nav-link active">Inicio</a> -->
+                        <a href="@Url.Action("IndexTransportista", "Admin")" class="nav-item nav-link active">
+                            Inicio
+                        </a>
+
+
+                        <a href="about.html" class="nav-item nav-link">
+                            Cuenta
+                        </a>
+
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                                <span class="dropdown-toggle">Tracking</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="@Url.Action("AsignTransportista", "Admin")" class="dropdown-item">Tracking Admin</a>
+                                <a href="@Url.Action("TrackingAdmin", "Modulo4")" class="dropdown-item">Rastreo Paquete</a>
+                            </div>
+                        </div>
+
+
+                        @if (Session["Usuario"] != null)
+                        {
+                            <a href="@Url.Action("Logout", "Cuenta")" class="nav-item nav-link">
+                                <span class="d-block"><i class="fas fa-sign-out-alt"></i></span>
+                                @Session["Usuario"]
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Login", "Cuenta")" class="nav-item nav-link">
+                                <span class="d-block"><i class="fas fa-user"></i></span>
+                                Cuenta
+                            </a>
+                        }
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar -->
+
+
 
 
 
