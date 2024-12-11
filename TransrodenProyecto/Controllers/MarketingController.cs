@@ -90,12 +90,12 @@ namespace TransrodenProyecto.Controllers
         {
             try
             {
-                // Obtener todos los usuarios
+                // Obtener todos los usuarios registrados
                 var usuarios = db.Usuarios.ToList();
 
                 if (usuarios.Count == 0)
                 {
-                    return Content("No se encontraron usuarios.");
+                    return Content("No se encontraron usuarios registrados.");
                 }
 
                 // Configurar el cliente SMTP
@@ -135,10 +135,10 @@ namespace TransrodenProyecto.Controllers
             catch (Exception ex)
             {
                 // Manejo de errores
-                return Content($"Error al enviar el boletín: {ex.Message}");
+                return Content($"Error al enviar el correo: {ex.Message}");
             }
-        }
 
+        }
 
 
     }

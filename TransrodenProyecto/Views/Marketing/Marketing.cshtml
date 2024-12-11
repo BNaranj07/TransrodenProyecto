@@ -4,53 +4,50 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<!--Marketing-->
 
-    <!--Marketing-->
+<div class="container-fluid bg-light py-5">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-12">
+                <div class="mb-5 text-center">
+                    <h1 class="display-4 mb-0" style="color: red;">Enviar Notificación</h1>
+                </div>
 
-    <div class="container-fluid bg-light py-5">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-12">
-                    <div class="mb-5 text-center">
-                        <h1 class="display-4 mb-0" style="color: red;">Enviar Notificación</h1>
+                <form id="notificationForm" method="post" action="@Url.Action("EnviarBoletin", "Marketing")" enctype="multipart/form-data">
+                    <div class="display-6 mb-3">
+                        <label for="tipoNotificacion" class="form-label">Tipo de Notificación</label>
+                        <select id="tipoNotificacion" class="form-select" onchange="updateFormAction()">
+                            <option value="EnviarBoletin">Boletín</option>
+                            <option value="EnviarImportante">AVISO IMPORTANTE!</option>
+                        </select>
                     </div>
 
-                    <form id="notificationForm" method="post" action="@Url.Action("EnviarBoletin", "Marketing")" enctype="multipart/form-data">
-                        <div class="display-6 mb-3">
-                            <label for="tipoNotificacion" class="form-label">Tipo de Notificación</label>
-                            <select id="tipoNotificacion" class="form-select" onchange="updateFormAction()">
-                                <option value="EnviarBoletin">Boletín</option>
-                                <option value="EnviarImportante">AVISO IMPORTANTE!</option>
-                            </select>
+                    <div class="display-6 mb-3">
+                        <label for="asunto" class="form-label">Asunto</label>
+                        <textarea class="form-control" id="asunto" name="Asunto" rows="2" placeholder="Escriba el asunto de la notificación" required></textarea>
+                    </div>
+                    <div class="display-6 mb-3">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" name="Mensaje" rows="6" placeholder="Escriba el mensaje de la notificación" required></textarea>
+                    </div>
+                    <div class="display-6 mb-3">
+                        <label for="imagen" class="form-label">Subir Imagen</label>
+                        <input type="file" class="form-control" id="imagen" name="Imagen" accept="image/*" onchange="previewImage(event)">
+                        <div class="mt-3">
+                            <img id="preview" src="#" alt="Vista previa de la imagen" style="display: none; max-width: 200px; max-height: 200px;" />
                         </div>
-
-
-                        <div class="display-6 mb-3">
-                            <label for="asunto" class="form-label">Asunto</label>
-                            <textarea class="form-control" id="asunto" name="Asunto" rows="2" placeholder="Escriba el asunto de la notificación" required></textarea>
-                        </div>
-                        <div class="display-6 mb-3">
-                            <label for="mensaje" class="form-label">Mensaje</label>
-                            <textarea class="form-control" id="mensaje" name="Mensaje" rows="6" placeholder="Escriba el mensaje de la notificación" required></textarea>
-                        </div>
-                        <div class="display-6 mb-3">
-                            <label for="imagen" class="form-label">Subir Imagen</label>
-                            <input type="file" class="form-control" id="imagen" name="Imagen" accept="image/*" onchange="previewImage(event)">
-                            <div class="mt-3">
-                                <img id="preview" src="#" alt="Vista previa de la imagen" style="display: none; max-width: 200px; max-height: 200px;" />
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" id="submitBtn" class="btn btn-lg" style="background-color: #cccccc; border-color: #cccccc; color: #666666;" disabled>Enviar Notificación</button>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" id="submitBtn" class="btn btn-lg" style="background-color: #cccccc; border-color: #cccccc; color: #666666;" disabled>Enviar Notificación</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
-
-    <script>
+<script>
         function previewImage(event) {
             var preview = document.getElementById('preview');
             var reader = new FileReader();
@@ -87,6 +84,13 @@
             }
         }
 
+        // Cambiar la acción del formulario según el tipo de notificación
+        function updateFormAction() {
+            const tipoNotificacion = document.getElementById('tipoNotificacion').value;
+            const form = document.getElementById('notificationForm');
+            form.action = tipoNotificacion === 'EnviarImportante' ? '@Url.Action("EnviarImportante", "Marketing")' : '@Url.Action("EnviarBoletin", "Marketing")';
+        }
+
         // Agregar listeners para los campos de texto
         document.getElementById('asunto').addEventListener('input', checkFields);
         document.getElementById('mensaje').addEventListener('input', checkFields);
@@ -97,4 +101,4 @@
 
         // Ejecutar la verificación inicial
         checkFields();
-    </script>
+</script>
