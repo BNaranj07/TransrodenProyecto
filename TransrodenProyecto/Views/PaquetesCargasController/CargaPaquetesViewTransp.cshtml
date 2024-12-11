@@ -141,52 +141,74 @@
     </div>
     <!-- Navbar -->
 
-
-
+    <h2 class="text-center">Paquetes de la Carga</h2>
     <div class="container mt-5">
+        <h4>Transportista: @Model.Cargas.First().Usuario.Nombre</h4>
+        <h4>Estado: @Model.Cargas.First().Estado.ToString()</h4>
+        <h4>Paquetes Asignados: @Model.Cargas.First().NumeroPaquetes</h4>
 
-
-        <h2 class="text-center">Paquetes de la Carga</h2>
-
-
-        <div class="container mt-5">
-            <h4>Transportista: @Model.Cargas.First().Usuario.Nombre</h4>
-            <h4>Estado: @Model.Cargas.First().Estado.ToString()</h4>
-            <h4>Paquetes Asignados: @Model.Cargas.First().NumeroPaquetes</h4>
-            <br>
-            <table class="table mt-4">
-                <thead>
-                    <tr>
-                        <th>Número de Rastreo</th>
-                        <th>Emisor</th>
-                        <th>Receptor</th>
-                        <th>Estado</th>
-                        <th>Detalles del Paquete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var paquete in Model.Paquetes)
-                    {
-                        <tr>
-                            <td>@paquete.NumeroRastreo</td>
-                            <td>@paquete.NombreEmisor</td>
-                            <td>@paquete.NombreReceptor</td>
-                            <td>@paquete.Estado.ToString()</td>
-                            <td>
-                                <a href="@Url.Action("DetailsTransp", "Paquetes", new { id = paquete.Id_Paquete })" class="btn btn-primary">
-                                    Ver
-                                </a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+        <div class="mb-3">
+            <input type="text" id="searchInput" class="form-control" placeholder="Buscar por Número de Rastreo"
+                   value="@ViewBag.SearchTerm" onkeyup="searchPackages()">
         </div>
+
+        <table class="table mt-4" id="packagesTable">
+            <thead>
+                <tr>
+                    <th>Número de Rastreo</th>
+                    <th>Emisor</th>
+                    <th>Receptor</th>
+                    <th>Estado</th>
+                    <th>Detalles del Paquete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var paquete in Model.Paquetes)
+                {
+                    <tr>
+                        <td>@paquete.NumeroRastreo</td>
+                        <td>@paquete.NombreEmisor</td>
+                        <td>@paquete.NombreReceptor</td>
+                        <td>@paquete.Estado.ToString()</td>
+                        <td>
+                            <a href="@Url.Action("DetailsTransp", "Paquetes", new { id = paquete.Id_Paquete })" class="btn btn-primary">
+                                Ver
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <nav>
+            <ul class="pagination">
+                @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                {
+                    <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                        <a class="page-link" href="@Url.Action("CargaPaquetesViewTransp", new { idCarga = ViewBag.IdCarga, page = i, searchTerm = ViewBag.SearchTerm })">
+                            @i
+                        </a>
+                    </li>
+                }
+            </ul>
+        </nav>
     </div>
+
+    <script>
+    function searchPackages() {
+        var searchTerm = document.getElementById('searchInput').value;
+        var idCarga = @ViewBag.IdCarga;
+
+        // Redirect with search term
+        window.location.href = '@Url.Action("CargaPaquetesViewTransp")' +
+            '?idCarga=' + idCarga +
+            '&searchTerm=' + encodeURIComponent(searchTerm) +
+            '&page=1';
+    }
+    </script>
+
     <br>
     <br>
-
-
 
 
 

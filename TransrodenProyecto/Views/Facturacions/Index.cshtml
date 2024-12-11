@@ -191,100 +191,118 @@
     <!-- Navbar -->
 
 
+
     <div class="container mt-5">
-
-
         <div class="d-flex justify-content-end mb-4">
             <a href="@Url.Action("Create", "Facturacions")" class="btn btn-danger">
                 <i class="fas fa-box-plus"></i> Agregar Factura
             </a>
         </div>
 
-
         <!-- Barra de búsqueda -->
-        <form method="get" action="@Url.Action("Index", "Facturacions")">
-            <div class="form-group">
-                <label for="searchId">Buscar Factura:</label>
-                <input type="number" name="searchId" id="searchId" class="form-control" placeholder="Ingrese ID de la Factura" />
-                <br>
-                <button type="submit" class="btn btn-primary">Buscar</button>
-            </div>
-        </form>
-        <br>
-        <br>
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Paquete.NumeroRastreo)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Usuario.Nombre)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.NombreEmisor)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CedulaEmisor)
-                </th>
-                @*<th>
-                    @Html.DisplayNameFor(model => model.Cantidad)
-                </th>*@
-                <th>
-                    @Html.DisplayNameFor(model => model.Precio)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Iva)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Total)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Fecha)
-                </th>
-                <th></th>
-            </tr>
+        <div class="form-group">
+            <label for="searchId">Buscar Factura:</label>
+            <input type="number" id="searchId" class="form-control" placeholder="Ingrese ID de la Factura" />
+        </div>
 
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Paquete.NumeroRastreo)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Usuario.Nombre)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.NombreEmisor)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CedulaEmisor)
-                    </td>
-                    @*<td>
-                        @Html.DisplayFor(modelItem => item.Cantidad)
-                    </td>*@
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Precio)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Iva)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Total)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Fecha)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Editar", "Edit", new { id = item.Id_Facturacion }, new { @class = "btn btn-success" }) |
-                        @Html.ActionLink("Detalle", "DetalleFacturacion", new { id = item.Id_Facturacion }, new { @class = "btn btn-primary" }) |
-                        @Html.ActionLink("Borrar", "Delete", new { id = item.Id_Facturacion }, new { @class = "btn btn-danger" })
-                    </td>
-                </tr>
-            }
-
-        </table>
+        <br>
+        <h2>Lista de Facturaciones</h2>
+        <div style="overflow-y: auto; max-height: 400px;">
+            <table class="table" id="facturacionTable">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Id_Facturacion)</th>
+                        <th>@Html.DisplayNameFor(model => model.Paquete.NumeroRastreo)</th>
+                        <th>@Html.DisplayNameFor(model => model.Usuario.Nombre)</th>
+                        <th>@Html.DisplayNameFor(model => model.NombreEmisor)</th>
+                        <th>@Html.DisplayNameFor(model => model.CedulaEmisor)</th>
+                        <th>@Html.DisplayNameFor(model => model.Precio)</th>
+                        <th>@Html.DisplayNameFor(model => model.Iva)</th>
+                        <th>@Html.DisplayNameFor(model => model.Total)</th>
+                        
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Contenido dinámico -->
+                </tbody>
+            </table>
+        </div>
+        <nav>
+            <ul class="pagination" id="pagination"></ul>
+        </nav>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+$(document).ready(function () {
+    let currentPage = 1;
+
+    function loadFacturaciones(page, searchId = '') {
+        $.ajax({
+            url: '@Url.Action("GetFacturaciones", "Facturacions")',
+            type: 'GET',
+            data: { page: page, searchId: searchId },
+            success: function (response) {
+                const facturaciones = response.data;
+                const totalPages = response.totalPages;
+
+                let tableBody = '';
+                facturaciones.forEach(factura => {
+                    tableBody += `
+                        <tr>
+                            <td>${factura.Id_Facturacion}</td>
+                            <td>${factura.Paquete?.NumeroRastreo || '-'}</td>
+                            <td>${factura.Usuario?.Nombre || '-'}</td>
+                            <td>${factura.NombreEmisor}</td>
+                            <td>${factura.CedulaEmisor}</td>
+                            <td>${factura.Precio}</td>
+                            <td>${factura.Iva}</td>
+                            <td>${factura.Total}</td>
+                            
+                            <td>
+                                <a href="/Facturacions/Edit/${factura.Id_Facturacion}" class="btn btn-success">Editar</a>
+                                <a href="/Facturacions/DetalleFacturacion/${factura.Id_Facturacion}" class="btn btn-primary">Detalle</a>
+                                <a href="/Facturacions/Delete/${factura.Id_Facturacion}" class="btn btn-danger">Borrar</a>
+                            </td>
+                        </tr>`;
+                });
+
+                $('#facturacionTable tbody').html(tableBody);
+                renderPagination(totalPages, searchId);
+            }
+        });
+    }
+
+    function renderPagination(totalPages, searchId = '') {
+        let paginationHtml = '';
+        for (let i = 1; i <= totalPages; i++) {
+            paginationHtml += `
+                <li class="page-item ${i === currentPage ? 'active' : ''}">
+                    <a class="page-link" href="#">${i}</a>
+                </li>`;
+        }
+
+        $('#pagination').html(paginationHtml);
+
+        $('#pagination .page-link').click(function (e) {
+            e.preventDefault();
+            currentPage = parseInt($(this).text());
+            loadFacturaciones(currentPage, searchId);
+        });
+    }
+
+    // Actualizar la búsqueda en tiempo real
+    $('#searchId').on('keyup', function () {
+        const searchId = $(this).val();
+        currentPage = 1; // Reiniciar a la primera página
+        loadFacturaciones(currentPage, searchId);
+    });
+
+    // Cargar facturaciones iniciales
+    loadFacturaciones(currentPage);
+});
+    </script>
 
 
     <!--

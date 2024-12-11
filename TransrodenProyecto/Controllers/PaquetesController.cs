@@ -312,5 +312,65 @@ namespace TransrodenProyecto.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult GetPaquetes(int page = 1, string searchString = null, string searchName = null, string searchCedula = null, string startDate = null, string endDate = null)
+        {
+            int pageSize = 10;
+            var paquetesQuery = db.Paquetes.AsQueryable();
+
+            // Apply filters if provided
+            if (!string.IsNullOrEmpty(searchString))
+                paquetesQuery = paquetesQuery.Where(p => p.NumeroRastreo.Contains(searchString));
+
+            if (!string.IsNullOrEmpty(searchName))
+                paquetesQuery = paquetesQuery.Where(p =>
+                    p.NombreEmisor.Contains(searchName) ||
+                    p.NombreReceptor.Contains(searchName));
+
+            if (!string.IsNullOrEmpty(searchCedula))
+                paquetesQuery = paquetesQuery.Where(p =>
+                    p.CedulaEmisor.Contains(searchCedula) ||
+                    p.CedulaReceptor.Contains(searchCedula));
+
+            if (DateTime.TryParse(startDate, out var start))
+                paquetesQuery = paquetesQuery.Where(p => p.fecha_recibo >= start);
+
+            if (DateTime.TryParse(endDate, out var end))
+                paquetesQuery = paquetesQuery.Where(p => p.fecha_recibo <= end);
+
+            // Order by most recent first
+            paquetesQuery = paquetesQuery.OrderByDescending(p => p.fecha_recibo);
+
+            // Pagination
+            var paquetes = paquetesQuery
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
+
+            int totalPaquetes = paquetesQuery.Count();
+            var totalPages = (int)Math.Ceiling((double)totalPaquetes / pageSize);
+
+            return Json(new
+            {
+                data = paquetes.Select(p => new
+                {
+                    p.Id_Paquete,
+                    p.NumeroRastreo,
+                    p.Tipo,
+                    p.Estado,
+                    p.NombreEmisor,
+                    p.CedulaEmisor,
+                    p.Domicilio,
+                    p.Direccion,
+                    p.TelefonoDomicilio,
+                    p.Pago,
+                    p.Descripcion
+                }),
+                totalPages,
+                currentPage = page
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+
     }
 }

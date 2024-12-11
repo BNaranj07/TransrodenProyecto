@@ -85,6 +85,7 @@
     </div>
     <!-- Topbar -->
     <!-- Navbar -->
+
     <div class="container-fluid nav-bar px-0 px-lg-0 py-lg-0" id="maincontainer">
         <div class="container" id="containertop">
             <nav class="navbar navbar-expand-lg navbar-light">
@@ -188,13 +189,14 @@
         </div>
     </div>
     <!-- Navbar -->
-    <h1 class="text-center">Envios Domicilios San Jose</h1>
+    
 
+    <h1 class="text-center">Envíos Domicilios Perez Zeledon</h1>
 
     <br>
     <div class="d-flex justify-content-center ">
         <a href="@Url.Action("VistaCargaTransito", "PaquetesCargasController")" class="btn btn-primary">
-            <i class="fa fa-truck"></i> Ver cargas en Transito
+            <i class="fa fa-truck"></i> Ver cargas en Tránsito
         </a>
     </div>
 
@@ -203,131 +205,152 @@
         {
             int? sedeValue = Session["Sede"] as int?;
             string sedeTexto = sedeValue.HasValue ?
-                ((Sede)sedeValue.Value == Sede.SanJose ? "San José" : "Perez Zeledón") :
+                ((Sede)sedeValue.Value == Sede.SanJose ? "San José" : "Pérez Zeledón") :
                 "";
 
-            <h2 class="navbar-text">Lista de Envios @sedeTexto</h2>
+            <h2 class="navbar-text">Lista de Envíos @sedeTexto</h2>
         }
 
         <br>
         <br>
 
-        <div class="row">
+
+
+        <h3>Paquetes</h3>
+
+        <div class="row mb-3">
             <div class="col-md-6">
-                <h3>Paquetes</h3>
-
-
-                @using (Html.BeginForm("AsignarPaqueteAEnvioPZ", "PaquetesEnviosController", FormMethod.Post))
-                {
-                    @Html.AntiForgeryToken()
-
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Número de Rastreo</th>
-                                <th>Emisor</th>
-                                <th>Receptor</th>
-                                <th>Estado</th>
-                                <th>Asignar a Envios</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @for (int i = 0; i < Model.Paquetes.Count; i++)
-                            {
-                                var paquete = Model.Paquetes[i];
-                                <tr>
-                                    <td>@paquete.NumeroRastreo</td>
-                                    <td>@paquete.NombreEmisor</td>
-                                    <td>@paquete.NombreReceptor</td>
-                                    <td>@paquete.Estado.ToString()</td>
-                                    <td>
-                                        @Html.Hidden($"PaqueteEnvioAsignaciones[{i}].IdPaquete", paquete.Id_Paquete)
-
-                                        <select name="PaqueteEnvioAsignaciones[@i].IdEnvio" class="form-control">
-                                            <option value="">Seleccionar Envio</option>
-                                            @foreach (var envio in Model.Envios)
-                                            {
-                                                <option value="@envio.Id_Envio">
-                                                    @envio.Descripcion - Usuario: @envio.Usuario.Nombre
-                                                </option>
-                                            }
-                                        </select>
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-
-                    <button type="submit" class="btn btn-primary">Asignar Envio</button>
-                }
+                <input type="text" id="searchPaqueteInput" class="form-control" placeholder="Buscar por Número de Rastreo...">
             </div>
-            <div class="col-md-6">
-                <h3>Envios</h3>
-                <br>
-                <a href="@Url.Action("Create", "Envios")" class="btn btn-danger">
-                    <i class="fas fa-user-plus"></i> Agregar Carga
-                </a>
-                <br>
-
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Id Carga</th>
-                            <th>Transportista</th>
-                            <th>Estado</th>
-                            <th>Paquetes Asignados</th>
-                            <th>Ver Paquetes</th>
-                            <th>Editar Envio</th>
-                            <th>Cambiar Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var envio in Model.Envios)
-                        {
-                            <tr>
-                                <td>@envio.Id_Envio</td>
-                                <td>@envio.Usuario.Nombre</td>
-                                <td>@envio.Estado.ToString()</td>
-                                <td>@envio.NumeroPaquetes</td>
-                                <td>
-                                    <a href="@Url.Action("EnvioPaquetes", "PaquetesEnviosController", new { idEnvio = envio.Id_Envio })" class="btn btn-success">
-                                        Ver
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="@Url.Action("Edit", "Envios", new { id = envio.Id_Envio })" class="btn btn-primary">
-                                        Editar
-                                    </a>
-                                    <a href="@Url.Action("Delete", "Envios", new { id = envio.Id_Envio })" class="btn btn-danger">
-                                        Borrar
-                                    </a>
-                                </td>
-                                <td>
-                                    @using (Html.BeginForm("ActualizarEstadoEnvioPZ", "PaquetesEnviosController", FormMethod.Post))
-                                    {
-                                        @Html.AntiForgeryToken()
-                                        @Html.Hidden("idEnvio", envio.Id_Envio)
-
-                                        <select name="nuevoEstado" class="form-control">
-                                            <option value="">Estado</option>
-                                            <option value="BodegaPZ">BodegaPZ</option>
-                                            <option value="EnTransito">EnTransito</option>
-                                        </select>
-
-                                        <button type="submit" class="btn btn-danger mt-2">Actualizar</button>
-                                    }
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-
         </div>
+
+        @using (Html.BeginForm("AsignarPaqueteAEnvioPZ", "PaquetesEnviosController", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Número de Rastreo</th>
+                        <th>Emisor</th>
+                        <th>Receptor</th>
+                        <th>Estado</th>
+                        <th>Asignar a Envíos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.Paquetes.Count; i++)
+                    {
+                        var paquete = Model.Paquetes[i];
+                        <tr>
+                            <td>@paquete.NumeroRastreo</td>
+                            <td>@paquete.NombreEmisor</td>
+                            <td>@paquete.NombreReceptor</td>
+                            <td>@paquete.Estado.ToString()</td>
+                            <td>
+                                @Html.Hidden($"PaqueteEnvioAsignaciones[{i}].IdPaquete", paquete.Id_Paquete)
+
+                                <select name="PaqueteEnvioAsignaciones[@i].IdEnvio" class="form-control">
+                                    <option value="">Seleccionar Envio</option>
+                                    @foreach (var envio in Model.Envios)
+                                    {
+                                        <option value="@envio.Id_Envio">
+                                            @envio.Descripcion - Usuario: @envio.Usuario.Nombre
+                                        </option>
+                                    }
+                                </select>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <button type="submit" class="btn btn-primary">Asignar Envio</button>
+        }
+
+
+        <h3>Envíos</h3>
+        <br>
+        <div class="input-group mb-3">
+            <input type="text" id="searchEnvios" class="form-control" placeholder="Buscar por Id Carga..." aria-label="Buscar">
+        </div>
+
+        <a href="@Url.Action("Create", "Envios")" class="btn btn-danger">
+            <i class="fas fa-user-plus"></i> Agregar Carga
+        </a>
+        <br>
+
+        <table id="enviosTable" class="table">
+            <thead>
+                <tr>
+                    <th>Id Carga</th>
+                    <th>Transportista</th>
+                    <th>Estado</th>
+                    <th>Paquetes Asignados</th>
+                    <th>Ver Paquetes</th>
+                    <th>Editar Envio</th>
+                    <th>Cambiar Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var envio in Model.Envios)
+                {
+                    <tr>
+                        <td>@envio.Id_Envio</td>
+                        <td>@envio.Usuario.Nombre</td>
+                        <td>@envio.Estado.ToString()</td>
+                        <td>@envio.NumeroPaquetes</td>
+                        <td>
+                            <a href="@Url.Action("EnvioPaquetes", "PaquetesEnviosController", new { idEnvio = envio.Id_Envio })" class="btn btn-success">
+                                Ver
+                            </a>
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Edit", "Envios", new { id = envio.Id_Envio })" class="btn btn-primary">
+                                Editar
+                            </a>
+                            <a href="@Url.Action("Delete", "Envios", new { id = envio.Id_Envio })" class="btn btn-danger">
+                                Borrar
+                            </a>
+                        </td>
+                        <td>
+                            @using (Html.BeginForm("ActualizarEstadoEnvioPZ", "PaquetesEnviosController", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.Hidden("idEnvio", envio.Id_Envio)
+
+                                <select name="nuevoEstado" class="form-control">
+                                    <option value="">Estado</option>
+                                    <option value="BodegaPZ">BodegaPZ</option>
+                                    <option value="EnTransito">EnTransito</option>
+                                </select>
+
+                                <button type="submit" class="btn btn-danger mt-2">Actualizar</button>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
     </div>
     <br>
 
+    <script>
+        document.getElementById("searchEnvios").addEventListener("input", function () {
+            const searchValue = this.value.toLowerCase();
+            const rows = document.querySelectorAll("#enviosTable tbody tr");
 
+            rows.forEach(row => {
+                const idCarga = row.cells[0].textContent.toLowerCase();
+                if (idCarga.includes(searchValue)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        });
+    </script>
 
 
 

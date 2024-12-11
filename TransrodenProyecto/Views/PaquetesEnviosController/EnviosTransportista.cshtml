@@ -144,13 +144,25 @@
 
 
 
+
     <div class="container mt-5">
-
-        <!-- Cargas para enviar -->
         <h2 class="text-center">Envio Domicilios Asignados</h2>
-        <br>
 
-        <table class="table">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <input type="text" id="searchInput" class="form-control" placeholder="Buscar por Id Envio...">
+            </div>
+            <div class="col-md-6 text-right">
+                <select id="pageSizeSelect" class="form-control d-inline-block w-auto">
+                    <option value="5">5 por página</option>
+                    <option value="10" selected>10 por página</option>
+                    <option value="20">20 por página</option>
+                    <option value="50">50 por página</option>
+                </select>
+            </div>
+        </div>
+
+        <table class="table" id="enviosTable">
             <thead>
                 <tr>
                     <th>Id Envio</th>
@@ -161,7 +173,7 @@
                     <th>Cambiar Estado</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="enviosTableBody">
                 @foreach (var envio in Model.Envios)
                 {
                     <tr>
@@ -179,27 +191,116 @@
                             {
                                 @Html.AntiForgeryToken()
                                 @Html.Hidden("idEnvio", envio.Id_Envio)
-
                                 <select name="nuevoEstado" class="form-control">
                                     <option value="">Estado</option>
-                                    <option value="EnTransito">EnTransito</option>
+                                    <option value="EnTransito">En Transito</option>
                                     <option value="Entregado">Entregado</option>
                                 </select>
-
                                 <button type="submit" class="btn btn-danger mt-2">Actualizar</button>
                             }
                         </td>
                     </tr>
                 }
             </tbody>
+
+
+            </tbody>
         </table>
 
-        <br>
-        <a href="@Url.Action("AsignTransportista", "Admin")" class="btn btn-success">
-            Regresar
-        </a>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="pagination" class="d-flex justify-content-start align-items-center">
+                    <button id="prevPage" class="btn btn-secondary mr-2">Anterior</button>
+                    <span id="pageInfo" class="mx-2"></span>
+                    <button id="nextPage" class="btn btn-secondary ml-2">Siguiente</button>
+                </div>
+
+            </div>
+            <div class="col-md-6 text-right">
+                <a href="@Url.Action("AsignTransportista", "Admin")" class="btn btn-success">
+                    Regresar
+                </a>
+            </div>
+        </div>
     </div>
-    <br>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const table = document.getElementById('enviosTable');
+            const tableBody = document.getElementById('enviosTableBody');
+            const rows = Array.from(tableBody.querySelectorAll('tr'));
+            const searchInput = document.getElementById('searchInput');
+            const pageSizeSelect = document.getElementById('pageSizeSelect');
+            const prevPageBtn = document.getElementById('prevPage');
+            const nextPageBtn = document.getElementById('nextPage');
+            const pageInfo = document.getElementById('pageInfo');
+
+            let currentPage = 1;
+            let pageSize = 10;
+            let filteredRows = rows;
+
+            function updateTable() {
+                // Apply search filter
+                const searchTerm = searchInput.value.toLowerCase();
+                filteredRows = rows.filter(row =>
+                    row.cells[0].textContent.toLowerCase().includes(searchTerm)
+                );
+
+                // Calculate pagination
+                const totalPages = Math.ceil(filteredRows.length / pageSize);
+
+                // Hide all rows first
+                rows.forEach(row => row.style.display = 'none');
+
+                // Show rows for current page
+                const startIndex = (currentPage - 1) * pageSize;
+                const endIndex = startIndex + pageSize;
+                filteredRows
+                    .slice(startIndex, endIndex)
+                    .forEach(row => row.style.display = '');
+
+                // Update pagination info and buttons
+                pageInfo.textContent = `Página ${currentPage} de ${totalPages}`;
+                prevPageBtn.disabled = currentPage === 1;
+                nextPageBtn.disabled = currentPage === totalPages;
+            }
+
+            // Page size change
+            pageSizeSelect.addEventListener('change', function () {
+                pageSize = parseInt(this.value);
+                currentPage = 1;
+                updateTable();
+            });
+
+            // Search input
+            searchInput.addEventListener('input', function () {
+                currentPage = 1;
+                updateTable();
+            });
+
+            // Previous page button
+            prevPageBtn.addEventListener('click', function () {
+                if (currentPage > 1) {
+                    currentPage--;
+                    updateTable();
+                }
+            });
+
+            // Next page button
+            nextPageBtn.addEventListener('click', function () {
+                const totalPages = Math.ceil(filteredRows.length / pageSize);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    updateTable();
+                }
+            });
+
+            // Initial table setup
+            updateTable();
+        });
+    </script>
+
+
 
 
 
@@ -280,5 +381,7 @@
     <!-- Template Javascript -->
     <script src="~/Content/assets/js/main.js"></script>
 </body>
+
+
 
 </html>

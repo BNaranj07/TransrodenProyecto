@@ -191,8 +191,8 @@
         </div>
     </div>
     <!-- Navbar -->
-
     <!-- Buevo codigo para ordenar -->
+
     <div class="container mt-5">
         <div class="d-flex justify-content-end mb-4">
             <a href="@Url.Action("Create", "Usuarios")" class="btn btn-danger">
@@ -201,79 +201,28 @@
         </div>
 
         <div class="form-group">
-            <label for="searchId">Buscar Usuario:</label>
-            <input type="number" id="searchCed" class="form-control" placeholder="Ingresa número de cédula" />
+            <label for="searchCed">Buscar Usuario:</label>
+            <input type="text" id="searchCed" class="form-control" placeholder="Ingresa número de cédula o nombre" />
         </div>
 
-        <br>
         <h2 class="mb-4">Lista de Usuarios</h2>
 
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Nombre)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Apellidos)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Cedula)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Correo)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Telefono)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Rol)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.NotifCli)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Sede)
-                </th>
-                <th></th>
-            </tr>
-
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Nombre)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Apellidos)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Cedula)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Correo)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Telefono)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Rol)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.NotifCli)
-                    </td>
-                    <td>
-                        @(item.Sede.ToString())
-                    </td>
-                    <td>
-                        @Html.ActionLink("Editar", "Edit", new { id = item.Id_Usuario }, new { @class = "btn btn-success" }) |
-                        @Html.ActionLink("Detalles", "Details", new { id = item.Id_Usuario }, new { @class = "btn btn-primary" }) |
-                        @Html.ActionLink("Borrar", "Delete", new { id = item.Id_Usuario }, new { @class = "btn btn-danger" })
-                    </td>
-                </tr>
-            }
-            
-            <tbody></tbody>
-        </table>
+        <div style="max-height: 400px; overflow-y: auto;">
+            <table class="table table-bordered" id="usuariosTable">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Cédula</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                        <th>Rol</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
 
         <nav>
             <ul class="pagination" id="pagination"></ul>
@@ -282,73 +231,87 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-    $(document).ready(function () {
-        let currentPage = 1;
+$(document).ready(function () {
+    let currentPage = 1;
 
-        function loadUsuarios(page, searchCed = '') {
-            $.ajax({
-                url: '@Url.Action("GetUsuarios", "Usuarios")',
-                type: 'GET',
-                data: { page: page, searchCed: searchCed },
-                success: function (response) {
-                    const usuarios = response.data;
-                    const totalPages = response.totalPages;
+    function loadUsuarios(page, searchQuery = '') {
+        $.ajax({
+            url: '@Url.Action("GetUsuarios", "Usuarios")',
+            type: 'GET',
+            data: { page: page, searchCed: searchQuery },
+            success: function (response) {
+                const usuarios = response.data;
+                const totalPages = response.totalPages;
 
-                    let tableBody = '';
-                    usuarios.forEach(usuario => {
-                        tableBody += `
-                            <tr>
-                                <td>${usuario.Nombre}</td>
-                                <td>${usuario.Apellidos}</td>
-                                <td>${usuario.Cedula}</td>
-                                <td>${usuario.Correo}</td>
-                                <td>${usuario.Telefono}</td>
-                                <td>${usuario.Rol}</td>
-                                <td>
-                                    <a href="/Usuarios/Edit/${usuario.Id_Usuario}" class="btn btn-success">Editar</a>
-                                    <a href="/Usuarios/Details/${usuario.Id_Usuario}" class="btn btn-primary">Detalles</a>
-                                    <a href="/Usuarios/Delete/${usuario.Id_Usuario}" class="btn btn-danger">Borrar</a>
-                                </td>
-                            </tr>`;
-                    });
+                let tableBody = '';
+                usuarios.forEach(usuario => {
+                    tableBody += `
+                        <tr>
+                            <td>${usuario.Nombre}</td>
+                            <td>${usuario.Apellidos}</td>
+                            <td>${usuario.Cedula}</td>
+                            <td>${usuario.Correo}</td>
+                            <td>${usuario.Telefono}</td>
+                            <td>${usuario.Rol}</td>
+                            <td>
+                                <a href="/Usuarios/Edit/${usuario.Id_Usuario}" class="btn btn-success">Editar</a>
+                                <a href="/Usuarios/Details/${usuario.Id_Usuario}" class="btn btn-primary">Detalles</a>
+                                <a href="/Usuarios/Delete/${usuario.Id_Usuario}" class="btn btn-danger">Borrar</a>
+                            </td>
+                        </tr>`;
+                });
 
-                    $('#usuariosTable tbody').html(tableBody);
-                    renderPagination(totalPages, searchCed);
-                }
-            });
-        }
-
-        function renderPagination(totalPages, searchCed = '') {
-            let paginationHtml = '';
-            for (let i = 1; i <= totalPages; i++) {
-                paginationHtml += `
-                    <li class="page-item ${i === currentPage ? 'active' : ''}">
-                        <a class="page-link" href="#">${i}</a>
-                    </li>`;
+                $('#usuariosTable tbody').html(tableBody);
+                renderPagination(totalPages, searchQuery);
             }
+        });
+    }
 
-            $('#pagination').html(paginationHtml);
-
-            $('#pagination .page-link').click(function (e) {
-                e.preventDefault();
-                currentPage = parseInt($(this).text());
-                loadUsuarios(currentPage, searchCed);
-            });
+    function renderPagination(totalPages, searchQuery = '') {
+        let paginationHtml = '';
+        for (let i = 1; i <= totalPages; i++) {
+            paginationHtml += `
+                <li class="page-item ${i === currentPage ? 'active' : ''}">
+                    <a class="page-link" href="#">${i}</a>
+                </li>`;
         }
 
-        // Actualizar la busqueda
-        $('#searchCed').on('keyup', function () {
-            const searchCed = $(this).val();
-            currentPage = 1; // Reinicia la paginación en la primera página
-            loadUsuarios(currentPage, searchCed);
-        });
+        $('#pagination').html(paginationHtml);
 
-        // Cargar los usuarios iniciales
-        loadUsuarios(currentPage);
+        $('#pagination .page-link').click(function (e) {
+            e.preventDefault();
+            currentPage = parseInt($(this).text());
+            loadUsuarios(currentPage, searchQuery);
+        });
+    }
+
+    // Actualizar la búsqueda
+    $('#searchCed').on('input', function () {
+        const searchQuery = $(this).val();
+        currentPage = 1; // Reinicia la paginación
+        loadUsuarios(currentPage, searchQuery);
     });
+
+    // Cargar usuarios iniciales
+    loadUsuarios(currentPage);
+});
     </script>
 
+    <!--Style-->
+    <style>
+        .table {
+            margin: 0;
+            width: 100%;
+        }
 
+        .table thead th {
+                position: sticky;
+                top: 0;
+                background: #f8f9fa;
+        }
+
+
+    </style>
 
     <!-- -->
     <!-- Footer Start -->

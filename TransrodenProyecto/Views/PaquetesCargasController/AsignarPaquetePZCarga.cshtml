@@ -117,13 +117,13 @@
 
                             // Determinar la URL según la sede
                             string urlCargas;
-                            if (sedeUsuario == Sede.SanJose)
+                            if (sedeUsuario == Sede.PerezZeledon)
                             {
-                                urlCargas = Url.Action("DashboardSJ", "PaquetesCargasController");
+                                urlCargas = Url.Action("DashboardPZ", "PaquetesCargasController");
                             }
-                            else if (sedeUsuario == Sede.PerezZeledon)
+                            else if (sedeUsuario == Sede.SanJose)
                             {
-                                urlCargas = Url.Action("DashBoardPZ", "PaquetesCargasController");
+                                urlCargas = Url.Action("DashBoardSJ", "PaquetesCargasController");
                             }
                             else
                             {
@@ -201,18 +201,29 @@
 
 
 
-        <div class="row">
-            <!-- Lista de paquetes-->
-            <div class="col-md-6">
-                <h3>Paquetes Sin Carga Asignada</h3>
+    <!-- Lista de paquetes-->
 
-                @using (Html.BeginForm("AsignarPaqueteACargaPZ", "PaquetesCargasController", FormMethod.Post))
-                {
-                    @Html.AntiForgeryToken()
 
-                    <table class="table">
+
+        <div class="container-fluid">
+            <h3 class="mb-4">Paquetes Sin Carga Asignada - Perez Zeledon</h3>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Buscar por número de rastreo...">
+                </div>
+            </div>
+
+            @using (Html.BeginForm("AsignarPaqueteACargaPZ", "PaquetesCargasController", FormMethod.Post, new { id = "assignPackageFormPZ" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="table-responsive">
+                    <table class="table table-striped" id="packagesTablePZ">
                         <thead>
                             <tr>
+                                <th>
+                                    <input type="checkbox" id="selectAllCheckboxPZ">
+                                </th>
                                 <th>Número de Rastreo</th>
                                 <th>Emisor</th>
                                 <th>Receptor</th>
@@ -220,19 +231,20 @@
                                 <th>Asignar a Carga</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="packagesTableBodyPZ">
                             @for (int i = 0; i < Model.Paquetes.Count; i++)
                             {
                                 var paquete = Model.Paquetes[i];
                                 <tr>
+                                    <td>
+                                        <input type="checkbox" name="selectedPaquetesPZ" value="@paquete.Id_Paquete" class="package-checkboxPZ">
+                                    </td>
                                     <td>@paquete.NumeroRastreo</td>
                                     <td>@paquete.NombreEmisor</td>
                                     <td>@paquete.NombreReceptor</td>
                                     <td>@paquete.Estado.ToString()</td>
                                     <td>
-                                        @Html.Hidden($"PaqueteCargaAsignaciones[{i}].IdPaquete", paquete.Id_Paquete)
-
-                                        <select name="PaqueteCargaAsignaciones[@i].IdCarga" class="form-control">
+                                        <select name="PaqueteCargaAsignaciones[@i].IdCarga" class="form-control carga-selectPZ">
                                             <option value="">Seleccionar Carga</option>
                                             @foreach (var carga in Model.Cargas)
                                             {
@@ -246,135 +258,487 @@
                             }
                         </tbody>
                     </table>
+                </div>
 
-                    <button type="submit" class="btn btn-success">Asignar Carga</button>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <select id="cargaMasivaPZ" class="form-control">
+                                <option value="">Asignación Masiva de Carga</option>
+                                @foreach (var carga in Model.Cargas)
+                                {
+                                    <option value="@carga.Id_Carga">
+                                        Carga: @carga.Id_Carga - Camionero: @carga.Usuario.Nombre
+                                    </option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <button type="submit" class="btn btn-success">Asignar Carga</button>
+                    </div>
+                </div>
+
+                <div id="paginationPZ" class="d-flex justify-content-center mt-3">
+                    <ul class="pagination" id="paginationLinksPZ">
+                        <!-- Pagination links will be dynamically generated -->
+                    </ul>
+                </div>
+            }
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const tableBodyPZ = document.getElementById('packagesTableBodyPZ');
+                    const paginationContainerPZ = document.getElementById('paginationLinksPZ');
+                    const itemsPerPagePZ = 10;
+                    let currentPagePZ = 1;
+
+                    // Prepare data
+                    const originalRowsPZ = Array.from(tableBodyPZ.querySelectorAll('tr'));
+
+                    // Render table based on current page
+                    function renderPackagesTablePZ() {
+                        tableBodyPZ.innerHTML = ''; // Clear table
+
+                        const startIndex = (currentPagePZ - 1) * itemsPerPagePZ;
+                        const endIndex = startIndex + itemsPerPagePZ;
+
+                        originalRowsPZ.slice(startIndex, endIndex).forEach(row => {
+                            tableBodyPZ.appendChild(row);
+                        });
+                    }
+
+                    // Render pagination links
+                    function renderPaginationPZ() {
+                        paginationContainerPZ.innerHTML = '';
+
+                        const totalPagesPZ = Math.ceil(originalRowsPZ.length / itemsPerPagePZ);
+
+                        if (currentPagePZ > 1) {
+                            const prevLiPZ = document.createElement('li');
+                            prevLiPZ.className = 'page-item';
+                            const prevLinkPZ = document.createElement('a');
+                            prevLinkPZ.className = 'page-link';
+                            prevLinkPZ.href = '#';
+                            prevLinkPZ.textContent = 'Anterior';
+                            prevLinkPZ.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                currentPagePZ--;
+                                renderPackagesTablePZ();
+                                renderPaginationPZ();
+                            });
+                            prevLiPZ.appendChild(prevLinkPZ);
+                            paginationContainerPZ.appendChild(prevLiPZ);
+                        }
+
+                        for (let i = 1; i <= totalPagesPZ; i++) {
+                            const liPZ = document.createElement('li');
+                            liPZ.className = `page-item ${i === currentPagePZ ? 'active' : ''}`;
+                            const linkPZ = document.createElement('a');
+                            linkPZ.className = 'page-link';
+                            linkPZ.href = '#';
+                            linkPZ.textContent = i;
+                            linkPZ.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                currentPagePZ = i;
+                                renderPackagesTablePZ();
+                                renderPaginationPZ();
+                            });
+                            liPZ.appendChild(linkPZ);
+                            paginationContainerPZ.appendChild(liPZ);
+                        }
+
+                        if (currentPagePZ < totalPagesPZ) {
+                            const nextLiPZ = document.createElement('li');
+                            nextLiPZ.className = 'page-item';
+                            const nextLinkPZ = document.createElement('a');
+                            nextLinkPZ.className = 'page-link';
+                            nextLinkPZ.href = '#';
+                            nextLinkPZ.textContent = 'Siguiente';
+                            nextLinkPZ.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                currentPagePZ++;
+                                renderPackagesTablePZ();
+                                renderPaginationPZ();
+                            });
+                            nextLiPZ.appendChild(nextLinkPZ);
+                            paginationContainerPZ.appendChild(nextLiPZ);
+                        }
+                    }
+
+                    // Initialize table and pagination
+                    renderPackagesTablePZ();
+                    renderPaginationPZ();
+                });
+            </script>
+
+
+            <style>
+                .pagination {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
+
+                    .pagination .page-item {
+                        margin: 0 5px;
+                    }
+
+                        .pagination .page-item.active .page-link {
+                            background-color: #007bff;
+                            color: white;
+                        }
+            </style>
+
+            <!--Cargas para enviar-->
+
+            <h3>Cargas</h3>
+            <br>
+            <a href="@Url.Action("Create", "Cargas")" class="btn btn-danger">
+                <i class="fas fa-user-plus"></i> Agregar Carga
+            </a>
+            <br>
+            <br>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <input type="text" id="searchCargaInput" class="form-control" placeholder="Buscar por Id Carga...">
+                </div>
             </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id Carga</th>
+                        <th>Transportista</th>
+                        <th>Estado</th>
+                        <th>Paquetes Asignados</th>
+                        <th>Ver Paquetes</th>
+                        <th>Acciones</th>
+                        <th>Cambiar Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="cargasTableBody">
+                    @foreach (var carga in Model.Cargas)
+                    {
+                        <tr>
+                            <td>@carga.Id_Carga</td>
+                            <td>@carga.Usuario.Nombre</td>
+                            <td>@carga.Estado.ToString()</td>
+                            <td>@carga.NumeroPaquetes</td>
+                            <td>
+                                <a href="@Url.Action("CargaPaquetes", "PaquetesCargasController", new { idCarga = carga.Id_Carga })" class="btn btn-success">
+                                    Ver
+                                </a>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("Edit", "Cargas", new { id = carga.Id_Carga })" class="btn btn-primary">
+                                    Editar
+                                </a>
+                                <a href="@Url.Action("Delete", "Cargas", new { id = carga.Id_Carga })" class="btn btn-danger">
+                                    Borrar
+                                </a>
+                            </td>
+                            <td>
+                                @using (Html.BeginForm("ActualizarEstadoCargaPZ", "PaquetesCargasController", FormMethod.Post))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.Hidden("idCarga", carga.Id_Carga)
+
+                                    <select name="nuevoEstado" class="form-control">
+                                        <option value="">Estado</option>
+                                        <option value="BodegaPZ">BodegaPZ</option>
+                                        <option value="EnTransito">EnTransito</option>
+                                    </select>
+
+                                    <button type="submit" class="btn btn-danger mt-2">Actualizar</button>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+
+            <div id="pagination" class="d-flex justify-content-center mt-3">
+                <ul class="pagination" id="paginationLinks">
+                    <!-- Pagination links will be dynamically generated -->
+                </ul>
+            </div>
+
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const tableBody = document.getElementById('cargasTableBody');
+                    const searchInput = document.getElementById('searchCargaInput');
+                    const itemsPerPage = 10;
+                    let currentPage = 1;
+                    let filteredData = [];
+
+                    // Prepare data
+                    const originalRows = Array.from(tableBody.querySelectorAll('tr'));
+
+                    // Search functionality
+                    function performSearch() {
+                        const searchTerm = searchInput.value.toLowerCase();
+                        filteredData = originalRows.filter(row => {
+                            const cargaId = row.querySelector('td:first-child').textContent.toLowerCase();
+                            return cargaId.includes(searchTerm);
+                        });
+
+                        currentPage = 1;
+                        renderTable();
+                        renderPagination();
+                    }
+
+                    // Pagination rendering
+                    function renderTable() {
+                        tableBody.innerHTML = '';
+
+                        const startIndex = (currentPage - 1) * itemsPerPage;
+                        const endIndex = startIndex + itemsPerPage;
+
+                        const pageData = filteredData.slice(startIndex, endIndex);
+                        pageData.forEach(row => tableBody.appendChild(row));
+                    }
+
+                    function renderPagination() {
+                        const paginationContainer = document.getElementById('paginationLinks');
+                        paginationContainer.innerHTML = '';
+
+                        const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
+                        if (currentPage > 1) {
+                            const prevLi = document.createElement('li');
+                            prevLi.className = 'page-item';
+                            const prevLink = document.createElement('a');
+                            prevLink.className = 'page-link';
+                            prevLink.href = '#';
+                            prevLink.textContent = 'Previous';
+                            prevLink.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                currentPage--;
+                                renderTable();
+                                renderPagination();
+                            });
+                            prevLi.appendChild(prevLink);
+                            paginationContainer.appendChild(prevLi);
+                        }
+
+                        for (let i = 1; i <= totalPages; i++) {
+                            const li = document.createElement('li');
+                            li.className = `page-item ${i === currentPage ? 'active' : ''}`;
+                            const link = document.createElement('a');
+                            link.className = 'page-link';
+                            link.href = '#';
+                            link.textContent = i;
+                            link.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                currentPage = i;
+                                renderTable();
+                                renderPagination();
+                            });
+                            li.appendChild(link);
+                            paginationContainer.appendChild(li);
+                        }
+
+                        if (currentPage < totalPages) {
+                            const nextLi = document.createElement('li');
+                            nextLi.className = 'page-item';
+                            const nextLink = document.createElement('a');
+                            nextLink.className = 'page-link';
+                            nextLink.href = '#';
+                            nextLink.textContent = 'Next';
+                            nextLink.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                currentPage++;
+                                renderTable();
+                                renderPagination();
+                            });
+                            nextLi.appendChild(nextLink);
+                            paginationContainer.appendChild(nextLi);
+                        }
+                    }
+
+                    filteredData = originalRows;
+                    renderTable();
+                    renderPagination();
+
+                    searchInput.addEventListener('input', performSearch);
+                });
+            </script>
+
 
             <!-- Cargas para enviar -->
-            <div class="col-md-6">
-                <h3>Cargas</h3>
-                <br>
-                <a href="@Url.Action("Create", "Cargas")" class="btn btn-danger">
-                    <i class="fas fa-user-plus"></i> Agregar Carga
-                </a>
-                <br>
-                <br>
+            <!--Cargas Recibidas-->
 
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Id Carga</th>
-                            <th>Transportista</th>
-                            <th>Estado</th>
-                            <th>Paquetes Asignados</th>
-                            <th>Ver Paquetes</th>
-                            <th>Acciones</th>
-                            <th>Cambiar Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var carga in Model.Cargas)
-                        {
-                            <tr>
-                                <td>@carga.Id_Carga</td>
-                                <td>@carga.Usuario.Nombre</td>
-                                <td>@carga.Estado.ToString()</td>
-                                <td>@carga.NumeroPaquetes</td>
-                                <td>
-                                    <a href="@Url.Action("CargaPaquetes", "PaquetesCargasController", new { idCarga = carga.Id_Carga })" class="btn btn-success">
-                                        Ver
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="@Url.Action("Edit", "Cargas", new { id = carga.Id_Carga })" class="btn btn-primary">
-                                        Editar
-                                    </a>
-                                    <a href="@Url.Action("Delete", "Cargas", new { id = carga.Id_Carga })" class="btn btn-danger">
-                                        Borrar
-                                    </a>
-                                </td>
-                                <td>
-                                    @using (Html.BeginForm("ActualizarEstadoCargaPZ", "PaquetesCargasController", FormMethod.Post))
-                                    {
-                                        @Html.AntiForgeryToken()
-                                        @Html.Hidden("idCarga", carga.Id_Carga)
+            <h3>Cargas Recibidas</h3>
 
-                                        <select name="nuevoEstado" class="form-control">
-                                            <option value="">Estado</option>
-                                            <option value="BodegaPZ">BodegaPZ</option>
-                                            <option value="EnTransito">EnTransito</option>
-                                        </select>
-
-                                        <button type="submit" class="btn btn-danger mt-2">Actualizar</button>
-                                    }
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <input type="text" id="searchInputRecibidas" class="form-control" placeholder="Buscar por Id Carga...">
+                </div>
             </div>
-        </div>
-        <br>
-        <br>
 
-        <!-- Cargas recibidas -->
-        <div class="row">
-            <div class="col-md-6 offset-md-6">
-                <h3>Cargas Recibidas</h3>
-
-                <table class="table">
-                    <thead>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id Carga</th>
+                        <th>Transportista</th>
+                        <th>Estado</th>
+                        <th>Paquetes Asignados</th>
+                        <th>Ver Paquetes</th>
+                        <th>Cambiar Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="cargasRecibidasTableBody">
+                    @foreach (var carga in Model.CargasRecibidas)
+                    {
                         <tr>
-                            <th>Id Carga</th>
-                            <th>Transportista</th>
-                            <th>Estado</th>
-                            <th>Paquetes Asignados</th>
-                            <th>Ver Paquetes</th>
-                            <th>Cambiar Estado</th>
+                            <td>@carga.Id_Carga</td>
+                            <td>@carga.Usuario.Nombre</td>
+                            <td>@carga.Estado.ToString()</td>
+                            <td>@carga.NumeroPaquetes</td>
+                            <td>
+                                <a href="@Url.Action("CargaPaquetesView", "PaquetesCargasController", new { idCarga = carga.Id_Carga })" class="btn btn-success">
+                                    Ver
+                                </a>
+                            </td>
+                            <td>
+                                @using (Html.BeginForm("EstadoCargaPZ", "PaquetesCargasController", FormMethod.Post))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.Hidden("idCarga", carga.Id_Carga)
+
+                                    <select name="nuevoEstado" class="form-control">
+                                        <option value="">Estado</option>
+                                        <option value="BodegaPZ">BodegaPZ</option>
+                                        <option value="Recibido">Recibido</option>
+                                    </select>
+
+                                    <button type="submit" class="btn btn-danger mt-2">Actualizar</button>
+                                }
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var carga in Model.CargasRecibidas)
-                        {
-                            <tr>
-                                <td>@carga.Id_Carga</td>
-                                <td>@carga.Usuario.Nombre</td>
-                                <td>@carga.Estado.ToString()</td>
-                                <td>@carga.NumeroPaquetes</td>
-                                <td>
-                                    <a href="@Url.Action("CargaPaquetesView", "PaquetesCargasController", new { idCarga = carga.Id_Carga })" class="btn btn-success">
-                                        Ver
-                                    </a>
-                                </td>
-                                <td>
-                                    @using (Html.BeginForm("EstadoCargaPZ", "PaquetesCargasController", FormMethod.Post))
-                                    {
-                                        @Html.AntiForgeryToken()
-                                        @Html.Hidden("idCarga", carga.Id_Carga)
+                    }
+                </tbody>
+            </table>
 
-                                        <select name="nuevoEstado" class="form-control">
-                                            <option value="">Estado</option>
-                                            <option value="BodegaPZ">BodegaPZ</option>
-                                            <option value="Recibido">Recibido</option>
-                                        </select>
-
-                                        <button type="submit" class="btn btn-danger mt-2">Actualizar</button>
-                                    }
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
+            <div id="paginationRecibidas" class="d-flex justify-content-center mt-3">
+                <ul class="pagination" id="paginationLinksRecibidas">
+                    <!-- Pagination links will be dynamically generated -->
+                </ul>
             </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const tableBody = document.getElementById('cargasRecibidasTableBody');
+                    const searchInput = document.getElementById('searchInputRecibidas');
+                    const paginationContainer = document.getElementById('paginationLinksRecibidas');
+                    const itemsPerPage = 10;
+                    let currentPage = 1;
+                    let filteredData = [];
+
+                    // Prepare data
+                    const originalRows = Array.from(tableBody.querySelectorAll('tr'));
+
+                    // Search functionality
+                    function performSearch() {
+                        const searchTerm = searchInput.value.toLowerCase();
+                        filteredData = originalRows.filter(row => {
+                            const idCarga = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
+                            return idCarga.includes(searchTerm);
+                        });
+
+                        currentPage = 1;
+                        renderTable();
+                        renderPagination();
+                    }
+
+                    // Render table based on current page
+                    function renderTable() {
+                        tableBody.innerHTML = ''; // Clear table
+
+                        const startIndex = (currentPage - 1) * itemsPerPage;
+                        const endIndex = startIndex + itemsPerPage;
+
+                        filteredData.slice(startIndex, endIndex).forEach(row => {
+                            tableBody.appendChild(row);
+                        });
+                    }
+
+                    // Render pagination links
+                    function renderPagination() {
+                        paginationContainer.innerHTML = '';
+
+                        const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
+                        if (currentPage > 1) {
+                            const prevLi = document.createElement('li');
+                            prevLi.className = 'page-item';
+                            const prevLink = document.createElement('a');
+                            prevLink.className = 'page-link';
+                            prevLink.href = '#';
+                            prevLink.textContent = 'Anterior';
+                            prevLink.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                currentPage--;
+                                renderTable();
+                                renderPagination();
+                            });
+                            prevLi.appendChild(prevLink);
+                            paginationContainer.appendChild(prevLi);
+                        }
+
+                        for (let i = 1; i <= totalPages; i++) {
+                            const li = document.createElement('li');
+                            li.className = `page-item ${i === currentPage ? 'active' : ''}`;
+                            const link = document.createElement('a');
+                            link.className = 'page-link';
+                            link.href = '#';
+                            link.textContent = i;
+                            link.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                currentPage = i;
+                                renderTable();
+                                renderPagination();
+                            });
+                            li.appendChild(link);
+                            paginationContainer.appendChild(li);
+                        }
+
+                        if (currentPage < totalPages) {
+                            const nextLi = document.createElement('li');
+                            nextLi.className = 'page-item';
+                            const nextLink = document.createElement('a');
+                            nextLink.className = 'page-link';
+                            nextLink.href = '#';
+                            nextLink.textContent = 'Siguiente';
+                            nextLink.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                currentPage++;
+                                renderTable();
+                                renderPagination();
+                            });
+                            nextLi.appendChild(nextLink);
+                            paginationContainer.appendChild(nextLi);
+                        }
+                    }
+
+                    // Initialize table and pagination
+                    filteredData = originalRows;
+                    renderTable();
+                    renderPagination();
+
+                    // Attach search event
+                    searchInput.addEventListener('input', performSearch);
+                });
+            </script>
+
         </div>
-    </div>
 
-
-
-
-
-
+    <!-- Cargas recibidas -->
+    <!---->
     <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
         <div class="container py-5">

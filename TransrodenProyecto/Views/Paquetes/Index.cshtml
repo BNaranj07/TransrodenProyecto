@@ -189,11 +189,8 @@
         </div>
     </div>
     <!-- Navbar -->
-
     <div class="container mt-5">
-
         <h2 class="text-center">Paquetes</h2>
-
 
         <div class="d-flex justify-content-end mb-4">
             <a href="@Url.Action("RegistrarPaquete", "Paquetes")" class="btn btn-danger">
@@ -201,125 +198,209 @@
             </a>
         </div>
 
-
-
-        @using (Html.BeginForm("Index", "Paquetes", FormMethod.Get))
-        {
-            <div class="form-horizontal">
-                <br>
-                <h4>Buscar Paquetes</h4>
-                <hr />
-
-                <div class="form-group">
-                    @Html.Label("Número de Rastreo", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.TextBox("searchString", "", new { @class = "form-control" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.Label("Nombre del Cliente", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.TextBox("searchName", "", new { @class = "form-control" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.Label("Cédula", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.TextBox("searchCedula", "", new { @class = "form-control" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.Label("Fecha Inicio", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.TextBox("startDate", "", new { @class = "form-control", @type = "date" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.Label("Fecha Fin", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.TextBox("endDate", "", new { @class = "form-control", @type = "date" })
-                    </div>
-                </div>
-                <br>
-
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Buscar" class="btn btn-success" />
-                        <input type="button" value="Limpiar" onclick="limpiarBusqueda()" class="btn btn-primary" />
-                    </div>
+        <!--Barra de busqueda-->
+        <div class="form-horizontal">
+            <h4>Buscar Paquetes</h4>
+            <hr />
+            <div class="form-group">
+                @Html.Label("Número de Rastreo", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBox("searchString", "", new { @class = "form-control", id = "searchString" })
                 </div>
             </div>
-            <br>
-        }
+            <div class="form-group">
+                @Html.Label("Nombre del Cliente", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBox("searchName", "", new { @class = "form-control", id = "searchName" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("Cédula", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBox("searchCedula", "", new { @class = "form-control", id = "searchCedula" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("Fecha Inicio", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBox("startDate", "", new { @class = "form-control", @type = "date", id = "startDate" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("Fecha Fin", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBox("endDate", "", new { @class = "form-control", @type = "date", id = "endDate" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="button" onclick="limpiarBusqueda()" class="btn btn-primary">Limpiar</button>
+                </div>
+            </div>
+        </div>
 
 
-        <br>
+        <!-- Barra de búsqueda -->
+        
+
+
         <h2>Lista de Paquetes</h2>
-
-        @if (ViewBag.NoResults != null)
-        {
-            <p class="text-danger">@ViewBag.NoResults</p>
-        }
-        else
-        {
-            <table class="table">
+        <table class="table" id="paquetesTable">
+            <thead>
                 <tr>
-                    <th>@Html.DisplayNameFor(model => model.First().NumeroRastreo)</th>
-                    <th>@Html.DisplayNameFor(model => model.First().Tipo)</th>
-                    <th>@Html.DisplayNameFor(model => model.First().Estado)</th>
-                    <th>@Html.DisplayNameFor(model => model.First().NombreEmisor)</th>
-                    <th>@Html.DisplayNameFor(model => model.First().CedulaEmisor)</th>
-                    <th>@Html.DisplayNameFor(model => model.First().Domicilio)</th>
-                    <th>@Html.DisplayNameFor(model => model.First().Direccion)</th>
-                    <th>@Html.DisplayNameFor(model => model.First().TelefonoDomicilio)</th>
-                   @*<th>@Html.DisplayNameFor(model => model.First().Cantidad)</th>*@
-                    <th>@Html.DisplayNameFor(model => model.First().Pago)</th>
-                    <th>@Html.DisplayNameFor(model => model.First().Descripcion)</th>
-                    <th>@Html.DisplayNameFor(model => model.First().fecha_recibo)</th>
-                    <th></th>
-                </tr>
+                    <th>@Html.DisplayNameFor(model => model.NumeroRastreo)</th>
+                    <th>@Html.DisplayNameFor(model => model.Tipo)</th>
+                    <th>@Html.DisplayNameFor(model => model.Estado)</th>
+                    <th>@Html.DisplayNameFor(model => model.NombreEmisor)</th>
+                    <th>@Html.DisplayNameFor(model => model.CedulaEmisor)</th>
+                    <th>@Html.DisplayNameFor(model => model.Domicilio)</th>
+                    <th>@Html.DisplayNameFor(model => model.Direccion)</th>
+                    <th>@Html.DisplayNameFor(model => model.TelefonoDomicilio)</th>
+                    <th>@Html.DisplayNameFor(model => model.Pago)</th>
+                    <th>@Html.DisplayNameFor(model => model.Descripcion)</th>
 
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>@Html.DisplayFor(modelItem => item.NumeroRastreo)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Tipo)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Estado)</td>
-                        <td>@Html.DisplayFor(modelItem => item.NombreEmisor)</td>
-                        <td>@Html.DisplayFor(modelItem => item.CedulaEmisor)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Domicilio)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Direccion)</td>
-                        <td>@Html.DisplayFor(modelItem => item.TelefonoDomicilio)</td>
-                        @*<td>@Html.DisplayFor(modelItem => item.Cantidad)</td>*@
-                        <td>@Html.DisplayFor(modelItem => item.Pago)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
-                        <td>@Html.DisplayFor(modelItem => item.fecha_recibo)</td>
-                        <td>
-                            @Html.ActionLink("Editar", "Edit", new { id = item.Id_Paquete }, new { @class = "btn btn-success" })
-                            @Html.ActionLink("Detalles", "Details", new { id = item.Id_Paquete }, new { @class = "btn btn-primary" })
-                            @Html.ActionLink("Borrar", "Delete", new { id = item.Id_Paquete }, new { @class = "btn btn-danger" })
-                        </td>
-                    </tr>
-                }
-            </table>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--Contnido dinamico-->
+            </tbody>
+        </table>
+
+        <nav>
+            <ul class="pagination" id="pagination"></ul>
+        </nav>
+    </div>
+
+    <style>
+        #paquetesTable {
+            display: block;
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
         }
 
-        <script>
-            function limpiarBusqueda() {
-                document.querySelector('input[name="searchString"]').value = '';
-                document.querySelector('input[name="searchName"]').value = '';
-                document.querySelector('input[name="searchCedula"]').value = '';
-                document.querySelector('input[name="startDate"]').value = '';
-                document.querySelector('input[name="endDate"]').value = '';
+            #paquetesTable thead {
+                position: sticky;
+                top: 0;
+                background: #f8f9fa;
             }
-        </script>
+    </style>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function () {
+    let currentPage = 1;
+    let totalPages = 1;
+    let isLoading = false;
 
-    </div>
+    function loadPaquetes(page, reset = false) {
+        if (isLoading) return;
+        isLoading = true;
+
+        const searchString = $('#searchString').val();
+        const searchName = $('#searchName').val();
+        const searchCedula = $('#searchCedula').val();
+        const startDate = $('#startDate').val();
+        const endDate = $('#endDate').val();
+
+        $.ajax({
+            url: '@Url.Action("GetPaquetes", "Paquetes")',
+            type: 'GET',
+            data: {
+                page: page,
+                searchString: searchString,
+                searchName: searchName,
+                searchCedula: searchCedula,
+                startDate: startDate,
+                endDate: endDate
+            },
+            success: function (response) {
+                totalPages = response.totalPages;
+
+                let tableBody = reset ? '' : $('#paquetesTable tbody').html();
+                response.data.forEach(paquete => {
+                    tableBody += `
+                        <tr>
+                            <td>${paquete.NumeroRastreo}</td>
+                            <td>${paquete.Tipo}</td>
+                            <td>${paquete.Estado}</td>
+                            <td>${paquete.NombreEmisor}</td>
+                            <td>${paquete.CedulaEmisor}</td>
+                            <td>${paquete.Domicilio}</td>
+                            <td>${paquete.Direccion}</td>
+                            <td>${paquete.TelefonoDomicilio}</td>
+                            <td>${paquete.Pago}</td>
+                            <td>${paquete.Descripcion}</td>
+                            <td>
+                                <a href="/Paquetes/Edit/${paquete.Id_Paquete}" class="btn btn-success btn-sm">Editar</a>
+                                <a href="/Paquetes/Details/${paquete.Id_Paquete}" class="btn btn-primary btn-sm">Detalles</a>
+                                <a href="/Paquetes/Delete/${paquete.Id_Paquete}" class="btn btn-danger btn-sm">Borrar</a>
+                            </td>
+                        </tr>`;
+                });
+
+                if (reset) {
+                    $('#paquetesTable tbody').html(tableBody);
+                } else {
+                    $('#paquetesTable tbody').append(tableBody);
+                }
+
+                isLoading = false;
+            },
+            error: function() {
+                isLoading = false;
+            }
+        });
+    }
+
+    // Infinite scroll
+    $(window).scroll(function() {
+        if ($(window).scrollTop() + $(window).height() >= $(document).height() - 100) {
+            if (currentPage < totalPages && !isLoading) {
+                currentPage++;
+                loadPaquetes(currentPage);
+            }
+        }
+    });
+
+    // Real-time search and filter
+    $('input').on('input', function() {
+        currentPage = 1;
+        loadPaquetes(currentPage, true);
+    });
+
+    // Date change
+    $('input[type="date"]').on('change', function() {
+        currentPage = 1;
+        loadPaquetes(currentPage, true);
+    });
+
+    // Clear search
+    function limpiarBusqueda() {
+        $('#searchString, #searchName, #searchCedula, #startDate, #endDate').val('');
+        currentPage = 1;
+        loadPaquetes(currentPage, true);
+    }
+
+    // Initial load
+    loadPaquetes(currentPage);
+});
+    </script>
+    <style>
+        #paquetesTable {
+            display: block;
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+        }
+
+            #paquetesTable thead {
+                position: sticky;
+                top: 0;
+                background: #f8f9fa;
+            }
+    </style>
 
     <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
@@ -357,7 +438,7 @@
                         </div>
                     </div>
 
-                   
+
                 </div>
             </div>
         </div>

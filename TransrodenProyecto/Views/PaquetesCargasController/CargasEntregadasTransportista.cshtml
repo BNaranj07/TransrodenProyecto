@@ -146,59 +146,83 @@
 
     <div class="container mt-5">
 
-        <!-- Cargas para enviar -->
-        <h2 class="text-center">Cargas Entregadas</h2>
-        <br>
+        <div class="container mt-5">
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Id Carga</th>
-                    <th>Transportista</th>
-                    <th>Origen</th>
-                    <th>Paquetes Asignados</th>
-                    <th>Estado</th>
-                    <th>Fecha de Entrega</th>
-                    <th>Ver Paquetes</th>
-                    <!--
-                    <th>Cambiar Estado</th> -->
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var carga in Model.Cargas)
-                {
+            <!-- Cargas para enviar -->
+            <h2 class="text-center">Cargas Entregadas</h2>
+            <br>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <form method="get" id="searchForm">
+                        <div class="input-group">
+                            <input type="text" name="searchTerm" id="searchInput" class="form-control"
+                                   placeholder="Buscar por Id Carga, Transportista o Origen"
+                                   value="@ViewBag.SearchTerm">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-primary">Buscar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <table class="table">
+                <thead>
                     <tr>
-                        <td>@carga.Id_Carga</td>
-                        <td>@carga.Usuario.Nombre</td>
-                        <td>@carga.Origen</td>
-                        <td>@carga.NumeroPaquetes</td>
-                        <td>@carga.Estado.ToString()</td>
-                        <td>@carga.fecha_creacion</td>
-                        <td>
-                            <a href="@Url.Action("CargaPaquetesViewTransp", "PaquetesCargasController", new { idCarga = carga.Id_Carga })" class="btn btn-success">
-                                Ver
-                            </a>
-                        </td>
-                        <!--
-                        <td>
-                            @using (Html.BeginForm("ActualizarEstadoCargaSJ", "PaquetesCargasController", FormMethod.Post))
-                            {
-                                @Html.AntiForgeryToken()
-                                @Html.Hidden("idCarga", carga.Id_Carga)
-
-                                <select name="nuevoEstado" class="form-control">
-                                    <option value="">Estado</option>
-                                    <option value="BodegaSJ">BodegaSJ</option>
-                                    <option value="EnTransito">EnTransito</option>
-                                </select>
-
-                                <button type="submit" class="btn btn-danger mt-2">Actualizar</button>
-                            }
-                        </td> -->
+                        <th>Id Carga</th>
+                        <th>Transportista</th>
+                        <th>Origen</th>
+                        <th>Paquetes Asignados</th>
+                        <th>Estado</th>
+                        <th>Fecha de Entrega</th>
+                        <th>Ver Paquetes</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var carga in Model.Cargas)
+                    {
+                        <tr>
+                            <td>@carga.Id_Carga</td>
+                            <td>@carga.Usuario.Nombre</td>
+                            <td>@carga.Origen</td>
+                            <td>@carga.NumeroPaquetes</td>
+                            <td>@carga.Estado.ToString()</td>
+                            <td>@carga.fecha_creacion</td>
+                            <td>
+                                <a href="@Url.Action("CargaPaquetesViewTransp", "PaquetesCargasController", new { idCarga = carga.Id_Carga })" class="btn btn-success">
+                                    Ver
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            @* Pagination *@
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                    {
+                        <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                            <a class="page-link" href="?searchTerm=@ViewBag.SearchTerm&page=@i">@i</a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </div>
+
+        <script>
+            // Optional: Real-time search with debounce
+            document.getElementById('searchInput').addEventListener('input', function () {
+                const searchTerm = this.value;
+                clearTimeout(this.searchTimeout);
+
+                this.searchTimeout = setTimeout(() => {
+                    document.getElementById('searchForm').submit();
+                }, 50); // 500ms delay
+            });
+        </script>
     </div>
     <br>
     <br>

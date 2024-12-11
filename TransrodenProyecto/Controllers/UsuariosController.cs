@@ -167,14 +167,14 @@ namespace TransrodenProyecto.Controllers
         //Codigo para la busqueda y para el buscador
         public ActionResult GetUsuarios(int page = 1, string searchCed = null)
         {
-            int pageSize = 7;
+            int pageSize = 10;
 
             // Filtra los usuarios si hay un criterio de búsqueda
             var usuariosQuery = db.Usuarios.AsQueryable();
 
             if (!string.IsNullOrEmpty(searchCed))
             {
-                usuariosQuery = usuariosQuery.Where(u => u.Cedula.Contains(searchCed));
+                usuariosQuery = usuariosQuery.Where(u => u.Cedula.Contains(searchCed) || u.Nombre.Contains(searchCed));
             }
 
             // Aplica el ordenamiento y paginación
