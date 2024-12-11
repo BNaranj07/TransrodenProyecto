@@ -303,7 +303,50 @@ namespace TransrodenProyecto.Controllers
             return View(facturacion);
         }
 
+        //PAGINACION
+        public ActionResult GetFacturaciones(int page = 1, string searchId = "")
+        {
+            const int pageSize = 10; // Número de elementos por página
+            var facturacionesQuery = db.Facturaciones.Include(f => f.Paquete).Include(f => f.Usuario);
 
+            // Filtrar por ID si se proporciona un valor de búsqueda
+            if (!string.IsNullOrEmpty(searchId))
+            {
+                if (int.TryParse(searchId, out int idFacturacion))
+                {
+                    facturacionesQuery = facturacionesQuery.Where(f => f.Id_Facturacion == idFacturacion);
+                }
+            }
+
+            // Obtener el total de registros para calcular las páginas
+            int totalFacturaciones = facturacionesQuery.Count();
+            var totalPages = (int)Math.Ceiling((double)totalFacturaciones / pageSize);
+
+            // Aplicar paginación y traer datos a memoria
+        var facturaciones = facturacionesQuery
+            .OrderBy(f => f.Id_Facturacion)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToList() // Cargar datos en memoria
+            .Select(f => new
+            {
+               f.Id_Facturacion,
+               Paquete = f.Paquete != null ? f.Paquete.NumeroRastreo : "", // Espacio en blanco si es null
+               Usuario = f.Usuario != null ? f.Usuario.Nombre : "",       // Espacio en blanco si es null
+               f.NombreEmisor,
+               f.CedulaEmisor,
+               f.Precio,
+               f.Iva,
+               f.Total
+         });
+
+            // Retornar los datos en formato JSON
+            return Json(new
+            {
+                data = facturaciones,
+                totalPages
+            }, JsonRequestBehavior.AllowGet);
+        }
 
     }
 }

@@ -374,7 +374,7 @@ namespace TransrodenProyecto.Controllers
 
         // Vista para Transportistas donde solo se requiera ver el paquete nada mas
 
-        public ActionResult CargaPaquetesViewTransp(int idCarga)
+        public ActionResult CargaPaquetesViewTransp(int idCarga, string searchTerm = "", int page = 1)
         {
             var carga = db.Cargas.Include(c => c.Usuario).FirstOrDefault(c => c.Id_Carga == idCarga);
 
@@ -384,8 +384,24 @@ namespace TransrodenProyecto.Controllers
             }
 
             // Paquetes asociados a la carga
-            var paquetes = db.Paquetes.Where(p => p.Id_Carga == idCarga).ToList();
+            var paquetesQuery = db.Paquetes.Where(p => p.Id_Carga == idCarga);
 
+            // Apply search filter if search term is provided
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                paquetesQuery = paquetesQuery.Where(p => p.NumeroRastreo.Contains(searchTerm));
+            }
+
+            // Pagination
+            int pageSize = 10;
+            int totalPaquetes = paquetesQuery.Count();
+            int totalPages = (int)Math.Ceiling((double)totalPaquetes / pageSize);
+
+            var paquetes = paquetesQuery
+                .OrderBy(p => p.Id_Paquete)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
 
             // Este viewModel funciona para cargar la vista
             var viewModel = new PaqueteCargaViewModel
@@ -393,6 +409,12 @@ namespace TransrodenProyecto.Controllers
                 Cargas = new List<Carga> { carga },
                 Paquetes = paquetes
             };
+
+            // Pasar datos de paginación a la vista mediante ViewBag
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = totalPages;
+            ViewBag.SearchTerm = searchTerm;
+            ViewBag.IdCarga = idCarga;
 
             return View(viewModel);
         }
@@ -671,7 +693,7 @@ namespace TransrodenProyecto.Controllers
             return Redirect("CargasTransportista");
         }
 
-
+        
 
 
         // Cambiar el estado de las cargas en la vista de cargas en transito
@@ -744,12 +766,6 @@ namespace TransrodenProyecto.Controllers
         }
 
 
-
-
-
-
-
-
         // Cambia solo el estado del paquete
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -789,9 +805,6 @@ namespace TransrodenProyecto.Controllers
 
 
             db.SaveChanges();
-
-
-            
 
 
             TempData["Success"] = "El estado del paquete se ha actualizado correctamente.";
@@ -840,7 +853,7 @@ namespace TransrodenProyecto.Controllers
 
 
         // Muesta todos las cargas entregadas que tiene el usuario Transportista asignado
-        public ActionResult CargasEntregadasTransportista()
+        public ActionResult CargasEntregadasTransportista(string searchTerm = "", int page = 1)
         {
             // Verificar si la sesión contiene la información del usuario
             if (Session["UsuarioId"] == null)
@@ -852,24 +865,50 @@ namespace TransrodenProyecto.Controllers
             var usuarioId = (int)Session["UsuarioId"];
             var usuarioRol = (Rol)Session["UsuarioRol"];
 
-
             // Verificar si 'sede' tiene un valor antes de convertirlo
-            var cargas = new List<Carga>();
+            var cargasQuery = new List<Carga>();
 
             if (usuarioRol == Rol.Transportista)
             {
-                //MUESTRA LAS CARGAS QUE SON PERTENECIENTES AL TRANSPORTISTA Y TENGAN ESTADO ENTRANSITO, BODEGASJ, BODEGAPZ
-                cargas = db.Cargas.Include(c => c.Usuario).Where(c => c.Id_Usuario == usuarioId && c.Estado == EstadoCarga.Entregado && c.Id_Usuario == usuarioId || c.Estado == EstadoCarga.Recibido).ToList();
+                //MUESTRA LAS CARGAS QUE SON PERTENECIENTES AL TRANSPORTISTA Y TENGAN ESTADO ENTREGADO O RECIBIDO
+                cargasQuery = db.Cargas.Include(c => c.Usuario)
+                    .Where(c => (c.Id_Usuario == usuarioId && (c.Estado == EstadoCarga.Entregado || c.Estado == EstadoCarga.Recibido)))
+                    .ToList();
             }
+
+            // Apply search filter if search term is provided
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                cargasQuery = cargasQuery.Where(c =>
+                    c.Id_Carga.ToString().Contains(searchTerm) ||
+                    c.Usuario.Nombre.Contains(searchTerm) ||
+                    c.Origen.ToString().Contains(searchTerm)
+                ).ToList();
+            }
+
+            // Pagination
+            int pageSize = 10;
+            int totalCargas = cargasQuery.Count();
+            int totalPages = (int)Math.Ceiling((double)totalCargas / pageSize);
+
+            var cargas = cargasQuery
+                .OrderBy(c => c.Id_Carga)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
 
             var viewModel = new PaqueteCargaViewModel
             {
                 Cargas = cargas
             };
 
+            // Pasar datos de paginación a la vista mediante ViewBag
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = totalPages;
+            ViewBag.SearchTerm = searchTerm;
+
             return View(viewModel);
         }
-
 
     }
 }

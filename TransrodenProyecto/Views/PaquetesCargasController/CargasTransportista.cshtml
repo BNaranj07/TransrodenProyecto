@@ -11,49 +11,237 @@
 
         <!-- Cargas para enviar -->
         <h2 class="text-center">Cargas Asignadas</h2>
-        <br>
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Id Carga</th>
-                    <th>Transportista</th>
-                    <th>Estado</th>
-                    <th>Paquetes Asignados</th>
-                    <th>Ver Paquetes</th>
-                    <th>Cambiar Estado</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var carga in Model.Cargas)
-                {
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <input type="text" id="searchInput" class="form-control" placeholder="Buscar por ID, Transportista o Estado...">
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped" id="cargasTable">
+                <thead>
                     <tr>
-                        <td>@carga.Id_Carga</td>
-                        <td>@carga.Usuario.Nombre</td>
-                        <td>@carga.Estado.ToString()</td>
-                        <td>@carga.NumeroPaquetes</td>
-                        <td>
-                            <a href="@Url.Action("CargaPaquetesViewTransp", "PaquetesCargasController", new { idCarga = carga.Id_Carga })" class="btn btn-success">
-                                Ver
-                            </a>
-                        </td>
-                        <td>
-                            @using (Html.BeginForm("EstadoCargaTransp", "PaquetesCargasController", FormMethod.Post))
-                            {
-                                @Html.AntiForgeryToken()
-                                @Html.Hidden("idCarga", carga.Id_Carga)
-
-                                <select name="nuevoEstado" class="form-control">
-                                    <option value="">Estado</option>
-                                    <option value="Averia">Averia</option>
-                                </select>
-
-                                <button type="submit" class="btn btn-danger mt-2">Actualizar</button>
-                            }
-                        </td>
+                        <th>Id Carga</th>
+                        <th>Transportista</th>
+                        <th>Estado</th>
+                        <th>Paquetes Asignados</th>
+                        <th>Ver Paquetes</th>
+                        <th>Cambiar Estado</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var carga in Model.Cargas)
+                    {
+                        <tr>
+                            <td>@carga.Id_Carga</td>
+                            <td>@carga.Usuario.Nombre</td>
+                            <td>@carga.Estado.ToString()</td>
+                            <td>@carga.NumeroPaquetes</td>
+                            <td>
+                                <a href="@Url.Action("CargaPaquetesViewTransp", "PaquetesCargasController", new { idCarga = carga.Id_Carga })" class="btn btn-success btn-sm">
+                                    Ver Paquetes
+                                </a>
+                            </td>
+                            <td>
+                                <form action="@Url.Action("EstadoCargaTransp", "PaquetesCargasController")" method="post" class="estado-form">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="idCarga" value="@carga.Id_Carga" />
+                                    <div class="input-group">
+                                        <select name="nuevoEstado" class="form-control form-control-sm estado-select">
+                                            <option value="">Seleccionar Estado</option>
+                                            <option value="Averia">Avería</option>
+                                        </select>
+                                        <div class="input-group-append">
+                                            <button type="submit" class="btn btn-danger btn-sm ml-2">Actualizar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Paginación -->
+        <div class="pagination-container text-center mt-3">
+            <nav>
+                <ul class="pagination" id="pagination"></ul>
+            </nav>
+        </div>
     </div>
-    
+
+    <script>
+        // Configuración de paginación
+        const rowsPerPage = 10;
+        let currentPage = 1;
+        const table = document.getElementById('cargasTable');
+        const tbody = table.querySelector('tbody');
+        const rows = Array.from(tbody.querySelectorAll('tr'));
+        const totalPages = Math.ceil(rows.length / rowsPerPage);
+
+        function renderPage() {
+            tbody.innerHTML = '';
+            const start = (currentPage - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+            const pageRows = rows.slice(start, end);
+
+            pageRows.forEach(row => tbody.appendChild(row));
+            renderPagination();
+        }
+
+        function renderPagination() {
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+
+            for (let i = 1; i <= totalPages; i++) {
+                const li = document.createElement('li');
+                li.className = `page-item ${i === currentPage ? 'active' : ''}`;
+                const link = document.createElement('a');
+                link.className = 'page-link';
+                link.href = '#';
+                link.textContent = i;
+
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentPage = i;
+                    renderPage();
+                });
+
+                li.appendChild(link);
+                pagination.appendChild(li);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            renderPage();
+        });
+    </script>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('searchInput');
+            const table = document.getElementById('cargasTable');
+            const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+            // Real-time search functionality
+            searchInput.addEventListener('keyup', function () {
+                const searchTerm = this.value.toLowerCase();
+
+                Array.from(rows).forEach(row => {
+                    const idCarga = row.cells[0].textContent.toLowerCase();
+                    const transportista = row.cells[1].textContent.toLowerCase();
+                    const estado = row.cells[2].textContent.toLowerCase();
+
+                    const isVisible =
+                        idCarga.includes(searchTerm) ||
+                        transportista.includes(searchTerm) ||
+                        estado.includes(searchTerm);
+
+                    row.style.display = isVisible ? '' : 'none';
+                });
+            });
+
+            // Form submission handling
+            const forms = document.querySelectorAll('.estado-form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function (e) {
+                    const estadoSelect = this.querySelector('.estado-select');
+
+                    if (estadoSelect.value === '') {
+                        e.preventDefault();
+                        alert('Por favor, seleccione un estado');
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+    <br>
+    <br>
+
+
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-xl-9">
+                    <div class="mb-5">
+                        <div class="row g-4">
+                            <div class="col-md-6 col-lg-6 col-xl-5">
+                                <div class="footer-item">
+                                    <a href="index.html" class="p-0">
+                                        <h3 class="text-white"><i class="fas fa-truck-loading me-3"></i> Transroden Express SA</h3>
+                                        <!-- <img src="~/Content/assets/img/logo.png" alt="Logo"> -->
+                                    </a>
+                                    <p class="text-white mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-3">
+                                <div class="footer-item">
+                                    <h4 class="text-white mb-4">Acceso Rapido</h4>
+                                    <a href="#" class="text-white"><i class="text-white fas fa-angle-right me-2"></i> Inicio </a>
+                                    <a href="#" class="text-white"><i class="text-white fas fa-angle-right me-2"></i> Administracion </a>
+                                    <a href="#" class="text-white"><i class="text-white fas fa-angle-right me-2"></i> Clientes </a>
+                                    <a href="#" class="text-white"><i class="text-white fas fa-angle-right me-2"></i> Inventario </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-3">
+                                <div class="footer-item">
+                                    <h4 class="mb-4" style="color: rgb(192, 27, 28);">Acceso Rápido</h4>
+                                    <a href="#" class="text-white"><i class="text-white fas fa-angle-right me-2"></i> Tracking </a>
+                                    <a href="#" class="text-white"><i class="text-white fas fa-angle-right me-2"></i> Contabilidad </a>
+                                    <a href="#" class="text-white"><i class="text-white fas fa-angle-right me-2"></i> Mercadeo </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-end mb-md-0">
+                    <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>transroden.com</a>, Todos los derechos reservados 2024.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-start text-body">
+                    <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                    <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                    <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                    <!-- Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom text-white" href="https://themewagon.com">ThemeWagon</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets/lib/wow/wow.min.js"></script>
+    <script src="~/Content/assets/lib/easing/easing.min.js"></script>
+    <script src="~/Content/assets/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/Content/assets/lib/counterup/counterup.min.js"></script>
+    <script src="~/Content/assets/lib/lightbox/js/lightbox.min.js"></script>
+    <script src="~/Content/assets/lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="~/Content/assets/js/main.js"></script>
+</body>
+
+</html>

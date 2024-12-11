@@ -149,14 +149,27 @@
 
 
     <div class="container mt-5">
-
         <h2 class="text-center">Paquetes del Envio</h2>
         <br>
         <h4>Transportista: @Model.Envios.First().Usuario.Nombre</h4>
         <h4>Estado: @Model.Envios.First().Estado.ToString()</h4>
         <h4>Paquetes Asignados: @Model.Envios.First().NumeroPaquetes</h4>
 
-        <table class="table mt-4">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <input type="text" id="searchInput" class="form-control" placeholder="Buscar por Número de Rastreo...">
+            </div>
+            <div class="col-md-6 text-right">
+                <select id="pageSizeSelect" class="form-control d-inline-block w-auto">
+                    <option value="5">5 por página</option>
+                    <option value="10" selected>10 por página</option>
+                    <option value="20">20 por página</option>
+                    <option value="50">50 por página</option>
+                </select>
+            </div>
+        </div>
+
+        <table class="table mt-4" id="paquetesTable">
             <thead>
                 <tr>
                     <th>Número de Rastreo</th>
@@ -169,7 +182,7 @@
                     <th>Accion</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="paquetesTableBody">
                 @foreach (var paquete in Model.Paquetes)
                 {
                     <tr>
@@ -193,33 +206,6 @@
                                 Ver
                             </a>
                         </td>
-                        <!--
-                    <td>
-                        @using (Html.BeginForm("ActualizarEstadoPaquete", "PaquetesEnviosController", FormMethod.Post))
-                        {
-                            @Html.AntiForgeryToken()
-                            @Html.Hidden("idPaquete", paquete.Id_Paquete)
-
-                            <select name="nuevoEstado" class="form-control">
-                                <option value="">Estado</option>
-                                <option value="EnTransito">En Transito</option>
-                                <option value="Entregado">Entregado</option>
-                                <option value="NoEntregado">No Entregado</option>
-                            </select>
-
-                            <button type="submit" class="btn btn-danger mt-2">Actualizar</button>
-                        }
-                    </td>
-                        <td>
-                            <select name="nuevoEstado" class="form-control" onchange="handleEstadoChange(this, @paquete.Id_Paquete, '@paquete.CedulaReceptor')">
-                                <option value="">Estado</option>
-                                <option value="Domicilio">En Transito</option>
-                                <option value="Entregado">Entregado</option>
-                                <option value="NoEntregado">No Entregado</option>
-                            </select>
-                        </td>
-
-                    -->
                         <td>
                             <form method="post" action="@Url.Action("ActualizarEstadoPaquete", "PaquetesEnviosController")" id="form-estado-@paquete.Id_Paquete">
                                 @Html.AntiForgeryToken()
@@ -234,66 +220,150 @@
                             </form>
                         </td>
                     </tr>
-
-
                 }
             </tbody>
         </table>
 
-
-
-        <!-- Modal para ingresar la cédula -->
-        <div class="modal fade" id="cedulaModal" tabindex="-1" aria-labelledby="cedulaModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form id="modalForm" method="post" action="@Url.Action("ActualizarEstadoPaquete", "PaquetesEnviosController")">
-                        @Html.AntiForgeryToken()
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="cedulaModalLabel">Confirmar Entrega</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <input type="hidden" id="modalIdPaquete" name="idPaquete" />
-                            <input type="hidden" id="modalEstado" name="nuevoEstado" />
-                            <div class="mb-3">
-                                <label for="modalCedula" class="form-label">Ingrese la Cédula del Receptor</label>
-                                <input type="text" class="form-control" id="modalCedula" name="cedulaReceptor" required />
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Confirmar</button>
-                        </div>
-                    </form>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="pagination" class="d-flex justify-content-start align-items-center">
+                    <button id="prevPage" class="btn btn-secondary mr-2">Anterior</button>
+                    <span id="pageInfo" class="mx-2"></span>
+                    <button id="nextPage" class="btn btn-secondary ml-2">Siguiente</button>
                 </div>
             </div>
+            <div class="col-md-6 text-right">
+                <a href="@Url.Action("AsignTransportista", "Admin")" class="btn btn-success">
+                    Regresar
+                </a>
+            </div>
         </div>
+    </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const table = document.getElementById('paquetesTable');
+            const tableBody = document.getElementById('paquetesTableBody');
+            const rows = Array.from(tableBody.querySelectorAll('tr'));
+            const searchInput = document.getElementById('searchInput');
+            const pageSizeSelect = document.getElementById('pageSizeSelect');
+            const prevPageBtn = document.getElementById('prevPage');
+            const nextPageBtn = document.getElementById('nextPage');
+            const pageInfo = document.getElementById('pageInfo');
 
+            let currentPage = 1;
+            let pageSize = 10;
+            let filteredRows = rows;
 
+            function updateTable() {
+                // Apply search filter
+                const searchTerm = searchInput.value.toLowerCase();
+                filteredRows = rows.filter(row =>
+                    row.cells[0].textContent.toLowerCase().includes(searchTerm)
+                );
 
-        <!--Para validar la cedula-->
-        <script>
-            function handleEstadoChange(select, idPaquete, cedulaReceptor) {
-                if (select.value === "Entregado") {
-                    const modal = new bootstrap.Modal(document.getElementById('cedulaModal'));
-                    document.getElementById('modalIdPaquete').value = idPaquete;
-                    document.getElementById('modalEstado').value = select.value;
-                    document.getElementById('modalCedula').value = '';
-                    modal.show();
-                } else if (select.value) {
-                    // Esto envia el estado automaticamente, no se hace validacion de cedula
-                    document.getElementById(`form-estado-${idPaquete}`).submit();
-                }
+                // Calculate pagination
+                const totalPages = Math.ceil(filteredRows.length / pageSize);
+
+                // Hide all rows first
+                rows.forEach(row => row.style.display = 'none');
+
+                // Show rows for current page
+                const startIndex = (currentPage - 1) * pageSize;
+                const endIndex = startIndex + pageSize;
+                filteredRows
+                    .slice(startIndex, endIndex)
+                    .forEach(row => row.style.display = '');
+
+                // Update pagination info and buttons
+                pageInfo.textContent = `Página ${currentPage} de ${totalPages}`;
+                prevPageBtn.disabled = currentPage === 1;
+                nextPageBtn.disabled = currentPage === totalPages;
             }
-        </script>
+
+            // Page size change
+            pageSizeSelect.addEventListener('change', function () {
+                pageSize = parseInt(this.value);
+                currentPage = 1;
+                updateTable();
+            });
+
+            // Search input
+            searchInput.addEventListener('input', function () {
+                currentPage = 1;
+                updateTable();
+            });
+
+            // Previous page button
+            prevPageBtn.addEventListener('click', function () {
+                if (currentPage > 1) {
+                    currentPage--;
+                    updateTable();
+                }
+            });
+
+            // Next page button
+            nextPageBtn.addEventListener('click', function () {
+                const totalPages = Math.ceil(filteredRows.length / pageSize);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    updateTable();
+                }
+            });
+
+            // Initial table setup
+            updateTable();
+        });
+    </script>
+
+
+
+    <!-- Modal para ingresar la cédula -->
+    <div class="modal fade" id="cedulaModal" tabindex="-1" aria-labelledby="cedulaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="modalForm" method="post" action="@Url.Action("ActualizarEstadoPaquete", "PaquetesEnviosController")">
+                    @Html.AntiForgeryToken()
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="cedulaModalLabel">Confirmar Entrega</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="modalIdPaquete" name="idPaquete" />
+                        <input type="hidden" id="modalEstado" name="nuevoEstado" />
+                        <div class="mb-3">
+                            <label for="modalCedula" class="form-label">Ingrese la Cédula del Receptor</label>
+                            <input type="text" class="form-control" id="modalCedula" name="cedulaReceptor" required />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Confirmar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
 
 
-        <a href="@Url.Action("EnviosTransportista", "PaquetesEnviosController")" class="btn btn-success">
-            Regresar
-        </a>
+    <!--Para validar la cedula-->
+    <script>
+        function handleEstadoChange(select, idPaquete, cedulaReceptor) {
+            if (select.value === "Entregado") {
+                const modal = new bootstrap.Modal(document.getElementById('cedulaModal'));
+                document.getElementById('modalIdPaquete').value = idPaquete;
+                document.getElementById('modalEstado').value = select.value;
+                document.getElementById('modalCedula').value = '';
+                modal.show();
+            } else if (select.value) {
+                // Esto envia el estado automaticamente, no se hace validacion de cedula
+                document.getElementById(`form-estado-${idPaquete}`).submit();
+            }
+        }
+    </script>
+
 
 
     </div>

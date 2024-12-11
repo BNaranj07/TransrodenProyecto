@@ -28,114 +28,696 @@
         <div class="col-md-6">
             <h3>Paquetes Sin Carga Asignada</h3>
 
-            @using (Html.BeginForm("AsignarPaqueteACargaSJ", "PaquetesCargasController", FormMethod.Post))
+    <br>
+    <div class="d-flex justify-content-center ">
+        <a href="@Url.Action("VistaCargaTransito", "PaquetesCargasController")" class="btn btn-primary">
+            <i class="fa fa-truck"></i> Ver cargas en Transito
+        </a>
+    </div>
+
+    <br>
+
+
+    <div class="container mt-5">
+
+        <!-- Lista de paquetes-->
+
+
+
+        <div class="container-fluid">
+            <h3 class="mb-4">Paquetes Sin Carga Asignada - San Jose</h3>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Buscar por número de rastreo...">
+                </div>
+            </div>
+
+            @using (Html.BeginForm("AsignarPaqueteACargaSJ", "PaquetesCargasController", FormMethod.Post, new { id = "assignPackageForm" }))
             {
                 @Html.AntiForgeryToken()
-
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Número de Rastreo</th>
-                            <th>Emisor</th>
-                            <th>Receptor</th>
-                            <th>Estado</th>
-                            <th>Asignar a Carga</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @for (int i = 0; i < Model.Paquetes.Count; i++)
-                        {
-                            var paquete = Model.Paquetes[i];
+                <div class="table-responsive">
+                    <table class="table table-striped" id="packagesTable">
+                        <thead>
                             <tr>
-                                <td>@paquete.NumeroRastreo</td>
-                                <td>@paquete.NombreEmisor</td>
-                                <td>@paquete.NombreReceptor</td>
-                                <td>@paquete.Estado.ToString()</td>
-                                <td>
-                                    @Html.Hidden($"PaqueteCargaAsignaciones[{i}].IdPaquete", paquete.Id_Paquete)
-
-                                    <select name="PaqueteCargaAsignaciones[@i].IdCarga" class="form-control">
-                                        <option value="">Seleccionar Carga</option>
-                                        @foreach (var carga in Model.Cargas)
-                                        {
-                                            <option value="@carga.Id_Carga">
-                                                Carga: @carga.Id_Carga - Camionero: @carga.Usuario.Nombre
-                                            </option>
-                                        }
-                                    </select>
-                                </td>
+                                <th>
+                                    <input type="checkbox" id="selectAllCheckbox">
+                                </th>
+                                <th>Número de Rastreo</th>
+                                <th>Emisor</th>
+                                <th>Receptor</th>
+                                <th>Estado</th>
+                                <th>Asignar a Carga</th>
                             </tr>
-                        }
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody id="packagesTableBody">
+                            @for (int i = 0; i < Model.Paquetes.Count; i++)
+                            {
+                                var paquete = Model.Paquetes[i];
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="selectedPaquetes" value="@paquete.Id_Paquete" class="package-checkbox">
+                                    </td>
+                                    <td>@paquete.NumeroRastreo</td>
+                                    <td>@paquete.NombreEmisor</td>
+                                    <td>@paquete.NombreReceptor</td>
+                                    <td>@paquete.Estado.ToString()</td>
+                                    <td>
+                                        <select name="PaqueteCargaAsignaciones[@i].IdCarga" class="form-control carga-select">
+                                            <option value="">Seleccionar Carga</option>
+                                            @foreach (var carga in Model.Cargas)
+                                            {
+                                                <option value="@carga.Id_Carga">
+                                                    Carga: @carga.Id_Carga - Camionero: @carga.Usuario.Nombre
+                                                </option>
+                                            }
+                                        </select>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
 
-                <button type="submit" class="btn btn-success">Asignar Carga</button>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <select id="cargaMasiva" class="form-control">
+                                <option value="">Asignación Masiva de Carga</option>
+                                @foreach (var carga in Model.Cargas)
+                                {
+                                    <option value="@carga.Id_Carga">
+                                        Carga: @carga.Id_Carga - Camionero: @carga.Usuario.Nombre
+                                    </option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <button type="submit" class="btn btn-success">Asignar Carga</button>
+                    </div>
+                </div>
+
+                <div id="assignPackagePagination" class="d-flex justify-content-center mt-3">
+                    <ul class="pagination" id="assignPackagePaginationLinks">
+                        <!-- Pagination links will be dynamically generated -->
+                    </ul>
+                </div>
             }
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const tableBody = document.getElementById('packagesTableBody');
+                    const paginationContainer = document.getElementById('assignPackagePaginationLinks');
+                    const itemsPerPage = 10;
+                    let currentPage = 1;
+
+                    // Prepare data
+                    const originalRows = Array.from(tableBody.querySelectorAll('tr'));
+
+                    // Render table based on current page
+                    function renderAssignPackageTable() {
+                        tableBody.innerHTML = ''; // Clear table
+
+                        const startIndex = (currentPage - 1) * itemsPerPage;
+                        const endIndex = startIndex + itemsPerPage;
+
+                        originalRows.slice(startIndex, endIndex).forEach(row => {
+                            tableBody.appendChild(row);
+                        });
+                    }
+
+                    // Render pagination links
+                    function renderAssignPackagePagination() {
+                        paginationContainer.innerHTML = '';
+
+                        const totalPages = Math.ceil(originalRows.length / itemsPerPage);
+
+                        if (currentPage > 1) {
+                            const prevLi = document.createElement('li');
+                            prevLi.className = 'page-item';
+                            const prevLink = document.createElement('a');
+                            prevLink.className = 'page-link';
+                            prevLink.href = '#';
+                            prevLink.textContent = 'Anterior';
+                            prevLink.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                currentPage--;
+                                renderAssignPackageTable();
+                                renderAssignPackagePagination();
+                            });
+                            prevLi.appendChild(prevLink);
+                            paginationContainer.appendChild(prevLi);
+                        }
+
+                        for (let i = 1; i <= totalPages; i++) {
+                            const li = document.createElement('li');
+                            li.className = `page-item ${i === currentPage ? 'active' : ''}`;
+                            const link = document.createElement('a');
+                            link.className = 'page-link';
+                            link.href = '#';
+                            link.textContent = i;
+                            link.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                currentPage = i;
+                                renderAssignPackageTable();
+                                renderAssignPackagePagination();
+                            });
+                            li.appendChild(link);
+                            paginationContainer.appendChild(li);
+                        }
+
+                        if (currentPage < totalPages) {
+                            const nextLi = document.createElement('li');
+                            nextLi.className = 'page-item';
+                            const nextLink = document.createElement('a');
+                            nextLink.className = 'page-link';
+                            nextLink.href = '#';
+                            nextLink.textContent = 'Siguiente';
+                            nextLink.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                currentPage++;
+                                renderAssignPackageTable();
+                                renderAssignPackagePagination();
+                            });
+                            nextLi.appendChild(nextLink);
+                            paginationContainer.appendChild(nextLi);
+                        }
+                    }
+
+                    // Initialize table and pagination
+                    renderAssignPackageTable();
+                    renderAssignPackagePagination();
+                });
+            </script>
+
+
+
         </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const table = document.getElementById('packagesTable');
+                const tableBody = document.getElementById('packagesTableBody');
+                const searchInput = document.getElementById('searchInput');
+                const selectAllCheckbox = document.getElementById('selectAllCheckbox');
+                const cargaMasiva = document.getElementById('cargaMasiva');
+                const itemsPerPage = 10;
+                let currentPage = 1;
+                let filteredData = [];
+
+                // Prepare data
+                const originalRows = Array.from(tableBody.querySelectorAll('tr'));
+
+                // Search functionality
+                function performSearch() {
+                    const searchTerm = searchInput.value.toLowerCase();
+                    filteredData = originalRows.filter(row => {
+                        const trackingNumber = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+                        return trackingNumber.includes(searchTerm);
+                    });
+
+                    currentPage = 1;
+                    renderTable();
+                    renderPagination();
+                }
+
+                // Pagination rendering
+                function renderTable() {
+                    // Clear current table body
+                    tableBody.innerHTML = '';
+
+                    // Calculate start and end indices
+                    const startIndex = (currentPage - 1) * itemsPerPage;
+                    const endIndex = startIndex + itemsPerPage;
+
+                    // Slice and render current page data
+                    const pageData = filteredData.slice(startIndex, endIndex);
+                    pageData.forEach(row => tableBody.appendChild(row));
+                }
+
+                // Pagination links rendering
+                function renderPagination() {
+                    const paginationContainer = document.getElementById('paginationLinks');
+                    paginationContainer.innerHTML = '';
+
+                    const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
+                    // Previous button
+                    if (currentPage > 1) {
+                        const prevLi = document.createElement('li');
+                        prevLi.className = 'page-item';
+                        const prevLink = document.createElement('a');
+                        prevLink.className = 'page-link';
+                        prevLink.href = '#';
+                        prevLink.textContent = 'Previous';
+                        prevLink.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            currentPage--;
+                            renderTable();
+                            renderPagination();
+                        });
+                        prevLi.appendChild(prevLink);
+                        paginationContainer.appendChild(prevLi);
+                    }
+
+                    // Page numbers
+                    for (let i = 1; i <= totalPages; i++) {
+                        const li = document.createElement('li');
+                        li.className = `page-item ${i === currentPage ? 'active' : ''}`;
+                        const link = document.createElement('a');
+                        link.className = 'page-link';
+                        link.href = '#';
+                        link.textContent = i;
+                        link.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            currentPage = i;
+                            renderTable();
+                            renderPagination();
+                        });
+                        li.appendChild(link);
+                        paginationContainer.appendChild(li);
+                    }
+
+                    // Next button
+                    if (currentPage < totalPages) {
+                        const nextLi = document.createElement('li');
+                        nextLi.className = 'page-item';
+                        const nextLink = document.createElement('a');
+                        nextLink.className = 'page-link';
+                        nextLink.href = '#';
+                        nextLink.textContent = 'Next';
+                        nextLink.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            currentPage++;
+                            renderTable();
+                            renderPagination();
+                        });
+                        nextLi.appendChild(nextLink);
+                        paginationContainer.appendChild(nextLi);
+                    }
+                }
+
+                // Initial rendering
+                filteredData = originalRows;
+                renderTable();
+                renderPagination();
+
+                // Search event
+                searchInput.addEventListener('input', performSearch);
+
+                // Select all checkbox
+                selectAllCheckbox.addEventListener('change', function () {
+                    const checkboxes = tableBody.querySelectorAll('.package-checkbox');
+                    checkboxes.forEach(checkbox => {
+                        checkbox.checked = this.checked;
+                    });
+                });
+
+                // Bulk assignment
+                cargaMasiva.addEventListener('change', function () {
+                    const selectedCargaId = this.value;
+                    const cargaSelects = document.querySelectorAll('.carga-select');
+
+                    cargaSelects.forEach(select => {
+                        if (selectedCargaId) {
+                            select.value = selectedCargaId;
+                        } else {
+                            select.selectedIndex = 0;
+                        }
+                    });
+                });
+            });
+        </script>
+
+        <style>
+            .pagination {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+                .pagination .page-item {
+                    margin: 0 5px;
+                }
+
+                    .pagination .page-item.active .page-link {
+                        background-color: #007bff;
+                        color: white;
+                    }
+        </style>
+
+        <!--Cargas para enviar-->
+
+        <h3>Cargas</h3>
+        <br>
+        <a href="@Url.Action("Create", "Cargas")" class="btn btn-danger">
+            <i class="fas fa-user-plus"></i> Agregar Carga
+        </a>
+        <br>
+        <br>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <input type="text" id="searchCargaInput" class="form-control" placeholder="Buscar por Id Carga...">
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id Carga</th>
+                    <th>Transportista</th>
+                    <th>Estado</th>
+                    <th>Paquetes Asignados</th>
+                    <th>Ver Paquetes</th>
+                    <th>Acciones</th>
+                    <th>Cambiar Estado</th>
+                </tr>
+            </thead>
+            <tbody id="cargasTableBody">
+                @foreach (var carga in Model.Cargas)
+                {
+                    <tr>
+                        <td>@carga.Id_Carga</td>
+                        <td>@carga.Usuario.Nombre</td>
+                        <td>@carga.Estado.ToString()</td>
+                        <td>@carga.NumeroPaquetes</td>
+                        <td>
+                            <a href="@Url.Action("CargaPaquetes", "PaquetesCargasController", new { idCarga = carga.Id_Carga })" class="btn btn-success">
+                                Ver
+                            </a>
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Edit", "Cargas", new { id = carga.Id_Carga })" class="btn btn-primary">
+                                Editar
+                            </a>
+                            <a href="@Url.Action("Delete", "Cargas", new { id = carga.Id_Carga })" class="btn btn-danger">
+                                Borrar
+                            </a>
+                        </td>
+                        <td>
+                            @using (Html.BeginForm("ActualizarEstadoCargaSJ", "PaquetesCargasController", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.Hidden("idCarga", carga.Id_Carga)
+
+                                <select name="nuevoEstado" class="form-control">
+                                    <option value="">Estado</option>
+                                    <option value="BodegaSJ">BodegaSJ</option>
+                                    <option value="EnTransito">EnTransito</option>
+                                </select>
+
+                                <button type="submit" class="btn btn-danger mt-2">Actualizar</button>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div id="pagination" class="d-flex justify-content-center mt-3">
+            <ul class="pagination" id="paginationLinks">
+                <!-- Pagination links will be dynamically generated -->
+            </ul>
+        </div>
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const tableBody = document.getElementById('cargasTableBody');
+                const searchInput = document.getElementById('searchCargaInput');
+                const itemsPerPage = 10;
+                let currentPage = 1;
+                let filteredData = [];
+
+                // Prepare data
+                const originalRows = Array.from(tableBody.querySelectorAll('tr'));
+
+                // Search functionality
+                function performSearch() {
+                    const searchTerm = searchInput.value.toLowerCase();
+                    filteredData = originalRows.filter(row => {
+                        const cargaId = row.querySelector('td:first-child').textContent.toLowerCase();
+                        return cargaId.includes(searchTerm);
+                    });
+
+                    currentPage = 1;
+                    renderTable();
+                    renderPagination();
+                }
+
+                // Pagination rendering
+                function renderTable() {
+                    tableBody.innerHTML = '';
+
+                    const startIndex = (currentPage - 1) * itemsPerPage;
+                    const endIndex = startIndex + itemsPerPage;
+
+                    const pageData = filteredData.slice(startIndex, endIndex);
+                    pageData.forEach(row => tableBody.appendChild(row));
+                }
+
+                function renderPagination() {
+                    const paginationContainer = document.getElementById('paginationLinks');
+                    paginationContainer.innerHTML = '';
+
+                    const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
+                    if (currentPage > 1) {
+                        const prevLi = document.createElement('li');
+                        prevLi.className = 'page-item';
+                        const prevLink = document.createElement('a');
+                        prevLink.className = 'page-link';
+                        prevLink.href = '#';
+                        prevLink.textContent = 'Previous';
+                        prevLink.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            currentPage--;
+                            renderTable();
+                            renderPagination();
+                        });
+                        prevLi.appendChild(prevLink);
+                        paginationContainer.appendChild(prevLi);
+                    }
+
+                    for (let i = 1; i <= totalPages; i++) {
+                        const li = document.createElement('li');
+                        li.className = `page-item ${i === currentPage ? 'active' : ''}`;
+                        const link = document.createElement('a');
+                        link.className = 'page-link';
+                        link.href = '#';
+                        link.textContent = i;
+                        link.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            currentPage = i;
+                            renderTable();
+                            renderPagination();
+                        });
+                        li.appendChild(link);
+                        paginationContainer.appendChild(li);
+                    }
+
+                    if (currentPage < totalPages) {
+                        const nextLi = document.createElement('li');
+                        nextLi.className = 'page-item';
+                        const nextLink = document.createElement('a');
+                        nextLink.className = 'page-link';
+                        nextLink.href = '#';
+                        nextLink.textContent = 'Next';
+                        nextLink.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            currentPage++;
+                            renderTable();
+                            renderPagination();
+                        });
+                        nextLi.appendChild(nextLink);
+                        paginationContainer.appendChild(nextLi);
+                    }
+                }
+
+                filteredData = originalRows;
+                renderTable();
+                renderPagination();
+
+                searchInput.addEventListener('input', performSearch);
+            });
+        </script>
+
 
         <!-- Cargas para enviar -->
-        <div class="col-md-6">
-            <h3>Cargas</h3>
-            <br>
-            <a href="@Url.Action("Create", "Cargas")" class="btn btn-danger">
-                <i class="fas fa-user-plus"></i> Agregar Carga
-            </a>
-            <br>
-            <br>
+        <!--Cargas Recibidas-->
 
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Id Carga</th>
-                        <th>Transportista</th>
-                        <th>Estado</th>
-                        <th>Paquetes Asignados</th>
-                        <th>Ver Paquetes</th>
-                        <th>Acciones</th>
-                        <th>Cambiar Estado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var carga in Model.Cargas)
-                    {
-                        <tr>
-                            <td>@carga.Id_Carga</td>
-                            <td>@carga.Usuario.Nombre</td>
-                            <td>@carga.Estado.ToString()</td>
-                            <td>@carga.NumeroPaquetes</td>
-                            <td>
-                                <a href="@Url.Action("CargaPaquetes", "PaquetesCargasController", new { idCarga = carga.Id_Carga })" class="btn btn-success">
-                                    Ver
-                                </a>
-                            </td>
-                            <td>
-                                <a href="@Url.Action("Edit", "Cargas", new { id = carga.Id_Carga })" class="btn btn-primary">
-                                    Editar
-                                </a>
-                                <a href="@Url.Action("Delete", "Cargas", new { id = carga.Id_Carga })" class="btn btn-danger">
-                                    Borrar
-                                </a>
-                            </td>
-                            <td>
-                                @using (Html.BeginForm("ActualizarEstadoCargaSJ", "PaquetesCargasController", FormMethod.Post))
-                                {
-                                    @Html.AntiForgeryToken()
-                                    @Html.Hidden("idCarga", carga.Id_Carga)
+        <h3>Cargas Recibidas</h3>
 
-                                    <select name="nuevoEstado" class="form-control">
-                                        <option value="">Estado</option>
-                                        <option value="BodegaSJ">BodegaSJ</option>
-                                        <option value="EnTransito">EnTransito</option>
-                                    </select>
-
-                                    <button type="submit" class="btn btn-danger mt-2">Actualizar</button>
-                                }
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <input type="text" id="searchInputRecibidas" class="form-control" placeholder="Buscar por Id Carga...">
+            </div>
         </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id Carga</th>
+                    <th>Transportista</th>
+                    <th>Estado</th>
+                    <th>Paquetes Asignados</th>
+                    <th>Ver Paquetes</th>
+                    <th>Cambiar Estado</th>
+                </tr>
+            </thead>
+            <tbody id="cargasRecibidasTableBody">
+                @foreach (var carga in Model.CargasRecibidas)
+                {
+                    <tr>
+                        <td>@carga.Id_Carga</td>
+                        <td>@carga.Usuario.Nombre</td>
+                        <td>@carga.Estado.ToString()</td>
+                        <td>@carga.NumeroPaquetes</td>
+                        <td>
+                            <a href="@Url.Action("CargaPaquetesView", "PaquetesCargasController", new { idCarga = carga.Id_Carga })" class="btn btn-success">
+                                Ver
+                            </a>
+                        </td>
+                        <td>
+                            @using (Html.BeginForm("EstadoCargaSJ", "PaquetesCargasController", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.Hidden("idCarga", carga.Id_Carga)
+
+                                <select name="nuevoEstado" class="form-control">
+                                    <option value="">Estado</option>
+                                    <option value="BodegaSJ">BodegaSJ</option>
+                                    <option value="Recibido">Recibido</option>
+                                </select>
+
+                                <button type="submit" class="btn btn-danger mt-2">Actualizar</button>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div id="paginationRecibidas" class="d-flex justify-content-center mt-3">
+            <ul class="pagination" id="paginationLinksRecibidas">
+                <!-- Pagination links will be dynamically generated -->
+            </ul>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const tableBody = document.getElementById('cargasRecibidasTableBody');
+                const searchInput = document.getElementById('searchInputRecibidas');
+                const paginationContainer = document.getElementById('paginationLinksRecibidas');
+                const itemsPerPage = 10;
+                let currentPage = 1;
+                let filteredData = [];
+
+                // Prepare data
+                const originalRows = Array.from(tableBody.querySelectorAll('tr'));
+
+                // Search functionality
+                function performSearch() {
+                    const searchTerm = searchInput.value.toLowerCase();
+                    filteredData = originalRows.filter(row => {
+                        const idCarga = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
+                        return idCarga.includes(searchTerm);
+                    });
+
+                    currentPage = 1;
+                    renderTable();
+                    renderPagination();
+                }
+
+                // Render table based on current page
+                function renderTable() {
+                    tableBody.innerHTML = ''; // Clear table
+
+                    const startIndex = (currentPage - 1) * itemsPerPage;
+                    const endIndex = startIndex + itemsPerPage;
+
+                    filteredData.slice(startIndex, endIndex).forEach(row => {
+                        tableBody.appendChild(row);
+                    });
+                }
+
+                // Render pagination links
+                function renderPagination() {
+                    paginationContainer.innerHTML = '';
+
+                    const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
+                    if (currentPage > 1) {
+                        const prevLi = document.createElement('li');
+                        prevLi.className = 'page-item';
+                        const prevLink = document.createElement('a');
+                        prevLink.className = 'page-link';
+                        prevLink.href = '#';
+                        prevLink.textContent = 'Anterior';
+                        prevLink.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            currentPage--;
+                            renderTable();
+                            renderPagination();
+                        });
+                        prevLi.appendChild(prevLink);
+                        paginationContainer.appendChild(prevLi);
+                    }
+
+                    for (let i = 1; i <= totalPages; i++) {
+                        const li = document.createElement('li');
+                        li.className = `page-item ${i === currentPage ? 'active' : ''}`;
+                        const link = document.createElement('a');
+                        link.className = 'page-link';
+                        link.href = '#';
+                        link.textContent = i;
+                        link.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            currentPage = i;
+                            renderTable();
+                            renderPagination();
+                        });
+                        li.appendChild(link);
+                        paginationContainer.appendChild(li);
+                    }
+
+                    if (currentPage < totalPages) {
+                        const nextLi = document.createElement('li');
+                        nextLi.className = 'page-item';
+                        const nextLink = document.createElement('a');
+                        nextLink.className = 'page-link';
+                        nextLink.href = '#';
+                        nextLink.textContent = 'Siguiente';
+                        nextLink.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            currentPage++;
+                            renderTable();
+                            renderPagination();
+                        });
+                        nextLi.appendChild(nextLink);
+                        paginationContainer.appendChild(nextLi);
+                    }
+                }
+
+                // Initialize table and pagination
+                filteredData = originalRows;
+                renderTable();
+                renderPagination();
+
+                // Attach search event
+                searchInput.addEventListener('input', performSearch);
+            });
+        </script>
+
+
+
+        <!-- Cargas recibidas -->
+
+
+
+
     </div>
     <br>
     <br>
