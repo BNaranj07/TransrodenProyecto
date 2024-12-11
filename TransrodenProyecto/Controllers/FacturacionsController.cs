@@ -297,6 +297,11 @@ namespace TransrodenProyecto.Controllers
             base.Dispose(disposing);
         }
 
+        public ActionResult ImprimirFactura(int id)
+        {
+            var facturacion = db.Facturaciones.Find(id); // Reemplaza con tu lógica para obtener la factura
+            return View(facturacion);
+        }
 
 
 

@@ -1,0 +1,68 @@
+﻿@model TransrodenProyecto.Models.Facturacion
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Imprimir Factura</title>
+    <style>
+        /* Aquí puedes agregar estilos específicos para la impresión */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 58mm; /* Ancho típico de una impresora de punto de venta */
+        }
+
+        .content {
+            padding: 10px;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .item {
+            margin-bottom: 5px;
+        }
+
+        .total {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function printInvoice() {
+            // Ocultar elementos no imprimibles
+            const noPrintElements = document.querySelectorAll('.no-print, .print-button');
+            noPrintElements.forEach(element => element.style.display = 'none');
+
+            // Imprimir la página
+            window.print();
+
+            // Mostrar elementos no imprimibles después de imprimir
+            noPrintElements.forEach(element => element.style.display = 'block');
+        }
+    </script>
+</head>
+<body>
+    <div class="content">
+        <div class="title">Transroden Express S.A</div>
+        <div class="title">Detalles de la Factura</div>
+        <div class="item">Factura N°: @Model.Id_Facturacion</div>
+        <div class="item">Fecha de Emisión: @Model.Fecha.ToString("dd/MM/yyyy")</div>
+        <div class="item">Precio: @String.Format("{0:C}", Model.Precio)</div>
+        <div class="item">Subtotal: @String.Format("{0:C}", Model.Iva)</div>
+        <div class="item total">Total: @String.Format("{0:C}", Model.Total)</div>
+    </div>
+
+    <input type="button" class="print-button no-print" value="Imprimir" onclick="printInvoice()" />
+</body>
+</html>

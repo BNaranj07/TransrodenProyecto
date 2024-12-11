@@ -253,7 +253,7 @@
                                 <dd>@Model.Paquete.NumeroRastreo</dd>
 
                                 @*<dt>Cantidad:</dt>
-                                <dd>@Model.Paquete.Cantidad</dd>*@
+                                    <dd>@Model.Paquete.Cantidad</dd>*@
 
                                 <dt>Emisor:</dt>
                                 <dd>@Model.Paquete.NombreEmisor</dd>
@@ -311,6 +311,7 @@
         <p>
             @Html.ActionLink("Ir a Paquetes", "Index", "Paquetes", null, new { @class = "btn btn-primary" }) |
             @Html.ActionLink("Ir a Facturas", "Index", "Facturacions", null, new { @class = "btn btn-danger" })
+            <input type="button" value="Imprimir" onclick="abrirVentanaImpresion(@Model.Id_Facturacion)" class="btn btn-success" />
         </p>
 
     </div>
@@ -389,6 +390,15 @@
 
     <!-- Template Javascript -->
     <script src="~/Content/assets/js/main.js"></script>
+    <script type="text/javascript">
+    function abrirVentanaImpresion(idFactura) {
+        var url = '@Url.Action("ImprimirFactura", "Facturacions", new { id = "__id__" })';
+        url = url.replace("__id__", idFactura);
+        var opciones = "width=300,height=600,scrollbars=yes,resizable=yes";
+        window.open(url, "Imprimir Factura", opciones);
+    }
+    </script>
+
 </body>
 
 </html>
